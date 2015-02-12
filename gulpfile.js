@@ -36,7 +36,10 @@ var foundationJS = [
 ];
 // These files are for your app's JavaScript
 var appJS = [
-  'client/assets/js/app.js'
+  'client/assets/js/app.js',
+  'client/assets/js/services/ApiService.js',
+  'client/assets/js/services/LoginService.js',
+  'client/assets/js/controllers/LoginCtrl.js'
 ];
 
 // 3. TASKS
@@ -128,6 +131,7 @@ gulp.task('copy-templates', ['copy'], function() {
 gulp.task('server:start', function() {
   $.connect.server({
     root: './build',
+    livereload: true,
     middleware: function() {
       return [
         modRewrite(['^[^\\.]*$ /index.html [L]'])

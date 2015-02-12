@@ -1,0 +1,27 @@
+{
+  "name": "knot-suit-web",
+  "version": "0.0.0",
+  "authors": [
+    "Ilias, Atish ......"
+  ],
+  "description": "Web based knot suite application.",
+  "main": "gulpfile.js",
+  "keywords": [
+    "framework",
+    "angular",
+    "web",
+    "apps"
+  ],
+  "homepage": "http://knotsuite.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation-apps": "~1.0.2"
+  }
+}

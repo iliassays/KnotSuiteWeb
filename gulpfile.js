@@ -39,7 +39,9 @@ var appJS = [
   'client/assets/js/app.js',
   'client/assets/js/services/ApiService.js',
   'client/assets/js/services/LoginService.js',
-  'client/assets/js/controllers/LoginCtrl.js'
+  'client/assets/js/services/ProfileService.js',
+  'client/assets/js/controllers/LoginCtrl.js',
+  'client/assets/js/controllers/ProfileCtrl.js',
 ];
 
 // 3. TASKS

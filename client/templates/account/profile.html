@@ -4,4 +4,24 @@ url: /profile/:userId
 controller : ProfileCtrl
 ---
 
-<div>{{userName}}</div>
+<div class="medium-horizontal grid-block">
+    <div class="grid-block">
+        <section class="block-list">
+        <ul>
+            <li ui-sref-active="my-active-class"> <a ui-sref="profile.personalSettings">PERSONAL</a></li>
+            <li ui-sref-active="my-active-class"> <a ui-sref="profile.personalSettings">SECURITY</a></li>
+            <li ui-sref-active="my-active-class"><a ui-sref="profile.personalSettings">NOTIFICATION</a></li>
+            <li ui-sref-active="my-active-class"><a ui-sref="profile.personalSettings">SUBSCRIBERS</a></li>
+            <li ui-sref-active="my-active-class"><a ui-sref="profile.personalSettings">APPS</a></li>
+            <li ui-sref-active="my-active-class"><a ui-sref="profile.personalSettings">APP VERSION</a></li>
+            <li ui-sref-active="my-active-class"><a ui-sref="profile.personalSettings">SETTINGS B</a></li>
+            <li ui-sref-active="my-active-class"><a ui-sref="profile.personalSettings">SETTINGS C</a></li>
+
+        </ul>
+        </section>
+    </div>
+
+    <div class="grid-block" ui-view>
+
+    </div>
+</div>

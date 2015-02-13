@@ -3,20 +3,25 @@ name: login
 url: /login
 controller : LoginCtrl
 ---
-<div class="grid-container">
-    <div class="grid-block"><div class="grid-content"> <img src="assets/img/Logo_Text.png" /></div></div>
-    <div class="grid-block">
-        <div class="grid-block vertical medium">
-                <span class="text-right text-white">Log In Using KnotSuite Account</span>
-               <input type="text" placeholder="Email Address" ng-model="user.loginEmail">
-                <input type="password" placeholder="Password" ng-model="user.loginPassword">
-                <a class="login-button  button postfix " ng-click="loginNow()">LOGIN NOW</a>
+<div class="grid-block login-block">
+<div class="grid-container ">
+    <div class="vertical grid-block">
+        <div class="grid-block"><div class="grid-content"> <img src="assets/img/Logo_Text.png" /></div></div>
+         <div class="grid-block">
+        <div class="grid-content ">
+            <div class="vertical grid-block  ">
+                <div class="grid-content"> <div class="grid-container"><div class="grid-block align-right"> <span class=" text-white">Log In Using KnotSuite Account</span></div>
+                </div></div>
+                <div class="grid-content"><input type="text" placeholder="Email Address" ng-model="user.loginEmail"></div>
+                <div class="grid-content "><input type="password" placeholder="Password" ng-model="user.loginPassword"></div>
+                <div class="grid-content"><a class="login-button expand button" ng-click="loginNow()">LOGIN NOW</a></div>
+            </div>
         </div>
-        <div class="grid-block medium-horizontal">
-            <div class="grid-content large-5">
+        <div class="grid-block medium">
+            <div class="grid-content medium-5">
                 <img src="assets/img/news_icon.png" />
             </div>
-            <div class="grid-content large-7">
+            <div class="grid-content medium-7">
                 <h5 class="text-white">KnotSillicon app is awarded "The Most Wanted App" award
                 </h5>
                 <p class="text-white">
@@ -28,5 +33,6 @@ controller : LoginCtrl
         </div>
 
     </div>
-
+    </div>
+</div>
 </div>

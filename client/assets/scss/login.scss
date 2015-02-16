@@ -1,0 +1,31 @@
+$knot-blue-color:  #074e68;
+$knot-orange-color:  #DC6A00;
+$knot-white-color: #fff;
+
+
+.knot-container
+{
+  background-color: $knot-blue-color;
+}
+
+.login-block
+{
+  background-color: $knot-blue-color;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: auto;
+  transform: translate(-50%, -50%);
+  width: 55%;
+  height: 40%;
+}
+
+@mixin text-color($color) {
+  color: $color ;
+}
+
+.text-white { @include text-color(white); }
+
+.login-button , .login-button:hover{
+  background-color: $knot-orange-color;
+}

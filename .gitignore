@@ -4,3 +4,6 @@ npm-debug.log
 bower_components
 build
 .sass-cache
+.idea
+bin/
+

@@ -3,11 +3,36 @@ name: login
 url: /login
 controller : LoginCtrl
 ---
-<div class="align-spaced vertical medium-horizontal grid-block">
-    <div class="grid-block">
-        <input type="text" placeholder="Email Address" ng-model="user.loginEmail">
-        <input type="password" placeholder="Password" ng-model="user.loginPassword">
-        <a class="success button" ng-click="loginNow()">LOGIN NOW</a>
-    </div>
+<div class="grid-block login-block">
+<div class="grid-container ">
+    <div class="vertical grid-block">
+        <div class="grid-block"><div class="grid-content"> <img src="assets/img/Logo_Text.png" /></div></div>
+         <div class="grid-block">
+        <div class="grid-content ">
+            <div class="vertical grid-block  ">
+                <div class="grid-content"> <div class="grid-container"><div class="grid-block align-right"> <span class=" text-white">Log In Using KnotSuite Account</span></div>
+                </div></div>
+                <div class="grid-content"><input type="text" placeholder="Email Address" ng-model="user.loginEmail"></div>
+                <div class="grid-content "><input type="password" placeholder="Password" ng-model="user.loginPassword"></div>
+                <div class="grid-content"><a class="login-button expand button" ng-click="loginNow()">LOGIN NOW</a></div>
+            </div>
+        </div>
+        <div class="grid-block medium">
+            <div class="grid-content medium-5">
+                <img src="assets/img/news_icon.png" />
+            </div>
+            <div class="grid-content medium-7">
+                <h5 class="text-white">KnotSillicon app is awarded "The Most Wanted App" award
+                </h5>
+                <p class="text-white">
+                    Lorem ipsum dolor sit amet, consecteur adipising elit.
+                </p>
+                <a href="#" class="text-white">Read Full Story</a>
+            </div>
 
+        </div>
+
+    </div>
+    </div>
+</div>
 </div>

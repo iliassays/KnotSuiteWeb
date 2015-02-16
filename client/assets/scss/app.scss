@@ -1,4 +1,10 @@
+
 @import "settings";
 @import "foundation";
+@import "color";
 @import "login";
 
+.knot-container
+{
+  background-color: $knot-navy-color;
+}

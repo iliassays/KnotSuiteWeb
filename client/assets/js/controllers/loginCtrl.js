@@ -2,8 +2,8 @@
 (function () {
     angular.module('application')
         .controller('LoginCtrl',
-        ['$scope', 'LoginService', '$location', '$rootScope', "toaster",
-            function ($scope, LoginService, $location, $rootScope, toaster) {
+        ['$scope', 'LoginService', '$location', '$rootScope',
+            function ($scope, LoginService, $location, $rootScope) {
                 $scope.user = {
                     loginEmail: "brian.tobey123@gmail.com",
                     loginPassword: "@ddinstagram",
@@ -22,7 +22,7 @@
                         LoginService.saveAccessToken(data.userObj.accessToken);
                         console.log(data);
                         $rootScope.userData = data.userObj;
-                        toaster.pop("title", "text");
+                        //toaster.pop("title", "text");
                         $location.path('/profile');
                     });
                 };

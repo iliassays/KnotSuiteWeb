@@ -3,14 +3,14 @@
 @import "foundation";
 @import "color";
 @import "login";
-@import "forms";
+@import "variables";
 
-.knot-container
-{
+.knot-container{
   background-color: $knot-navy-color;
 }
+
 .grid-container{
-  max-width: none;
+  max-width: 100%;
 }
 
 .personal-settings-form{
@@ -21,13 +21,4 @@
 .profile-image{
   max-width: $profile-image-max-width;
   height: $profile-image-max-height;
-}
-
-.fade {
-  opacity: 0;
-  -webkit-transition: opacity .15s linear;
-  transition: opacity .15s linear;
-}
-.fade.in {
-  opacity: 1;
 }

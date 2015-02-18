@@ -1,37 +1,42 @@
-@mixin custom-text-styles($color, $decoration) {
-  color: $color ;
-  text-decoration: $decoration;
+.login-container{
+  padding-top: 5%;
+
+  .logo{
+    padding-bottom: 40px;
+  }
+
+  .login-left{
+    padding: 20px;
+
+    .info{
+      color: #ffffff;
+
+      a{
+        color: #ffffff;
+        font-weight: bold;
+      }
+    }
+
+    .login-button{
+      width: 100%;
+      margin: 0 0 1rem 0
+    }
+  }
+
+  .login-right{
+    padding: 20px;
+
+    .headline{
+      color: #ffc520;
+    }
+    .text{
+      color: #ffffff;
+    }
+    .sign-up-link{
+      color: #ffffff;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 5px 0px 0px 5px;
+    }
+  }
 }
-
-.text-grey{ color: $knot-grey-color;}
-.text-white { color:white; }
-
-.custom-anchor, .custom-anchor:hover{
-  @include  custom-text-styles($knot-grey2-color, underline);
-}
-
-.login-button , .login-button:hover{
-  background-color: $knot-orange-color;
-}
-.padding-logo{padding: 0 0 10px 50px;}
-@media screen and (max-width: 1200px) {.padding-logo{padding:0 0 10px 0;}}
-
-.login-block
-{
-
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin: auto;
-  transform: translate(-50%, -50%);
-  width: 55%;
-  height: 40%;
-}
-
-.font-16{ font-size: 16px;}
-.font-14{ font-size: 14px;}
-.font-18{ font-size: 18px;}
-
-
-
-

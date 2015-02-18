@@ -10,12 +10,10 @@
                 }
                 var userId = $rootScope.userData.accountId;
                 ProfileService.getProfileById(userId).then(function (data) {
-                    console.log(data);
+
                     $scope.profileImage = ApiService.apiUrl + '/' + data.connData.imgSrc;
-                    console.log($scope.profileImage);
                 });
                 $scope.saveDate = function () {
-                    console.log($scope.fileValue);
                 }
             }]);
 })();

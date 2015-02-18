@@ -1,10 +1,36 @@
 
 @import "settings";
 @import "foundation";
+@import "toastr";
 @import "color";
 @import "login";
+@import "forms";
+
+
 
 .knot-container
 {
   background-color: $knot-navy-color;
+}
+.grid-container{
+  max-width: none;
+}
+
+.personal-settings-form{
+  background-color: $personal-settings-form-background-color;
+  padding: $personal-settings-form-background-padding;
+}
+
+.profile-image{
+  max-width: $profile-image-max-width;
+  height: $profile-image-max-height;
+}
+
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity .15s linear;
+  transition: opacity .15s linear;
+}
+.fade.in {
+  opacity: 1;
 }

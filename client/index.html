@@ -13,15 +13,19 @@
   <body>
 
     <div class="grid-frame vertical knot-container">
-      <div class="grid-content shrink" style="padding: 0;">
-        <ul class="primary condense menu-bar">
-          <li><a><strong>KSW</strong></a></li>
-          <li><a ui-sref="home">Home</a></li>
-          <li><a ui-sref="about">About</a></li>
-          <li><a ui-sref="contact">News</a></li>
-          <li><a ui-sref="news">Contact</a></li>
-        </ul>
+      <toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
+      <div class="grid-content shrink" style="padding: 0;" ng-controller="NavigationCtrl">
+
+         <ul class="primary condense menu-bar icon-left">
+           <li><a><strong>KSW</strong></a></li>
+           <li><a ui-sref="home"><img zf-iconic="" icon="thumb" size="small" class="iconic-color-primary">Home</a></li>
+           <li><a ui-sref="about">About</a></li>
+           <li><a ui-sref="contact">News</a></li>
+           <li><a ui-sref="news">Contact</a></li>
+         </ul>
+
       </div>
+
       <div class="grid-content">
         <div class="grid-container">
           <div ng-class="['ui-animation']" ui-view></div>

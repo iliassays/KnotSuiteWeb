@@ -22,7 +22,8 @@ angular.module('application')
     };
 
     return{
-        post:post
+        post:post,
+        apiUrl:baseUrl
     };
 }]);
 })();

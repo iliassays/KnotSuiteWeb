@@ -4,7 +4,7 @@
     angular.module('application').directive('profileImage', ['$parse', function ($parse) {
         return {
             restrict: 'A',
-            template: ' <div class="ten mobile-three columns"><img src="{{profileImage}}" ng-click="openFileBrowser()">' +
+            template: ' <div class="ten mobile-three columns"><img src="{{profileImage}}" ng-click="openFileBrowser()" class="profile-image">' +
             '<input type="file" style="display: none" id="uploader" accept="image/*">' +
             '</div>',
             link: function (scope, element, attrs) {

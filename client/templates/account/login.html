@@ -5,40 +5,42 @@ controller : LoginCtrl
 animationIn: fade
 animationOut: fade
 ---
-<div class="grid-block login-block">
-<div class="grid-container ">
-    <div class="vertical grid-block">
-
-        <div class="grid-block"><div class="grid-content padding-logo"> <img src="assets/img/Logo_Text.png" /></div></div>
-
-        <div class="large-grid-block">
-            <div class="grid-content">
-                <div class="vertical grid-block">
-                    <div class="grid-content"><label class="text-right text-white">Log In Using KnotSuite Account</label></div>
-                    <div class="grid-content"><input type="text" placeholder="Email Address" ng-model="user.loginEmail"></div>
-                    <div class="grid-content"><input type="password" placeholder="Password" ng-model="user.loginPassword"></div>
-                    <div class="grid-content"><a class="login-button expand button" ng-click="loginNow()">LOGIN NOW</a></div>
-                </div>
+<div class="login-container">
+    <div class="vertical medium-horizontal align-center grid-block">
+        <div class="grid-block medium-2"></div>
+        <div class="grid-content medium-4 login-left">
+            <div class="grid-block">
+                <img class="logo" src="assets/img/Logo_Text.png" />
             </div>
-            <div class="grid-content">
-                <div  class="grid-block wrap show-for-large">
-                    <div class="grid-container shrink ">
-                        <img src="assets/img/news_icon.png" />
-                    </div>
-                    <div class="grid-content source-frame-breakpoint-conditions">
-                        <h5 class="subheader">KnotSillicon app is awarded "The Most Wanted App" award
-                        </h5>
-                        <label class="text-white font-14">
-                            Lorem ipsum dolor sit amet, consecteur adipising elit. Quisque lobortis vel mauris bibendum tempor.
-                            Aenean volutpat tristique ex in auctor.
-                        </label>
-                        <a href="#" class="custom-anchor">Read full story</a>
-                    </div>
-                </div>
-             </div>
+            <div class="grid-block">
+                <input placeholder="Username" data-ng-model="user.loginEmail" type="text">
+            </div>
+            <div class="grid-block">
+                <input placeholder="Password" data-ng-model="user.loginPassword" type="password">
+            </div>
+            <div class="grid-block">
+                <a class="success button login-button" href="javascript:;" data-ng-click="loginNow()">LOGIN NOW</a>
+            </div>
+            <div class="grid-block">
+                <p class="info">
+                    <img zf-iconic="" icon="thumb" size="medium" class="iconic-color-warning">
+                    Forgot your password? click <a herf="javascript:;">here</a> to retrieve.
+                </p>
+            </div>
         </div>
-
+        <div class="grid-block medium-1 hide-for-small login-mid"></div>
+        <div class="grid-content medium-4 login-right">
+            <h4 class="headline">New?</h4>
+            <p class="text">
+                Lorem ipsum dolor sit amet, consecteur adipising elit. Quisque lobortis vel mauris bibendum tempor.
+                Aenean volutpat tristique ex in auctor.
+            </p>
+            <p>
+                <img zf-iconic="" icon="account" size="medium" class="iconic-color-warning"><a herf="javascript:;" class="sign-up-link">SIGN UP</a>
+            </p>
+        </div>
+        <div class="grid-block medium-1"></div>
     </div>
 </div>
-</div>
+
 

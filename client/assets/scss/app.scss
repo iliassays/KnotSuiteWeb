@@ -4,6 +4,7 @@
 @import "color";
 @import "login";
 @import "variables";
+@import "navigation";
 
 .knot-container{
   background-color: $knot-navy-color;
@@ -22,3 +23,9 @@
   max-width: $profile-image-max-width;
   height: $profile-image-max-height;
 }
+
+.custom-block-list{
+  padding-top: 1px;
+  background-color: white;
+}
+

@@ -6,8 +6,9 @@
                 localStorage["accessToken"] = accessToken;
             };
 
-            var clearAccessToken = function () {
+            var signOut = function () {
                 localStorage.removeItem("accessToken");
+                localStorage.removeItem("accountId");
             };
 
             var getAccessToken = function () {
@@ -20,14 +21,27 @@
 
             var isLoggedIn = function () {
                 return getAccessToken() != null ? true : false;
+            };
+
+            var saveAccountId = function(accountId){
+                localStorage["accountId"] = accountId;
+            };
+
+            var getCurrentUserId = function(){
+                if(localStorage["accessToken"]&&localStorage["accountId"]){
+                    return localStorage["accountId"];
+                }
+                return null;
             }
 
             return {
                 sendLoginRequest: sendLoginRequest,
                 saveAccessToken: saveAccessToken,
-                clearAccessToken: clearAccessToken,
+                signOut: signOut,
                 getAccessToken: getAccessToken,
-                isLoggedIn: isLoggedIn
+                isLoggedIn: isLoggedIn,
+                saveAccountId:saveAccountId,
+                getCurrentUserId:getCurrentUserId
             };
         }]);
 })();

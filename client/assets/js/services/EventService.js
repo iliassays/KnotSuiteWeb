@@ -1,4 +1,4 @@
-angular.module('application').service('events', ['$rootScope', function($rootScope) {
+angular.module('application').service('EventService', ['$rootScope', function($rootScope) {
     this.trigger = function (name, args) {
         $rootScope.$broadcast(name, args);
     };

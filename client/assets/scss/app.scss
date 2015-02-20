@@ -1,6 +1,7 @@
 
 @import "settings";
 @import "foundation";
+@import "font-awesome";
 @import "color";
 @import "login";
 @import "variables";
@@ -28,5 +29,9 @@
 .custom-block-list{
   padding-top: 1px;
   background-color: white;
+}
+
+.custom-grid-content{
+  padding-top: 3px;
 }
 

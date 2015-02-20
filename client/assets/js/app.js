@@ -19,11 +19,11 @@
     $urlProvider.otherwise('/');
 
     $locationProvider.html5Mode({
-      enabled:false,
+      enabled:true,
       requireBase: false
     });
 
-    $locationProvider.hashPrefix('!');
+    //$locationProvider.hashPrefix('!');
   }
 
   function run() {

@@ -20,7 +20,8 @@ var gulp       = require('gulp'),
 // Sass will check these folders for files when you use @import.
 var sassPaths = [
   'client/assets/scss',
-  'bower_components/foundation-apps/scss'
+  'bower_components/foundation-apps/scss',
+  'bower_components/font-awesome/scss'
 ];
 // These files include Foundation for Apps and its dependencies
 var foundationJS = [
@@ -76,6 +77,10 @@ gulp.task('copy', function() {
   // Iconic SVG icons
   gulp.src('./bower_components/foundation-apps/iconic/**/*')
     .pipe(gulp.dest('./build/assets/img/iconic/'));
+
+  gulp.src('./bower_components/font-awesome/fonts/**/*')
+      .pipe(gulp.dest('./build/assets/fonts/'));
+
 
   // Foundation's Angular partials
   return gulp.src(['./bower_components/foundation-apps/js/angular/components/**/*.html'])

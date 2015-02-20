@@ -19,7 +19,6 @@
                 };
 
                 EventService.on('updateProfilePicture', function (event,userData) {
-                    console.log(userData);
                     $scope.profilePicture = ApiService.apiUrl + '/' + userData.imgSrc;
                     $scope.userName = userData.userName;
                 });

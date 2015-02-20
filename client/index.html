@@ -24,16 +24,23 @@
 
           <div class="menu-group-right" data-ng-if="isLoggedIn">
             <ul class="icon-left menu-bar">
-              <li><a href="#/" class="divider"><img zf-iconic="" icon="home" size="medium" class="iconic-color-success"></a></li>
+              <li class="divider"><a href="#/"><img zf-iconic="" icon="home" size="medium" class="iconic-color-success"></a></li>
 
-              <li><a href="#" class="divider"><img zf-iconic="" icon="cog" size="medium" class="iconic-color-success"></a></li>
+              <li class="divider"><a href="#!/profile"><img zf-iconic="" icon="cog" size="medium" class="iconic-color-success"></a></li>
 
-              <li><a href="#" class="divider"><img zf-iconic="" icon="person" size="medium" class="iconic-color-success"></a></li>
+              <li class="divider"><a href="#!/myProfile"><img zf-iconic="" icon="person" size="medium" class="iconic-color-success"></a></li>
 
-              <li><a href="#" class="divider"><img zf-iconic="" icon="envelope" size="medium" class="iconic-color-success"></a></li>
+              <li class="divider"><a href="#"><img zf-iconic="" icon="envelope" size="medium" class="iconic-color-success"></a></li>
 
-              <li><a href="#" class="divider"><img zf-iconic="" icon="bell" size="medium" class="iconic-color-success"></a></li>
-              <li><a href="#" class="divider"><img ng-src="{{profilePicture}}" class="user-icon"></a></li>
+              <li class="divider"><a href="#"><img zf-iconic="" icon="bell" size="medium" class="iconic-color-success"></a></li>
+              <li class="divider"><a href="#">
+                <img ng-src="{{profilePicture}}" class="user-icon">
+                <!--{{userName}}-->
+              </a>
+              </li>
+              <!--<li class="">-->
+                <!--<a href="#"> </a>-->
+              <!--</li>-->
             </ul>
           </div>
         </div>

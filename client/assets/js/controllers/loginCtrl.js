@@ -6,12 +6,25 @@
             function ($scope, LoginService, $location, $rootScope, EventService) {
 
                 if (LoginService.isLoggedIn()) {
-                    $location.path('/profile');
+                    $location.path('/myProfile');
                 }
 
+                //$scope.user = {
+                //    loginEmail: "brian.tobey123@gmail.com",
+                //    loginPassword: "@ddinstagram",
+                //    clientURI: "test",
+                //    timeOffset: 360,
+                //    appId: "knotsillicon",
+                //    IsValidationEnabled: true,
+                //    Errors: {
+                //        Errors: {},
+                //        IsValidationEnabled: true
+                //    }
+                //};
+
                 $scope.user = {
-                    loginEmail: "brian.tobey123@gmail.com",
-                    loginPassword: "@ddinstagram",
+                    loginEmail: "",
+                    loginPassword: "",
                     clientURI: "test",
                     timeOffset: 360,
                     appId: "knotsillicon",
@@ -24,14 +37,14 @@
 
                 $scope.loginNow = function () {
                     LoginService.sendLoginRequest($scope.user).then(function (data) {
-                        LoginService.saveAccessToken(data.userObj.accessToken);
-                        LoginService.saveAccountId(data.userObj.accountId);
-                        $rootScope.userData = data.userObj;
-                        console.log(data.userObj);
-                        console.log(data.userObj.userName);
-                        EventService.trigger('signedIn');
-                        EventService.trigger('updateProfilePicture',data.userObj);
-                        $location.path('/profile');
+                        if(data.accountStatus==2){
+                            LoginService.saveAccessToken(data.userObj.accessToken);
+                            LoginService.saveAccountId(data.userObj.accountId);
+                            $rootScope.userData = data.userObj;
+                            EventService.trigger('signedIn');
+                            EventService.trigger('updateProfilePicture',data.userObj);
+                            $location.path('/myProfile');
+                        }
                     });
                 };
 

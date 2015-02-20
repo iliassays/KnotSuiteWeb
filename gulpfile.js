@@ -46,6 +46,7 @@ var appJS = [
   'client/assets/js/controllers/PersonalSettingsCtrl.js',
   'client/assets/js/directives/profileImage.js',
   'client/assets/js/controllers/NavigationCtrl.js',
+  'client/assets/js/controllers/myProfileCtrl.js',
   'client/assets/js/services/EventService.js',
 
 ];

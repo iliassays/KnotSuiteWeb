@@ -6,9 +6,18 @@
   .iconic{
     margin: 0 0.2rem 0 0.2rem!important;
   }
+
+
+
   .user-icon{
-    height: 40px;
-    width: 40px;
+    height: 18px;
+    width: 18px;
     border-radius: 50%;
+  }
+
+  .menu-group-flex-row {
+    a {
+      flex-flow: row nowrap !important;
+    }
   }
 }

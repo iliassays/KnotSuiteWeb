@@ -22,7 +22,7 @@
     "tests"
   ],
   "dependencies": {
-    "foundation-apps": "~1.0.2",
+    "foundation-apps": "~1.0.3"
     "font-awesome": "4.3.0"
   }
 }

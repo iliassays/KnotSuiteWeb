@@ -39,13 +39,13 @@ var foundationJS = [
 // These files are for your app's JavaScript
 var appJS = [
   'client/assets/js/app.js',
+  'client/assets/js/modules/kswDirectiveModule.js',
   'client/assets/js/services/ApiService.js',
   'client/assets/js/services/LoginService.js',
   'client/assets/js/services/ProfileService.js',
   'client/assets/js/controllers/LoginCtrl.js',
   'client/assets/js/controllers/ProfileCtrl.js',
   'client/assets/js/controllers/PersonalSettingsCtrl.js',
-  'client/assets/js/directives/profileImage.js',
   'client/assets/js/controllers/NavigationCtrl.js',
   'client/assets/js/controllers/myProfileCtrl.js',
   'client/assets/js/services/EventService.js',

@@ -7,6 +7,7 @@
 @import "variables";
 @import "navigation";
 @import "myProfile";
+@import "fontawesomeoverride";
 
 .knot-container{
   background-color: $knot-navy-color;
@@ -33,5 +34,8 @@
 
 .custom-grid-content{
   padding-top: 3px;
+}
+body{
+  background-image: url('/assets/img/main-background.jpg');
 }
 

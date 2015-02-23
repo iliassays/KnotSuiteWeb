@@ -10,7 +10,7 @@
                 }
                 var userId = LoginService.getCurrentUserId();
                 ProfileService.getProfileById(userId).then(function (data) {
-                    $scope.profileImage = ApiService.apiUrl + '/' + data.connData.imgSrc;
+                    $scope.profilePicture = ApiService.apiUrl + '/' + data.connData.imgSrc;
                 });
                 $scope.saveDate = function () {
                 }

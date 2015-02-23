@@ -4,6 +4,7 @@
   angular.module('application', [
     'ui.router',
     'ngAnimate',
+    'kswDirectiveModule',
     //foundation
     'foundation',
     'foundation.dynamicRouting',

@@ -4,12 +4,12 @@
     angular.module('application').directive('profileImage', ['$parse', function ($parse) {
         return {
             restrict: 'A',
-            template: ' <div class="ten mobile-three columns"><img src="{{profileImage}}" ng-click="openFileBrowser()" class="profile-image">' +
-            '<input type="file" style="display: none" id="uploader" accept="image/*">' +
+            template: ' <div><img src="{{profileImage}}" ng-click="openFileBrowser()" class="profile-image">' +
+            '<input type="file" style="display: none" accept="image/*">' +
             '</div>',
             link: function (scope, element, attrs) {
                 scope.openFileBrowser = function () {
-                    var imageFile = element[0].querySelector('#uploader');
+                    var imageFile = element[0].querySelector('input');
                     imageFile.click();
                 };
 
@@ -28,7 +28,7 @@
 
                 var updateFile = function () {
                     scope.$apply(function () {
-                        var imageFile = element[0].querySelector('#uploader').files[0];
+                        var imageFile = element[0].querySelector('input').files[0];
                         if(imageFile){
                             modelSetter(scope,imageFile);
                             imagePreview(imageFile);

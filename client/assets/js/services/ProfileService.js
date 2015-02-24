@@ -12,6 +12,13 @@
                 return ApiService.post('/personalHub/getProfileById', data);
             };
 
+            var getUserOrganizations =function(){
+                var data ={
+                    accessToken: LoginService.getAccessToken()
+                };
+                return ApiService.post('/api/user/getUserOrganizations', data);
+            }
+
             return{
                 getProfileById:getProfileById
             }

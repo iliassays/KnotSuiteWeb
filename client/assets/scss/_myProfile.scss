@@ -1,5 +1,30 @@
-.myProfile{
-  .myPhoto{
+@mixin setHoverBackground($background-color){
+  a:hover{
+    background-color: transparent;
+    color: white;
+  }
+  a{
+    color: white;
+  }
+  background-color: $background-color;
+  margin-bottom:2px !important;
+}
+
+.myProfile {
+  .myPhoto {
     max-width: 95%;
   }
+  .networkLinkBackground {
+    @include setHoverBackground(rgb(110, 142, 106));
+  }
+  .spacesLinkBackground {
+    @include setHoverBackground(rgb(183, 26, 129));
+  }
+  .viewAwardGalleryLinkBackground {
+    @include setHoverBackground(rgb(0, 154, 174));
+  }
+  .nominateAnAwardLinkBackground {
+    @include setHoverBackground(rgb(46, 46, 46));
+  }
 }
+

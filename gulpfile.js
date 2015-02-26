@@ -12,7 +12,8 @@ var gulp       = require('gulp'),
     sequence   = require('run-sequence'),
     path       = require('path'),
     modRewrite = require('connect-modrewrite'),
-    router     = require('./bower_components/foundation-apps/bin/gulp-dynamic-routing');
+    router     = require('./bower_components/foundation-apps/bin/gulp-dynamic-routing')
+    ;
 
 // 2. SETTINGS VARIABLES
 // - - - - - - - - - - - - - - -
@@ -33,8 +34,8 @@ var foundationJS = [
   'bower_components/ui-router/release/angular-ui-router.js',
   'bower_components/foundation-apps/js/vendor/**/*.js',
   'bower_components/foundation-apps/js/angular/**/*.js',
-  '!bower_components/foundation-apps/js/angular/app.js'
-
+  '!bower_components/foundation-apps/js/angular/app.js',
+  'bower_components/lodash/lodash.js'
 ];
 // These files are for your app's JavaScript
 var appJS = [
@@ -44,13 +45,16 @@ var appJS = [
   'client/assets/js/services/LoginService.js',
   'client/assets/js/services/ProfileService.js',
   'client/assets/js/services/EventService.js',
+  'client/assets/js/services/DummyDataService.js',
   'client/assets/js/controllers/LoginCtrl.js',
   'client/assets/js/controllers/ProfileCtrl.js',
   'client/assets/js/controllers/PersonalSettingsCtrl.js',
   'client/assets/js/controllers/NavigationCtrl.js',
   'client/assets/js/controllers/myProfileCtrl.js',
   'client/assets/js/directives/kswProfilePicture.js',
-  'client/assets/js/directives/kswComposeSignal.js'
+  'client/assets/js/directives/kswComposeSignal.js',
+  'client/assets/js/directives/kswFileOnchange.js',
+  'client/assets/js/directives/kswPeoplePicker.js'
 ];
 
 // 3. TASKS

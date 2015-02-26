@@ -1,23 +1,81 @@
+$signal-icon-height:40px;
+$signal-icon-width:40px;
+
+@mixin signal-icon-common-style($background-image){
+  width: $signal-icon-width;
+  height: $signal-icon-height;
+  background: url($background-image) no-repeat;
+  float: left;
+  cursor: pointer;
+}
+
 .compose-signal{
   background-color: rgb(11, 90, 11);
   padding-top: 10px;
-  padding-bottom: 10px;
   border-radius: 11px;
   margin-left: 2px!important;
-  .audience{
-    color: white;
-  }
-  .signal-post-button{
-    float: right;
-    width: 90px;
-  }
+
   textarea{
     resize: none;
     margin-bottom:0;
     border: none;
+    height: 64px;
   }
   .tagged-people{
-    margin-bottom: 4px;
     background-color: white;
+    height: 46px;
+    img{
+      height: 45px;
+      width: 45px;
+      float: left;
+      margin-right: 5px;
+      border: 1px solid;
+    }
+  }
+  .attached-files{
+    float: left;
+    padding: 3px;
+    background-color: white;
+    width: 100%;
+    margin-bottom: 4px;
+    label{
+      margin-right: 3px;
+      float: left;
+    }
+  }
+
+  .signal-bottom{
+    .signal-attachment{
+      @include signal-icon-common-style('/assets/img/icons/signal/attach_file.png');
+      overflow: hidden;
+      input{
+        display: block !important;
+        width: 40px !important;
+        height: 40px !important;
+        opacity: 0 !important;
+        overflow: hidden !important;
+      }
+    }
+    .signal-people-picker{
+      @include signal-icon-common-style('/assets/img/icons/signal/add_org.png');
+    }
+    .signal-connection{
+      @include signal-icon-common-style('/assets/img/icons/signal/add_tag.png');
+      margin-left: 3px;
+    }
+    .signal-post-button{
+      float: right;
+      a{
+        width: 90px;
+      }
+    }
+    .signal-audience{
+      float: left;
+      margin-top: 11px;
+      padding-left: 12px;
+      a{
+        color: white;
+      }
+    }
   }
 }

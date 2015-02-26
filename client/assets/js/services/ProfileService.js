@@ -12,15 +12,27 @@
                 return ApiService.post('/personalHub/getProfileById', data);
             };
 
-            var getUserOrganizations =function(){
-                var data ={
+            var getUserOrganizations = function () {
+                var data = {
                     accessToken: LoginService.getAccessToken()
                 };
                 return ApiService.post('/api/user/getUserOrganizations', data);
             }
 
-            return{
-                getProfileById:getProfileById
+            var personalConnections = function (searchKey) {
+                var data = {
+                    searchKey: searchKey == "" ? null : searchKey,
+                    accessToken: LoginService.getAccessToken(),
+                    orgIds: [],
+                    includeOrgs: false
+                }
+                return ApiService.post('/personalHub/personalConnections', data);
+            }
+
+            return {
+                getProfileById: getProfileById,
+                personalConnections:personalConnections,
+                getUserOrganizations:getUserOrganizations
             }
         }]);
 })();

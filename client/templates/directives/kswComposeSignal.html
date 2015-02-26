@@ -1,14 +1,36 @@
 <div class="grid-block vertical compose-signal">
         <div class="grid-content">
-            <textarea placeholder="Compose Signal..." data-ng-click="showBottomPart()"></textarea>
-            <div class="tagged-people">
+            <textarea placeholder="Compose Signal..." data-ng-click="showBottomPart()" data-ng-model="signal.message"></textarea>
+            <div class="tagged-people" data-ng-if="signal.taggedPeople.length > 0">
+                <img data-ng-src="{{person}}" alt="NA" data-ng-repeat="person in signal.taggedPeople"/>
+            </div>
+
+            <div class="attached-files">
+                <label>File1 <i class="fa fa-close"></i> </label>
+                <label>File2 <i class="fa fa-close"></i> </label>
+                <label>File3 <i class="fa fa-close"></i></label>
+            </div>
+
+            <div class="signal-attachments">
             </div>
         </div>
-        <div class="grid-content" data-ng-if="isClickedInTextArea">
-            <img src="../../assets/img/icons/signal/titlebar_close_icon.png">
-            <img src="../../assets/img/icons/signal/topbar_btn_ico_alert_contact.png">
-            <img src="../../assets/img/icons/signal/topbar_btn_ico_alert_messages.png">
-            <a href="#" class="audience">Audience: <b>All Employees</b></a>
-            <a href="#" class="button warning signal-post-button">Post</a>
+        <div class="grid-content signal-bottom">
+            <div class="signal-people-picker" data-ng-click="showPeoplePicker()">
+
+            </div>
+            <div class="signal-connection">
+
+            </div>
+            <div class="signal-attachment">
+                <input type="file" name="upload" data-ksw-file-on-change="onAttachmentChange()"/>
+            </div>
+            <div class="signal-audience">
+                <a href="#">Audience: <b>All Employees</b></a>
+            </div>
+            <div class="signal-post-button">
+                <a href="#" class="button warning" ng-click="postSignal(signal)">Post</a>
+            </div>
         </div>
 </div>
+
+

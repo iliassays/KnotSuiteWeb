@@ -7,11 +7,17 @@
                     restrict: 'E',
                     replace: true,
                     templateUrl: "templates/directives/kswComposeSignal.html",
-                    link: function (scope, element, attrs) {
-                        scope.showBottomPart = function(){
-                            scope.isClickedInTextArea = true;
-                            element.css({"padding-bottom":"0"});
+                    controller: function ($scope, $element) {
+                        $scope.showBottomPart = function () {
+                            //$scope.isClickedInTextArea = true;
+                            $element.css({"padding-bottom": "0"});
+                            if (this.peoplePickerFlag) {
+                                this.peoplePickerFlag = false;
+                            }
                         }
+                    },
+                    link: function (scope, element, attrs) {
+
                     }
                 };
             }]);

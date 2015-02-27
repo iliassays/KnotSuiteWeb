@@ -2,13 +2,14 @@
         <div class="grid-content">
             <textarea placeholder="Compose Signal..." data-ng-click="showBottomPart()" data-ng-model="signal.message"></textarea>
             <div class="tagged-people" data-ng-if="signal.taggedPeople.length > 0">
-                <img data-ng-src="{{person}}" alt="NA" data-ng-repeat="person in signal.taggedPeople"/>
+                <img data-ng-src="{{person.smallpicture}}" alt="NA" data-ng-repeat="person in signal.taggedPeople"/>
             </div>
 
-            <div class="attached-files">
-                <label>File1 <i class="fa fa-close"></i> </label>
-                <label>File2 <i class="fa fa-close"></i> </label>
-                <label>File3 <i class="fa fa-close"></i></label>
+            <div class="attached-files" data-ng-if="signal.attachments.length > 0">
+                <label data-ng-repeat="attachment in signal.attachments">
+                    {{attachment.fileName}}
+                    <i class="fa fa-close" data-ng-click="removeAttachment(attachment)"></i>
+                </label>
             </div>
 
             <div class="signal-attachments">
@@ -18,7 +19,7 @@
             <div class="signal-people-picker" data-ng-click="showPeoplePicker()">
 
             </div>
-            <div class="signal-connection">
+            <div class="signal-connection" data-ng-click="showPeoplePicker()">
 
             </div>
             <div class="signal-attachment">

@@ -7,7 +7,8 @@
 
                 $scope.signal = {
                     connections: [],
-                    taggedPeople : []
+                    taggedPeople : [],
+                    attachments:[]
                 };
 
                 $scope.groupByConnType = {};
@@ -23,9 +24,25 @@
                 });
 
                 $scope.onAttachmentChange = function (attachment) {
-                    var file = event.target.files[0];
-                    console.log(file);
+                  var  attachment = event.target.files[0];
+                    console.log(attachment);
+                    var fileReader = new FileReader();
+                    fileReader.onload = function (fileLoadedEvent) {
+                        var attachmentData = fileLoadedEvent.target.result;
+                        $scope.signal.attachments.push({
+                            fileName:attachment.name,
+                            attachmentContent: attachmentData
+                        });
+                        $scope.$apply();
+                        console.log($scope.signal.attachments);
+                    }
+                    fileReader.readAsDataURL(attachment);
                 };
+
+                $scope.removeAttachment = function(attachment){
+                    var attachmentIndex = $scope.signal.attachments.indexOf(attachment);
+                    $scope.signal.attachments.splice(attachmentIndex,1);
+                }
 
                 $scope.showPeoplePicker = function () {
                     var data = DummyDataService.peoplePickerResults;
@@ -64,22 +81,21 @@
 
                 $scope.toggleSelectPeople = function (person) {
                     person.isSelected = !person.isSelected;
-                    if ($scope.signal.connections.indexOf(person.id) == -1) {
-                        $scope.signal.connections.push(person.id);
-                        $scope.signal.taggedPeople.push(person.smallpicture);
+
+                    if ($scope.signal.connections.indexOf(person) == -1) {
+                        $scope.signal.connections.push(person);
+                        $scope.signal.taggedPeople.push(person);
                     } else {
-                        var index = $scope.signal.connections.indexOf(person.id);
+                        var index = $scope.signal.connections.indexOf(person);
                         $scope.signal.connections.splice(index, 1);
-                        $scope.signal.taggedPeople.splice($scope.signal.taggedPeople.indexOf(person.smallpicture),1);
+                        $scope.signal.taggedPeople.splice($scope.signal.taggedPeople.indexOf(person),1);
                     }
                 }
 
                 $scope.findPeople = function(peopleSearchText){
                     console.log(peopleSearchText);
                 }
-                $scope.capitalize = function(text){
-                    return _.capitalize(text);
-                }
+
                 $scope.updatePeoplePickerResults = function(selectedPeoplePickerGroup){
                     if(selectedPeoplePickerGroup){
                         $scope.selectedGroup = $scope.groupCollection[selectedPeoplePickerGroup.key];

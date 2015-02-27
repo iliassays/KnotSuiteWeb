@@ -1,13 +1,13 @@
 <div class="grid-block vertical people-picker" data-ng-if="peoplePickerFlag">
     <div class="grid-content">
         <div class="grid-block">
-            <div class="grid-content large-6 medium-9 small-11">
+            <div class="grid-content large-6 small-11">
                 <select ng-model="selectedPeoplePickerGroup"
                         ng-options="group as group.value for group in peoplePickerGroups"
                         data-ng-change="updatePeoplePickerResults(selectedPeoplePickerGroup)">
                 </select>
             </div>
-           <div class="grid-content large-6 medium-9 small-11">
+           <div class="grid-content large-6 small-11">
                <span class="inline-label">
                 <input type="search"
                        data-ng-model="peopleSearchText"
@@ -20,21 +20,30 @@
     </div>
 
     <div class="grid-content people-picker-results">
-        <div class="grid-block horizontal">
-            <div data-ng-repeat="(groupName,groupValue) in selectedGroup">
-                <h4>{{capitalize(groupName)}}</h4>
-                <div class="card custom-people-picker-card"
-                     data-ng-repeat="person in groupValue"
-                     data-ng-class="{ 'selected-card': person.isSelected }"
-                     data-ng-click="toggleSelectPeople(person)">
-                    <img ng-src="{{person.smallpicture}}">
-                    <p>{{person.title}}</p>
-                    <p>{{person.email}}<p>
+        <div class="grid-block">
+            <div data-ng-repeat="(groupName,groupValue) in selectedGroup" class="grid-content large-6 small-11">
+                <div data-ng-if="groupValue.length > 0">
+                    <h4>{{capitalize(groupName)}}</h4>
+                    <div class="card custom-people-picker-card"
+                         data-ng-repeat="person in groupValue | filter: peopleSearchText"
+                         data-ng-class="{ 'selected-card': person.isSelected }"
+                         data-ng-click="toggleSelectPeople(person)">
+                        <div class="grid-block">
+                            <div class="grid-content">
+                                <img ng-src="{{person.smallpicture}}">
+
+                            </div>
+                            <div class="grid-content">
+                                <p>{{person.title}}</p>
+                                <p>{{person.email}}<p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="grid-content">
+    <div class="grid-container" style="margin-top: 8px">
         <a href="" class="button warning"  data-ng-click="hidePeoplePicker()">Close</a>
     </div>
 </div>

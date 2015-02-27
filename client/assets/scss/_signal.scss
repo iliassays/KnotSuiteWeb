@@ -41,10 +41,17 @@ $signal-icon-width:40px;
     label{
       margin-right: 3px;
       float: left;
+      color: rgb(67, 184, 234);
+    }
+    i{
+      background-color: red;
+      cursor: pointer;
     }
   }
 
   .signal-bottom{
+    margin-top: 6px;
+    padding-right: 0;
     .signal-attachment{
       @include signal-icon-common-style('/assets/img/icons/signal/attach_file.png');
       overflow: hidden;

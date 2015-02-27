@@ -12,6 +12,7 @@
                         {key: "entityType", value: "Group by type"},
                         {key: "nameType", value: "Group by name"}
                     ];
+
                     $scope.hidePeoplePicker = function () {
                         $scope.peoplePickerFlag = false;
                     }

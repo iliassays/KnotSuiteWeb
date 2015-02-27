@@ -1,16 +1,15 @@
 //"use strict";
 (function () {
     angular.module('application').controller('myProfileCtrl',
-        ["$scope", "ProfileService", "ApiService", "LoginService", "$location","DummyDataService",
-            function ($scope, ProfileService, ApiService, LoginService, $location,DummyDataService) {
+        ["$scope", "ProfileService", "ApiService", "LoginService", "$location","DummyDataService","$state",
+            function ($scope, ProfileService, ApiService, LoginService, $location,DummyDataService,$state) {
                 var userId = LoginService.getCurrentUserId();
-
+                $state.go('myProfile.signal');
                 $scope.signal = {
                     connections: [],
                     taggedPeople : [],
                     attachments:[]
                 };
-
                 $scope.groupByConnType = {};
                 $scope.groupByEntityType = {};
                 $scope.groupByName = {};

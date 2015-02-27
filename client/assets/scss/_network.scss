@@ -1,21 +1,17 @@
-.people-picker{
+.network-container{
   margin-left: 2px !important;
-  margin-top: 4px;
-  background: rgb(224, 232, 237);
-  padding: 4px;
   img{
     float: left;
     height: 100px;
     width: 96px;
   }
-  .people-picker-results{
-    height: 450px;
-    overflow-y: auto!important;
+  .network-container-results{
+
   }
-  .custom-people-picker-card{
-//    width: 360px;
-//    margin-right: 14px;
-//    height: 100px;
+  h4{
+    color: white;
+  }
+  .custom-network-container-card{
     cursor: pointer;
     p{
       line-height: 0;

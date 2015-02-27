@@ -50,6 +50,7 @@ var appJS = [
   'client/assets/js/controllers/ProfileCtrl.js',
   'client/assets/js/controllers/PersonalSettingsCtrl.js',
   'client/assets/js/controllers/NavigationCtrl.js',
+  'client/assets/js/controllers/myNetWorkCtrl.js',
   'client/assets/js/controllers/myProfileCtrl.js',
   'client/assets/js/directives/kswProfilePicture.js',
   'client/assets/js/directives/kswComposeSignal.js',

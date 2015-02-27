@@ -10,6 +10,7 @@
 @import "fontawesomeoverride";
 @import "signal";
 @import "peoplepicker";
+@import "network";
 
 .knot-container{
   background-color: $knot-navy-color;
@@ -35,7 +36,7 @@
 }
 
 .custom-grid-content{
-  padding-top: 3px;
+  padding: 1rem;
 }
 body{
   background-image: url('/assets/img/main-background.jpg');

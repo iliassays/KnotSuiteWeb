@@ -1,6 +1,32 @@
-$knot-blue-color:  #074e68;
-$knot-orange-color:  #DC6A00;
-$knot-white-color: #fff;
-$knot-navy-color: #13625B;
-$knot-grey-color: #706C71;
-$knot-grey2-color: #574833;
+//Background colors
+.background-color-primary{
+  background-color: $background-color-primary;
+}
+
+.background-color-secondary{
+  background-color: $background-color-secondary;
+}
+
+.background-color-alert{
+  background-color: $background-color-alert;
+}
+
+.background-color-info{
+  background-color: $background-color-info;
+}
+
+.background-color-success{
+  background-color: $background-color-success;
+}
+
+.background-color-warning{
+  background-color: $background-color-warning;
+}
+
+.background-color-dark{
+  background-color: $background-color-dark;
+}
+
+.background-color-gray{
+  background-color: $background-color-gray;
+}

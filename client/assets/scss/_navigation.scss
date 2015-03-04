@@ -13,10 +13,35 @@
     border-radius: 50%;
   }
 
+  .user-info{
+   padding: .4rem .4rem .4rem 6rem;
+  }
+
   .menu-group-flex-row {
     a {
       flex-flow: row nowrap !important;
 //      font-size: 0.8571rem !important;
     }
   }
+
+  .menu-bar-has-action-sheet {
+    overflow-x: visible;
+  }
+
+  .action-sheet-container .action-trigger{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: $menubar-item-padding;
+    font-size: $menubar-fontsize;
+    line-height: 1;
+    flex-flow: row nowrap;
+
+    &:hover {
+
+    }
+
+    > img, > .iconic { margin: 0 $menubar-icon-spacing 0 0; }
+  }
 }
+

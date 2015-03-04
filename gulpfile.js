@@ -55,6 +55,8 @@ var appJS = [
   'client/assets/js/controllers/myNetWorkCtrl.js',
   'client/assets/js/controllers/myProfileCtrl.js',
   'client/assets/js/controllers/myAwardCtrl.js',
+  'client/assets/js/controllers/selectAwardCtrl.js',
+  'client/assets/js/controllers/nominateAwardCtrl.js',
   'client/assets/js/directives/kswProfilePicture.js',
   'client/assets/js/directives/kswComposeSignal.js',
   'client/assets/js/directives/kswFileOnchange.js',

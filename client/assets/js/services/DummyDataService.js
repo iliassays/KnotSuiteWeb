@@ -2477,6 +2477,166 @@
 
             var prodUrl = 'https://prod-frontserver.herokuapp.com/';
 
+            var awardList = [
+                {
+                    "title": "Test",
+                    "description": "Award",
+                    "imageUri": "api/defaultImages/image/award.png",
+                    "_id": "54bf4fec6a4bb00300000194",
+                    "__v": 0,
+                    "initialPledgeRequired": 2,
+                    "awardScope": null,
+                    "tags": []
+                },
+                {
+                    "title": "King Fisher Sky Award",
+                    "description": "sky Rule Award for Kingfisher",
+                    "imageUri": "api/signals/1421666835824/getAttachment/download.jpg",
+                    "_id": "54bcea17a2650b0300000042",
+                    "__v": 0,
+                    "initialPledgeRequired": 0,
+                    "awardScope": null,
+                    "tags": [
+                        {
+                            "tagName": "#kingfisher"
+                        }
+                    ]
+                },
+                {
+                    "title": "Excellent",
+                    "description": "For doing an excellent job!",
+                    "imageUri": "api/signals/1421669908455/getAttachment/Award_excellent.png",
+                    "_id": "54bcf619a2650b030000008e",
+                    "__v": 0,
+                    "initialPledgeRequired": 5,
+                    "awardScope": null,
+                    "tags": [
+                        {
+                            "tagName": "#general"
+                        }
+                    ]
+                },
+                {
+                    "title": "Job Well Done!",
+                    "description": "For a well done job.",
+                    "imageUri": "api/signals/1421669963327/getAttachment/Award_jobwelldone.png",
+                    "_id": "54bcf650a2650b0300000091",
+                    "__v": 0,
+                    "initialPledgeRequired": 5,
+                    "awardScope": null,
+                    "tags": [
+                        {
+                            "tagName": "#general"
+                        }
+                    ]
+                },
+                {
+                    "title": "Good Job!",
+                    "description": "For doing a good job.",
+                    "imageUri": "api/signals/1421670010180/getAttachment/Award_goodjob.png",
+                    "_id": "54bcf67fa2650b0300000096",
+                    "__v": 0,
+                    "initialPledgeRequired": 5,
+                    "awardScope": null,
+                    "tags": [
+                        {
+                            "tagName": "#general"
+                        }
+                    ]
+                },
+                {
+                    "title": "Great job!",
+                    "description": "For doing a great job!",
+                    "imageUri": "api/signals/1421670264732/getAttachment/Award_greatjob.png",
+                    "_id": "54bcf77ea2650b030000009b",
+                    "__v": 0,
+                    "initialPledgeRequired": 5,
+                    "awardScope": null,
+                    "tags": [
+                        {
+                            "tagName": "#general"
+                        }
+                    ]
+                },
+                {
+                    "title": "Speed Demon",
+                    "description": "For beating a deadline way before time.",
+                    "imageUri": "api/signals/1421670423567/getAttachment/Award_speeddemon.png",
+                    "_id": "54bcf829a2650b030000009e",
+                    "__v": 0,
+                    "initialPledgeRequired": 5,
+                    "awardScope": null,
+                    "tags": [
+                        {
+                            "tagName": "#general"
+                        }
+                    ]
+                },
+                {
+                    "title": "Money Maker",
+                    "description": "For discovering unnecessary expanses and figuring out alternative cheaper solutions.",
+                    "imageUri": "api/signals/1421670633852/getAttachment/Award_moneymaker.png",
+                    "_id": "54bcf8efa2650b03000000a1",
+                    "__v": 0,
+                    "initialPledgeRequired": 5,
+                    "awardScope": null,
+                    "tags": [
+                        {
+                            "tagName": "#admin"
+                        },
+                        {
+                            "tagName": "#HR"
+                        },
+                        {
+                            "tagName": "#techSupport"
+                        }
+                    ]
+                },
+                {
+                    "title": "New",
+                    "description": "Award",
+                    "imageUri": "api/defaultImages/image/award.png",
+                    "_id": "54c62de632487e0300000203",
+                    "__v": 0,
+                    "initialPledgeRequired": 2,
+                    "awardScope": null,
+                    "tags": [
+                        {
+                            "tagName": "#1"
+                        }
+                    ]}];
+
+            var getAwardById = function(awardId){
+                var award = _.find(awardList,{_id:awardId},'_id');
+                award.imageUri = prodUrl+award.imageUri;
+                return award;
+            }
+
+            var getAwardList = function(){
+                var tempAwardList ={
+                    "#UNTAGGED":[]
+                };
+                var temp = angular.copy(awardList);
+                angular.forEach(temp,function(award){
+                    award.imageUri = prodUrl+award.imageUri;
+                       if(award.tags.length>0){
+                           angular.forEach(award.tags,function(tag){
+                               if(!tempAwardList.hasOwnProperty(tag.tagName)){
+                                   tempAwardList[tag.tagName] = [];
+                               }
+                                  tempAwardList[tag.tagName].push(award);
+
+                           });
+                       }else{
+                           if(!tempAwardList.hasOwnProperty("#UNTAGGED")){
+                               tempAwardList["#UNTAGGED"] = [];
+                           }
+                           tempAwardList["#UNTAGGED"].push(award);
+                       }
+                });
+                return tempAwardList;
+            }
+
             return{
                 getConnection :function(){
                     var tempResult = angular.copy(peoplePickerResults);
@@ -2498,7 +2658,9 @@
                         award.image = prodUrl +  award.image;
                     });
                     return tempNominatedAward;
-                }
+                },
+                getAwardList:getAwardList,
+                getAwardById:getAwardById
             }
         });
 })();

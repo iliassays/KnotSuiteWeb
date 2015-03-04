@@ -1,0 +1,19 @@
+.select-award-main{
+  h4{
+    color: rgb(84, 175, 166);
+  }
+  img{
+    margin-left: 25%;
+    width: 50%;
+    margin-top: 1%;
+  }
+  .custom-card{
+    .custom-section{
+      text-align: center;
+    }
+  }
+  .custom-card:hover{
+    border: 2px solid green;
+    cursor: pointer;
+  }
+}

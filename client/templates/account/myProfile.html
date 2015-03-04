@@ -11,7 +11,6 @@ controller: myProfileCtrl
                 <a zf-close class="close-button hide-for-medium">&times;</a>
                 <section class="block-list custom-block-list">
                     <header class="title">
-                        <h3>{{myName}}</h3>
                         <img src="{{myPhoto}}" class="myPhoto"></header>
                     <ul>
                         <li class="networkLinkBackground">
@@ -20,8 +19,14 @@ controller: myProfileCtrl
                             </a>
                         </li>
                         <li class="spacesLinkBackground"><a>Spaces</a></li>
-                        <li class="viewAwardGalleryLinkBackground"><a>View Award Gallery</a></li>
-                        <li class="nominateAnAwardLinkBackground"><a>Nominate an Award</a></li>
+                        <li class="viewAwardGalleryLinkBackground">
+                            <a ui-sref="myProfile.myAward">
+                                View Award Gallery
+                            </a>
+                        </li>
+                        <li class="nominateAnAwardLinkBackground">
+                            <a>Nominate an Award</a>
+                        </li>
                     </ul>
                 </section>
             </div>

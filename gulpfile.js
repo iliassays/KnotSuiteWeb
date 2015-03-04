@@ -41,6 +41,8 @@ var foundationJS = [
 var appJS = [
   'client/assets/js/app.js',
   'client/assets/js/modules/kswDirectiveModule.js',
+  'client/assets/js/modules/kswFilterModule.js',
+  'client/assets/js/filters/kswCapitalizeFilter.js',
   'client/assets/js/services/ApiService.js',
   'client/assets/js/services/LoginService.js',
   'client/assets/js/services/ProfileService.js',
@@ -52,6 +54,7 @@ var appJS = [
   'client/assets/js/controllers/NavigationCtrl.js',
   'client/assets/js/controllers/myNetWorkCtrl.js',
   'client/assets/js/controllers/myProfileCtrl.js',
+  'client/assets/js/controllers/myAwardCtrl.js',
   'client/assets/js/directives/kswProfilePicture.js',
   'client/assets/js/directives/kswComposeSignal.js',
   'client/assets/js/directives/kswFileOnchange.js',

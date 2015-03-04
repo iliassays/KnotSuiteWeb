@@ -1,34 +1,33 @@
-.people-picker{
+.people-picker {
   margin-left: 2px !important;
   margin-top: 4px;
-  background: rgb(224, 232, 237);
+  background: #E4E9EC;
   padding: 4px;
-  img{
+  img {
     float: left;
     height: 100px;
     width: 96px;
+    padding-left: 16px;
   }
-  .people-picker-results{
+  .people-picker-results {
     height: 450px;
-    overflow-y: auto!important;
+    overflow-y: auto !important;
   }
-  .custom-people-picker-card{
-//    width: 360px;
-//    margin-right: 14px;
-//    height: 100px;
+  .custom-people-picker-card {
+    background-color: rgb(245, 255, 243);
     cursor: pointer;
-    p{
+    p {
       line-height: 0;
       text-align: center;
       font-size: 14px;
       color: rgb(67, 184, 234);
     }
-    p:first-of-type{
+    p:first-of-type {
       padding-top: 36px;
       color: #000000;
-      font-weight:bold;
+      font-weight: bold;
     }
-    .email-container{
+    .email-container {
       text-overflow: ellipsis;
       width: 188px;
       white-space: nowrap;
@@ -36,13 +35,13 @@
       padding: 10px;
     }
     @media only screen and (min-width: 90.063em) and (max-width: 120em) {
-      .email-container{
+      .email-container {
         width: 100%;
       }
     }
   }
 
-  .selected-card{
+  .selected-card {
     border: 2px solid green;
   }
 }

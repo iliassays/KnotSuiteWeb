@@ -11,8 +11,21 @@
 }
 
 .myProfile {
+  background-color: rgb(242, 242, 242);
+  padding-top: 10px;
+  padding-left: 27px;
+  padding-right: 27px;
   .myPhoto {
-    max-width: 95%;
+   max-height: 200px;
+    width: 100%;
+  }
+  .my-email{
+    color: #43b8ea;
+  }
+  .my-name-container{
+    margin-top: 0;
+    margin-bottom: 2px;
+    line-height: 16px;
   }
   .networkLinkBackground {
     @include setHoverBackground(rgb(110, 142, 106));
@@ -25,6 +38,13 @@
   }
   .nominateAnAwardLinkBackground {
     @include setHoverBackground(rgb(46, 46, 46));
+  }
+  .block-list {
+    header{
+      margin-top: 0;
+      margin-bottom: 3px;
+      margin-left: 0;
+    }
   }
 }
 

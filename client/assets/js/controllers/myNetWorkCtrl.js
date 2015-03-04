@@ -3,21 +3,15 @@
     angular.module("application")
         .controller("myNetWorkCtrl", ["$scope", "DummyDataService",
             function ($scope, DummyDataService) {
-                $scope.peoplePickerFlag = true;
                 $scope.groupCollection = {};
                 $scope.peoplePickerGroups = [
                     {key: "connType", value: "Group by connection type"},
                     {key: "entityType", value: "Group by type"},
                     {key: "nameType", value: "Group by name"}
                 ];
-                $scope.capitalize = function (text) {
-                    return _.capitalize(text);
-                }
-                var data = DummyDataService.peoplePickerResults;
+                $scope.selectedPeoplePickerGroup = $scope.peoplePickerGroups[1];
+                var data = DummyDataService.getConnection();
                 $scope.peoplePickerFlag = true;
-                for (var i = 0; i < data.length; i++) {
-                    data[i].smallpicture = 'https://prod-frontserver.herokuapp.com/' + data[i].smallpicture;
-                }
 
                 $scope.groupCollection["connType"] = _.groupBy(data, function(m) {
                     return m.connType;

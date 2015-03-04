@@ -1,6 +1,6 @@
 <div class="grid-block vertical compose-signal">
         <div class="grid-content">
-            <textarea placeholder="Compose Signal..." data-ng-click="showBottomPart()" data-ng-model="signal.message"></textarea>
+            <textarea placeholder="Compose Signal..." data-ng-click="showBottomPart()" data-ng-model="signal.content"></textarea>
             <div class="tagged-people" data-ng-if="signal.taggedPeople.length > 0">
                 <img data-ng-src="{{person.smallpicture}}" alt="NA" data-ng-repeat="person in signal.taggedPeople"/>
             </div>

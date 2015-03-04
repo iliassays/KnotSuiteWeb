@@ -1,12 +1,12 @@
 ---
 name: myProfile.myNetworks
-url: /networks
+url: networks
 controller : myNetWorkCtrl
 animateIn:  fadeIn
 ---
 <div class="grid-block horizontal">
     <div class="grid-content large-12">
-        <div class="grid-block vertical network-container" data-ng-if="peoplePickerFlag">
+        <div class="grid-block vertical network-container">
             <div class="grid-content">
                 <div class="grid-block">
                     <div class="grid-content large-6 small-11">
@@ -30,14 +30,14 @@ animateIn:  fadeIn
             <div class="grid-content network-container-results">
                 <div class="grid-block">
                     <div data-ng-repeat="(groupName,groupValue) in selectedGroup" class="grid-content large-4 small-11">
-                        <h4>{{capitalize(groupName)}}</h4>
+                        <h4>{{groupName | capitalize}}</h4>
 
                         <div class="card custom-network-container-card"
                              data-ng-repeat="person in groupValue | filter: peopleSearchText"
                              data-ng-class="{ 'selected-card': person.isSelected }"
                              data-ng-click="toggleSelectPeople(person)">
                             <div class="grid-block">
-                                <div class="grid-content shrink collapse">
+                                <div class="grid-content shrink">
                                     <img ng-src="{{person.smallpicture}}">
                                 </div>
                                 <div class="grid-content wrap collapse">

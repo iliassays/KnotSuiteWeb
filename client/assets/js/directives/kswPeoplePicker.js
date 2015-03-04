@@ -12,12 +12,9 @@
                         {key: "entityType", value: "Group by type"},
                         {key: "nameType", value: "Group by name"}
                     ];
-
+                    $scope.selectedPeoplePickerGroup = $scope.peoplePickerGroups[1];
                     $scope.hidePeoplePicker = function () {
                         $scope.peoplePickerFlag = false;
-                    }
-                    $scope.capitalize = function (text) {
-                        return _.capitalize(text);
                     }
                 },
                 link: function (scope, element, attrs) {

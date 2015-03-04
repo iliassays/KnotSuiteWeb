@@ -1,15 +1,15 @@
 "use strict";
 (function(){
     angular.module('application')
-        .service("DummyDataService",function(){
-           this.peoplePickerResults = [
+        .factory("DummyDataService",function(){
+           var peoplePickerResults = [
                {
                    "accountId": "544b11bf5291710200000030",
                    "_id": "5448a17f24d7ab020000007d",
                    "id": "5448a17f24d7ab020000007d",
                    "title": "Syed Sirazus Salehein",
                    "email": "salehein@gmail.com",
-                   "clientURI": "https://sin.notify.windows.com/?token=AwYAAABlKwXBTo4ltd80jU%2bQv%2bnXtFweLUlFuzLkzgIoJEBL4plUOTyl3oaP%2bv1DV1jfnaBljsOd%2bxwA8lq8wl4474Xvz887csTfFPVTfwH289gTXPjROHEWbKs9wZ1ThuGbnNo%3d",
+                   "clientURI": "https://sin.notify.windows.com/?token=AwYAAACZhI3OiY3gQHzPe100ue4owF%2bYDgc5xrFza6MElehuztTf01GF1%2bLMLj3xme2OU31VTAiT5RzCNGoYrihEtQpRi6ETsBHPb5uJsRSBuFJkL4MQd9ZwugDl1IusNEcV%2fmA%3d",
                    "tags": [],
                    "attributes": [],
                    "relations": [],
@@ -53,7 +53,7 @@
                    "id": "545aebb533882c020000003b",
                    "title": "Mohammad Faisal",
                    "email": "molmol@sisigma.com",
-                   "clientURI": "http://s.notify.live.net/u/1/bn1/HmQAAAAY6wPJBPVrUkNOX4sZnsz-LlxLVPOSgQtwSQttQWAulAjkfkbsO0LJ3Bx8qsZV7ORrYce3liOh2YCcx6HI0ygX/d2luZG93c3Bob25lZGVmYXVsdA/cjC1kUCd3EWX1HXmmEYk9A/Ti6rIJYVVxnZNdmTNtrGyrU2HIs",
+                   "clientURI": "APA91bGlVeVCkj22MAIxJqeFB4KXBZa56HdsCwelBeqxPCwO5P8ICB3Cl4W0luf4P73OZYGHOa0dA5MuNLEuLoV87mjKqcfMY19RnBLmFcyOMJA-tqridFdq9B4GXyMcjdBcnInyznx-HUjstrLAVio84IWFfPqp1Q",
                    "tags": [],
                    "attributes": [],
                    "relations": [],
@@ -163,7 +163,7 @@
                    "id": "547450ebec35d70200000157",
                    "title": "Sharif Khan",
                    "email": "sharif@sisigma.com",
-                   "clientURI": "834ACAA51419402017D9C2F0A28AC2EE3014EC843AB2320AA413FAA614ABFA69",
+                   "clientURI": "https://sin.notify.windows.com/?token=AwYAAABJnnwctPDS6xfEbVch9blTzQ6sKVuX0jizgN9FMx778hp6MWkN1K4BqA3vrbbbk%2bLFzN2wjamwVTxBTmBx03LecojXUmts2rdjTdTsM6wF2TnLd12FSJl5XsZfHOo5YFA%3d",
                    "tags": [],
                    "attributes": [],
                    "relations": [],
@@ -185,7 +185,7 @@
                    "id": "547c178157673e020000006e",
                    "title": "Ibrahim Islam",
                    "email": "ibrahim.islam@live.com",
-                   "clientURI": "https://sin.notify.windows.com/?token=AwYAAAC6ZWov%2b2rj%2fRT72IGn3u%2ftM86GluyILE4hVhs35Qg%2by5wUepEAyaUIXAGwyGT6IhtVGU7gjedbpunb8%2bdwsZHRR2Fhn%2bi%2fUHugk92pTCUWisKdQdcIC39eZMYcO%2fjnykA%3d",
+                   "clientURI": "https://sin.notify.windows.com/?token=AwYAAAD0pVL4LXFBMuY1vMrP72vblO8gqlY%2fOr5btliIoadkAlH29yD%2b2sglv8mP%2btVwucs7DDEr6sAdwcs9tCyzPho5tFcgMEdAU6NkYcP%2f1LW7KdRDLsTp3DyWGMtaS5afLC0%3d",
                    "tags": [],
                    "attributes": [],
                    "relations": [],
@@ -207,7 +207,7 @@
                    "id": "547c1e1957673e0200000090",
                    "title": "Faisal Amin",
                    "email": "faisal.amin@bs-23.com",
-                   "clientURI": "https://sin.notify.windows.com/?token=AwYAAAArSA7%2b9MLfB5WEuiC2Rjfa2%2f%2bqZugHy5e0%2f1lkfL%2bRgwmH5k3K2AAfK%2bh5QXMF28YV1q2sKEwwTO9ECF8ANtFTr1y2dZHXL9O3%2fIzN3zTDUthmPAEr70jfAYzDcI7yjm8%3d",
+                   "clientURI": "https://sin.notify.windows.com/?token=AwYAAAD5T96%2fELXsc%2fDjtr2cclK8Rs31x1iq3vJcnhbaIwV6V6JlQ%2bfsr%2bb1EySgGyPdcptMfyDtAm7JMGxoSbod1wmqCbk3dIyjs8%2fzTqAhoW%2fMsXUdEi00AESeYoaHxlq%2bmRg%3d",
                    "tags": [],
                    "attributes": [],
                    "relations": [],
@@ -229,7 +229,7 @@
                    "id": "547ee6a1adfc8a02000000e4",
                    "title": "Zahidur Rahman",
                    "email": "zahidur59@sisigma.com",
-                   "clientURI": "https://sin.notify.windows.com/?token=AwYAAAA0qHukrd4awzh722SpLrkrGRhnAyY%2fFB0zlPraUacjeMi425uMPRBnFQQKIDamKf3k%2bhjszAquDqJlVrVp8yddhpdwzBh9juoOZl4RNY4yZCH9rhHktKJKDnpf%2bxGMzWg%3d",
+                   "clientURI": "https://sin.notify.windows.com/?token=AwYAAADEwfDxOFN7AFQTV1nS1lAXf4ONREnW1zt3T72Pk0nlbNBSuTScV%2fjBHT0qtOuUuaJ1D9%2fmRC87FqBC6yd4L520BGukWWw9LoVJ%2bQoIKKall0EfnBON1xe8YiIAGZvo9rM%3d",
                    "tags": [],
                    "attributes": [],
                    "relations": [],
@@ -420,7 +420,2085 @@
                    "isWatched": false,
                    "online": false,
                    "entityType": "Person"
+               },
+               {
+                   "accountId": "544b11bf5291710200000030",
+                   "_id": "54db0897c92ceb03000000ed",
+                   "id": "54db0897c92ceb03000000ed",
+                   "title": "Atish Dipongkor",
+                   "email": "atish@bs-23.com",
+                   "clientURI": "https://sin.notify.windows.com/?token=AwYAAADc2QZVsmY7jEwTv2Lll4yuC0TnDe%2b5ZFoT12Or%2fFtohsHawQqaj3KANHH188O8i3ya5bNOG98rQJaf4u651E1boD8LnB6gCNg7ASX%2fEOcFTePMflnJwv36ODX172LmXus%3d",
+                   "tags": [],
+                   "attributes": [],
+                   "relations": [],
+                   "key": "Account",
+                   "text": "Scrum Master",
+                   "picture": "api/personalProfilePic/E50A5347-999C-4E02-B52E-04CBA7805036/Indian Visa Photo.jpg",
+                   "smallpicture": "api/personalProfilePic/E50A5347-999C-4E02-B52E-04CBA7805036/Indian Visa Photo.jpg",
+                   "connTypes": [
+                       "connection",
+                       "Employee"
+                   ],
+                   "connType": "connection",
+                   "isWatched": false,
+                   "online": true,
+                   "entityType": "Person"
+               },
+               {
+                   "accountId": "544b11bf5291710200000030",
+                   "_id": "544b1986529171020000003a",
+                   "id": "544b1986529171020000003a",
+                   "title": "MNGMT",
+                   "companyName": "MNGMT",
+                   "groupName": "MNGMT",
+                   "profileDesc": "description",
+                   "email": "brian.tobey123@gmail.com",
+                   "clientURI": "https://bn1.notify.windows.com/?token=AwYAAAA1SC5P27iZ1CNpz7e%2besXINRO%2bXhEgqUf%2bHFLiZU1TqwMXFU9j7LhwZn6RTEn0F7%2fySwVfCxg8dOzqujcs%2bDR%2ftn8uJTlfSuoV4E60%2fw1m8whdh1HfeJ%2bbS%2bKTmBIW9nM%3d",
+                   "adminId": "544b11bf5291710200000030",
+                   "makeEmployee": false,
+                   "allowFullEnv": false,
+                   "allowPin": false,
+                   "awardApproval": 1,
+                   "awardRules": {
+                       "thumbsUpAward": true,
+                       "peerAwardAnyEmployee": true,
+                       "excelAwardAdminOnly": true,
+                       "xferAwards": true
+                   },
+                   "topStoryRules": {
+                       "allowStoryCollectionFromGroupsWithRels": false,
+                       "allowStoryCollectionFromAllDomainGroups": false,
+                       "topStoryFromGroupsWithRels": false,
+                       "topStoryFromAllAllowedOrgs": false
+                   },
+                   "sharedSpaceRules": {
+                       "accessSharedSpace": true,
+                       "showSharedSpaceTags": true
+                   },
+                   "attributesPredefined": [
+                       {
+                           "attributeId": "53997942671c0d6b6d4498ab",
+                           "attributeValue": "MNGMT"
+                       },
+                       {
+                           "attributeId": "53997950671c0d6b6d4498ac",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997959671c0d6b6d4498ad",
+                           "attributeValue": "MNGMT"
+                       },
+                       {
+                           "attributeId": "53997966671c0d6b6d4498ae",
+                           "attributeValue": "MNGMT"
+                       },
+                       {
+                           "attributeId": "53997a19671c0d6b6d4498af",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a30671c0d6b6d4498b0",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997aba671c0d6b6d4498b1",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53b11775671c0d6b6d4498b4",
+                           "attributeValue": "brian.tobey123@gmail.com"
+                       },
+                       {
+                           "attributeId": "53997950671c0d6b6d4498ac",
+                           "attributeValue": "description"
+                       },
+                       {
+                           "attributeId": "53997950671c0d6b6d4498ac",
+                           "attributeValue": "MNGMT description"
+                       },
+                       {
+                           "attributeId": "53997950671c0d6b6d4498ac",
+                           "attributeValue": "MNGMT description"
+                       }
+                   ],
+                   "tags": [],
+                   "attributes": [],
+                   "relations": [],
+                   "key": "Organization",
+                   "text": "Scrum Master",
+                   "picture": "api/corporateProfilePic/544b1986529171020000003a/mngmtlogo.png",
+                   "smallpicture": "api/corporateProfilePic/544b1986529171020000003a/mngmtlogo.png",
+                   "connTypes": [
+                       "employee",
+                       "admin"
+                   ],
+                   "connType": "employee",
+                   "isWatched": false,
+                   "entityType": "Organization",
+                   "isAdmin": true,
+                   "admins": [
+                       {
+                           "id": "544b11bf5291710200000030",
+                           "_id": "544b1986529171020000003c",
+                           "joinDate": "2014-10-25T03:31:18.885Z"
+                       }
+                   ],
+                   "predefinedSpaces": {
+                       "publicSpace": "544b19865291710200000045",
+                       "sharedSpace": "544b19865291710200000046"
+                   }
+               },
+               {
+                   "accountId": "544b11bf5291710200000030",
+                   "_id": "544b1a3a529171020000004a",
+                   "id": "544b1a3a529171020000004a",
+                   "title": "PKG",
+                   "companyName": "PKG",
+                   "groupName": "PKG",
+                   "profileDesc": "",
+                   "email": "brian.tobey123@gmail.com",
+                   "clientURI": "https://bn1.notify.windows.com/?token=AwYAAAA1SC5P27iZ1CNpz7e%2besXINRO%2bXhEgqUf%2bHFLiZU1TqwMXFU9j7LhwZn6RTEn0F7%2fySwVfCxg8dOzqujcs%2bDR%2ftn8uJTlfSuoV4E60%2fw1m8whdh1HfeJ%2bbS%2bKTmBIW9nM%3d",
+                   "adminId": "544b11bf5291710200000030",
+                   "makeEmployee": false,
+                   "allowFullEnv": false,
+                   "allowPin": false,
+                   "awardApproval": 1,
+                   "awardRules": {
+                       "thumbsUpAward": true,
+                       "peerAwardAnyEmployee": true,
+                       "excelAwardAdminOnly": true,
+                       "xferAwards": true
+                   },
+                   "topStoryRules": {
+                       "allowStoryCollectionFromGroupsWithRels": false,
+                       "allowStoryCollectionFromAllDomainGroups": false,
+                       "topStoryFromGroupsWithRels": false,
+                       "topStoryFromAllAllowedOrgs": false
+                   },
+                   "sharedSpaceRules": {
+                       "accessSharedSpace": true,
+                       "showSharedSpaceTags": true
+                   },
+                   "attributesPredefined": [
+                       {
+                           "attributeId": "53997942671c0d6b6d4498ab",
+                           "attributeValue": "PKG"
+                       },
+                       {
+                           "attributeId": "53997950671c0d6b6d4498ac",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997959671c0d6b6d4498ad",
+                           "attributeValue": "PKG"
+                       },
+                       {
+                           "attributeId": "53997966671c0d6b6d4498ae",
+                           "attributeValue": "PKG"
+                       },
+                       {
+                           "attributeId": "53997a19671c0d6b6d4498af",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a30671c0d6b6d4498b0",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997aba671c0d6b6d4498b1",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53b11775671c0d6b6d4498b4",
+                           "attributeValue": "brian.tobey123@gmail.com"
+                       }
+                   ],
+                   "tags": [],
+                   "attributes": [],
+                   "relations": [],
+                   "key": "Organization",
+                   "text": "Scrum Master",
+                   "picture": "api/corporateProfilePic/544b1a3a529171020000004a/pkglogo.png",
+                   "smallpicture": "api/corporateProfilePic/544b1a3a529171020000004a/pkglogo.png",
+                   "connTypes": [
+                       "admin",
+                       "employee"
+                   ],
+                   "connType": "admin",
+                   "isWatched": false,
+                   "entityType": "Organization",
+                   "isAdmin": true,
+                   "admins": [
+                       {
+                           "id": "544b11bf5291710200000030",
+                           "_id": "544b1a3a529171020000004c",
+                           "joinDate": "2014-10-25T03:34:18.751Z"
+                       }
+                   ],
+                   "predefinedSpaces": {
+                       "publicSpace": "544b1a3a5291710200000055",
+                       "sharedSpace": "544b1a3a5291710200000056"
+                   }
+               },
+               {
+                   "accountId": "544b11bf5291710200000030",
+                   "_id": "544b1bb3529171020000005c",
+                   "id": "544b1bb3529171020000005c",
+                   "title": "LCM",
+                   "companyName": "LCM",
+                   "groupName": "LCM",
+                   "profileDesc": "",
+                   "email": "brian.tobey123@gmail.com",
+                   "clientURI": "https://bn1.notify.windows.com/?token=AwYAAAA1SC5P27iZ1CNpz7e%2besXINRO%2bXhEgqUf%2bHFLiZU1TqwMXFU9j7LhwZn6RTEn0F7%2fySwVfCxg8dOzqujcs%2bDR%2ftn8uJTlfSuoV4E60%2fw1m8whdh1HfeJ%2bbS%2bKTmBIW9nM%3d",
+                   "adminId": "544b11bf5291710200000030",
+                   "makeEmployee": false,
+                   "allowFullEnv": false,
+                   "allowPin": false,
+                   "awardApproval": 1,
+                   "awardRules": {
+                       "thumbsUpAward": true,
+                       "peerAwardAnyEmployee": true,
+                       "excelAwardAdminOnly": true,
+                       "xferAwards": true
+                   },
+                   "topStoryRules": {
+                       "allowStoryCollectionFromGroupsWithRels": false,
+                       "allowStoryCollectionFromAllDomainGroups": false,
+                       "topStoryFromGroupsWithRels": false,
+                       "topStoryFromAllAllowedOrgs": false
+                   },
+                   "sharedSpaceRules": {
+                       "accessSharedSpace": true,
+                       "showSharedSpaceTags": true
+                   },
+                   "attributesPredefined": [
+                       {
+                           "attributeId": "53997942671c0d6b6d4498ab",
+                           "attributeValue": "LCM"
+                       },
+                       {
+                           "attributeId": "53997950671c0d6b6d4498ac",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997959671c0d6b6d4498ad",
+                           "attributeValue": "LCM"
+                       },
+                       {
+                           "attributeId": "53997966671c0d6b6d4498ae",
+                           "attributeValue": "LCM"
+                       },
+                       {
+                           "attributeId": "53997a19671c0d6b6d4498af",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a30671c0d6b6d4498b0",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997aba671c0d6b6d4498b1",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53b11775671c0d6b6d4498b4",
+                           "attributeValue": "brian.tobey123@gmail.com"
+                       }
+                   ],
+                   "tags": [],
+                   "attributes": [],
+                   "relations": [],
+                   "key": "Organization",
+                   "text": "Scrum Master",
+                   "picture": "api/corporateProfilePic/544b1bb3529171020000005c/CheetahLCMLogo.png",
+                   "smallpicture": "api/corporateProfilePic/544b1bb3529171020000005c/CheetahLCMLogo.png",
+                   "connTypes": [
+                       "employee",
+                       "admin"
+                   ],
+                   "connType": "employee",
+                   "isWatched": false,
+                   "entityType": "Organization",
+                   "isAdmin": true,
+                   "admins": [
+                       {
+                           "id": "544b11bf5291710200000030",
+                           "_id": "544b1bb3529171020000005e",
+                           "joinDate": "2014-10-25T03:40:35.413Z"
+                       }
+                   ],
+                   "predefinedSpaces": {
+                       "publicSpace": "544b1bb35291710200000067",
+                       "sharedSpace": "544b1bb35291710200000068"
+                   }
+               },
+               {
+                   "accountId": "544b11bf5291710200000030",
+                   "_id": "544b1c91529171020000006c",
+                   "id": "544b1c91529171020000006c",
+                   "title": "PROD",
+                   "companyName": "PROD",
+                   "groupName": "PROD",
+                   "profileDesc": "",
+                   "email": "brian.tobey123@gmail.com",
+                   "clientURI": "https://bn1.notify.windows.com/?token=AwYAAAA1SC5P27iZ1CNpz7e%2besXINRO%2bXhEgqUf%2bHFLiZU1TqwMXFU9j7LhwZn6RTEn0F7%2fySwVfCxg8dOzqujcs%2bDR%2ftn8uJTlfSuoV4E60%2fw1m8whdh1HfeJ%2bbS%2bKTmBIW9nM%3d",
+                   "adminId": "544b11bf5291710200000030",
+                   "makeEmployee": false,
+                   "allowFullEnv": false,
+                   "allowPin": false,
+                   "awardApproval": 1,
+                   "awardRules": {
+                       "thumbsUpAward": true,
+                       "peerAwardAnyEmployee": true,
+                       "excelAwardAdminOnly": true,
+                       "xferAwards": true
+                   },
+                   "topStoryRules": {
+                       "allowStoryCollectionFromGroupsWithRels": false,
+                       "allowStoryCollectionFromAllDomainGroups": false,
+                       "topStoryFromGroupsWithRels": false,
+                       "topStoryFromAllAllowedOrgs": false
+                   },
+                   "sharedSpaceRules": {
+                       "accessSharedSpace": true,
+                       "showSharedSpaceTags": true
+                   },
+                   "attributesPredefined": [
+                       {
+                           "attributeId": "53997942671c0d6b6d4498ab",
+                           "attributeValue": "PROD"
+                       },
+                       {
+                           "attributeId": "53997950671c0d6b6d4498ac",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997959671c0d6b6d4498ad",
+                           "attributeValue": "PROD"
+                       },
+                       {
+                           "attributeId": "53997966671c0d6b6d4498ae",
+                           "attributeValue": "PROD"
+                       },
+                       {
+                           "attributeId": "53997a19671c0d6b6d4498af",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a30671c0d6b6d4498b0",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997aba671c0d6b6d4498b1",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53b11775671c0d6b6d4498b4",
+                           "attributeValue": "brian.tobey123@gmail.com"
+                       }
+                   ],
+                   "tags": [],
+                   "attributes": [],
+                   "relations": [],
+                   "key": "Organization",
+                   "text": "Scrum Master",
+                   "picture": "api/corporateProfilePic/544b1c91529171020000006c/prdLogo.png",
+                   "smallpicture": "api/corporateProfilePic/544b1c91529171020000006c/prdLogo.png",
+                   "connTypes": [
+                       "admin",
+                       "employee"
+                   ],
+                   "connType": "admin",
+                   "isWatched": false,
+                   "entityType": "Organization",
+                   "isAdmin": true,
+                   "admins": [
+                       {
+                           "id": "544b11bf5291710200000030",
+                           "_id": "544b1c91529171020000006e",
+                           "joinDate": "2014-10-25T03:44:17.536Z"
+                       }
+                   ],
+                   "predefinedSpaces": {
+                       "publicSpace": "544b1c915291710200000077",
+                       "sharedSpace": "544b1c915291710200000078"
+                   }
+               },
+               {
+                   "accountId": "544b11bf5291710200000030",
+                   "_id": "544b1d15529171020000007c",
+                   "id": "544b1d15529171020000007c",
+                   "title": "TEST",
+                   "companyName": "TEST",
+                   "groupName": "TEST",
+                   "profileDesc": "",
+                   "email": "brian.tobey123@gmail.com",
+                   "clientURI": "https://bn1.notify.windows.com/?token=AwYAAAA1SC5P27iZ1CNpz7e%2besXINRO%2bXhEgqUf%2bHFLiZU1TqwMXFU9j7LhwZn6RTEn0F7%2fySwVfCxg8dOzqujcs%2bDR%2ftn8uJTlfSuoV4E60%2fw1m8whdh1HfeJ%2bbS%2bKTmBIW9nM%3d",
+                   "adminId": "544b11bf5291710200000030",
+                   "makeEmployee": false,
+                   "allowFullEnv": false,
+                   "allowPin": false,
+                   "awardApproval": 1,
+                   "awardRules": {
+                       "thumbsUpAward": true,
+                       "peerAwardAnyEmployee": true,
+                       "excelAwardAdminOnly": true,
+                       "xferAwards": true
+                   },
+                   "topStoryRules": {
+                       "allowStoryCollectionFromGroupsWithRels": false,
+                       "allowStoryCollectionFromAllDomainGroups": false,
+                       "topStoryFromGroupsWithRels": false,
+                       "topStoryFromAllAllowedOrgs": false
+                   },
+                   "sharedSpaceRules": {
+                       "accessSharedSpace": true,
+                       "showSharedSpaceTags": true
+                   },
+                   "attributesPredefined": [
+                       {
+                           "attributeId": "53997942671c0d6b6d4498ab",
+                           "attributeValue": "TEST"
+                       },
+                       {
+                           "attributeId": "53997950671c0d6b6d4498ac",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997959671c0d6b6d4498ad",
+                           "attributeValue": "TEST"
+                       },
+                       {
+                           "attributeId": "53997966671c0d6b6d4498ae",
+                           "attributeValue": "TEST"
+                       },
+                       {
+                           "attributeId": "53997a19671c0d6b6d4498af",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a30671c0d6b6d4498b0",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997aba671c0d6b6d4498b1",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53b11775671c0d6b6d4498b4",
+                           "attributeValue": "brian.tobey123@gmail.com"
+                       }
+                   ],
+                   "tags": [],
+                   "attributes": [],
+                   "relations": [],
+                   "key": "Organization",
+                   "text": "Scrum Master",
+                   "picture": "api/corporateProfilePic/544b1d15529171020000007c/testLogo.png",
+                   "smallpicture": "api/corporateProfilePic/544b1d15529171020000007c/testLogo.png",
+                   "connTypes": [
+                       "admin",
+                       "employee"
+                   ],
+                   "connType": "admin",
+                   "isWatched": false,
+                   "entityType": "Organization",
+                   "isAdmin": true,
+                   "admins": [
+                       {
+                           "id": "544b11bf5291710200000030",
+                           "_id": "544b1d15529171020000007e",
+                           "joinDate": "2014-10-25T03:46:29.356Z"
+                       }
+                   ],
+                   "predefinedSpaces": {
+                       "publicSpace": "544b1d155291710200000087",
+                       "sharedSpace": "544b1d155291710200000088"
+                   }
+               },
+               {
+                   "accountId": "544b11bf5291710200000030",
+                   "_id": "544b1d89529171020000008c",
+                   "id": "544b1d89529171020000008c",
+                   "title": "VALID",
+                   "companyName": "VALID",
+                   "groupName": "VALID",
+                   "profileDesc": "",
+                   "email": "brian.tobey123@gmail.com",
+                   "clientURI": "https://bn1.notify.windows.com/?token=AwYAAAA1SC5P27iZ1CNpz7e%2besXINRO%2bXhEgqUf%2bHFLiZU1TqwMXFU9j7LhwZn6RTEn0F7%2fySwVfCxg8dOzqujcs%2bDR%2ftn8uJTlfSuoV4E60%2fw1m8whdh1HfeJ%2bbS%2bKTmBIW9nM%3d",
+                   "adminId": "544b11bf5291710200000030",
+                   "makeEmployee": false,
+                   "allowFullEnv": false,
+                   "allowPin": false,
+                   "awardApproval": 1,
+                   "awardRules": {
+                       "thumbsUpAward": true,
+                       "peerAwardAnyEmployee": true,
+                       "excelAwardAdminOnly": true,
+                       "xferAwards": true
+                   },
+                   "topStoryRules": {
+                       "allowStoryCollectionFromGroupsWithRels": false,
+                       "allowStoryCollectionFromAllDomainGroups": false,
+                       "topStoryFromGroupsWithRels": false,
+                       "topStoryFromAllAllowedOrgs": false
+                   },
+                   "sharedSpaceRules": {
+                       "accessSharedSpace": true,
+                       "showSharedSpaceTags": true
+                   },
+                   "attributesPredefined": [
+                       {
+                           "attributeId": "53997942671c0d6b6d4498ab",
+                           "attributeValue": "VALID"
+                       },
+                       {
+                           "attributeId": "53997950671c0d6b6d4498ac",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997959671c0d6b6d4498ad",
+                           "attributeValue": "VALID"
+                       },
+                       {
+                           "attributeId": "53997966671c0d6b6d4498ae",
+                           "attributeValue": "VALID"
+                       },
+                       {
+                           "attributeId": "53997a19671c0d6b6d4498af",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a30671c0d6b6d4498b0",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997aba671c0d6b6d4498b1",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53b11775671c0d6b6d4498b4",
+                           "attributeValue": "brian.tobey123@gmail.com"
+                       },
+                       {
+                           "attributeId": "53997942671c0d6b6d4498ab",
+                           "attributeValue": "VALIDATION"
+                       },
+                       {
+                           "attributeId": "53997959671c0d6b6d4498ad",
+                           "attributeValue": "VALIDATION"
+                       },
+                       {
+                           "attributeId": "53997966671c0d6b6d4498ae",
+                           "attributeValue": "VALIDATION"
+                       }
+                   ],
+                   "tags": [],
+                   "attributes": [],
+                   "relations": [],
+                   "key": "Organization",
+                   "text": "Scrum Master",
+                   "picture": "api/corporateProfilePic/544b1d89529171020000008c/validlogo.png",
+                   "smallpicture": "api/corporateProfilePic/544b1d89529171020000008c/validlogo.png",
+                   "connTypes": [
+                       "employee",
+                       "admin"
+                   ],
+                   "connType": "employee",
+                   "isWatched": false,
+                   "entityType": "Organization",
+                   "isAdmin": true,
+                   "admins": [
+                       {
+                           "id": "544b11bf5291710200000030",
+                           "_id": "544b1d89529171020000008e",
+                           "joinDate": "2014-10-25T03:48:25.209Z"
+                       }
+                   ],
+                   "predefinedSpaces": {
+                       "publicSpace": "544b1d895291710200000097",
+                       "sharedSpace": "544b1d895291710200000098"
+                   }
+               },
+               {
+                   "accountId": "544b11bf5291710200000030",
+                   "_id": "544b1e37529171020000009c",
+                   "id": "544b1e37529171020000009c",
+                   "title": "QUAL",
+                   "companyName": "QUAL",
+                   "groupName": "QUAL",
+                   "profileDesc": "",
+                   "email": "brian.tobey123@gmail.com",
+                   "clientURI": "https://bn1.notify.windows.com/?token=AwYAAAA1SC5P27iZ1CNpz7e%2besXINRO%2bXhEgqUf%2bHFLiZU1TqwMXFU9j7LhwZn6RTEn0F7%2fySwVfCxg8dOzqujcs%2bDR%2ftn8uJTlfSuoV4E60%2fw1m8whdh1HfeJ%2bbS%2bKTmBIW9nM%3d",
+                   "adminId": "544b11bf5291710200000030",
+                   "makeEmployee": false,
+                   "allowFullEnv": false,
+                   "allowPin": false,
+                   "awardApproval": 1,
+                   "awardRules": {
+                       "thumbsUpAward": true,
+                       "peerAwardAnyEmployee": true,
+                       "excelAwardAdminOnly": true,
+                       "xferAwards": true
+                   },
+                   "topStoryRules": {
+                       "allowStoryCollectionFromGroupsWithRels": false,
+                       "allowStoryCollectionFromAllDomainGroups": false,
+                       "topStoryFromGroupsWithRels": false,
+                       "topStoryFromAllAllowedOrgs": false
+                   },
+                   "sharedSpaceRules": {
+                       "accessSharedSpace": true,
+                       "showSharedSpaceTags": true
+                   },
+                   "attributesPredefined": [
+                       {
+                           "attributeId": "53997942671c0d6b6d4498ab",
+                           "attributeValue": "QUAL"
+                       },
+                       {
+                           "attributeId": "53997950671c0d6b6d4498ac",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997959671c0d6b6d4498ad",
+                           "attributeValue": "QUAL"
+                       },
+                       {
+                           "attributeId": "53997966671c0d6b6d4498ae",
+                           "attributeValue": "QUAL"
+                       },
+                       {
+                           "attributeId": "53997a19671c0d6b6d4498af",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a30671c0d6b6d4498b0",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997aba671c0d6b6d4498b1",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53b11775671c0d6b6d4498b4",
+                           "attributeValue": "brian.tobey123@gmail.com"
+                       }
+                   ],
+                   "tags": [],
+                   "attributes": [],
+                   "relations": [],
+                   "key": "Organization",
+                   "text": "Scrum Master",
+                   "picture": "api/corporateProfilePic/544b1e37529171020000009c/Quallogo.png",
+                   "smallpicture": "api/corporateProfilePic/544b1e37529171020000009c/Quallogo.png",
+                   "connTypes": [
+                       "admin",
+                       "employee"
+                   ],
+                   "connType": "admin",
+                   "isWatched": false,
+                   "entityType": "Organization",
+                   "isAdmin": true,
+                   "admins": [
+                       {
+                           "id": "544b11bf5291710200000030",
+                           "_id": "544b1e37529171020000009e",
+                           "joinDate": "2014-10-25T03:51:19.245Z"
+                       }
+                   ],
+                   "predefinedSpaces": {
+                       "publicSpace": "544b1e3752917102000000a7",
+                       "sharedSpace": "544b1e3752917102000000a8"
+                   }
+               },
+               {
+                   "accountId": "544b11bf5291710200000030",
+                   "_id": "54585c4ee268b802000000fa",
+                   "id": "54585c4ee268b802000000fa",
+                   "title": "CLC",
+                   "companyName": "",
+                   "groupName": "",
+                   "profileDesc": "",
+                   "email": "brian.tobey123@gmail.com",
+                   "clientURI": "https://bn1.notify.windows.com/?token=AwYAAAALpep4NAPLWavHtGB0nu5jmfTO39L0kBOI19DSIZfRXJvdG%2fSfDgF2CKJyIKgLSA2hcdsQxxzAoTbR5HCY%2fxUcTS8O5ojFlk0Mxa%2f0GiFked%2fhc2W5I4H0K1TxyA20dXQ%3d",
+                   "adminId": "544b11bf5291710200000030",
+                   "makeEmployee": false,
+                   "allowFullEnv": false,
+                   "allowPin": false,
+                   "awardApproval": 1,
+                   "awardRules": {
+                       "thumbsUpAward": true,
+                       "peerAwardAnyEmployee": true,
+                       "excelAwardAdminOnly": true,
+                       "xferAwards": true
+                   },
+                   "topStoryRules": {
+                       "allowStoryCollectionFromGroupsWithRels": false,
+                       "allowStoryCollectionFromAllDomainGroups": false,
+                       "topStoryFromGroupsWithRels": false,
+                       "topStoryFromAllAllowedOrgs": false
+                   },
+                   "sharedSpaceRules": {
+                       "accessSharedSpace": true,
+                       "showSharedSpaceTags": true
+                   },
+                   "attributesPredefined": [
+                       {
+                           "attributeId": "53997942671c0d6b6d4498ab",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997950671c0d6b6d4498ac",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997959671c0d6b6d4498ad",
+                           "attributeValue": "CLC"
+                       },
+                       {
+                           "attributeId": "53997966671c0d6b6d4498ae",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a19671c0d6b6d4498af",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a30671c0d6b6d4498b0",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997aba671c0d6b6d4498b1",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53b11775671c0d6b6d4498b4",
+                           "attributeValue": "brian.tobey123@gmail.com"
+                       },
+                       {
+                           "attributeId": "53997959671c0d6b6d4498ad",
+                           "attributeValue": "HammerCLC"
+                       }
+                   ],
+                   "tags": [],
+                   "attributes": [],
+                   "relations": [],
+                   "key": "Organization",
+                   "text": "Scrum Master",
+                   "picture": "api/corporateProfilePic/54585c4ee268b802000000fa/LCMLogo.png",
+                   "smallpicture": "api/corporateProfilePic/54585c4ee268b802000000fa/LCMLogo.png",
+                   "connTypes": [
+                       "employee",
+                       "admin"
+                   ],
+                   "connType": "employee",
+                   "isWatched": false,
+                   "entityType": "Organization",
+                   "isAdmin": true,
+                   "admins": [
+                       {
+                           "id": "544b11bf5291710200000030",
+                           "_id": "54585c4ee268b802000000fc",
+                           "joinDate": "2014-11-04T04:55:42.814Z"
+                       }
+                   ],
+                   "predefinedSpaces": {
+                       "publicSpace": "54585c4ee268b80200000105",
+                       "sharedSpace": "54585c4ee268b80200000106"
+                   }
+               },
+               {
+                   "accountId": "544b11bf5291710200000030",
+                   "_id": "5459aabf9492a602000000dc",
+                   "id": "5459aabf9492a602000000dc",
+                   "title": "NPI",
+                   "companyName": "",
+                   "groupName": "",
+                   "profileDesc": "",
+                   "email": "brian.tobey123@gmail.com",
+                   "clientURI": "https://bn1.notify.windows.com/?token=AwYAAACGhUasaLU%2fxbNA5vDVx8zmtn4D5MwgjcbzOfcickpXCopKfkGA5VfW4kW31eAPNYIEtShfvi86UTPLIyJs1dX4HpX3DWxDUvIV%2btMItOyzGhxzcmKKn4LAMnG09%2f3K6pU%3d",
+                   "adminId": "544b11bf5291710200000030",
+                   "makeEmployee": false,
+                   "allowFullEnv": false,
+                   "allowPin": false,
+                   "awardApproval": 1,
+                   "awardRules": {
+                       "thumbsUpAward": true,
+                       "peerAwardAnyEmployee": true,
+                       "excelAwardAdminOnly": true,
+                       "xferAwards": true
+                   },
+                   "topStoryRules": {
+                       "allowStoryCollectionFromGroupsWithRels": false,
+                       "allowStoryCollectionFromAllDomainGroups": false,
+                       "topStoryFromGroupsWithRels": false,
+                       "topStoryFromAllAllowedOrgs": false
+                   },
+                   "sharedSpaceRules": {
+                       "accessSharedSpace": true,
+                       "showSharedSpaceTags": true
+                   },
+                   "attributesPredefined": [
+                       {
+                           "attributeId": "53997942671c0d6b6d4498ab",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997950671c0d6b6d4498ac",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997959671c0d6b6d4498ad",
+                           "attributeValue": "NPI"
+                       },
+                       {
+                           "attributeId": "53997966671c0d6b6d4498ae",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a19671c0d6b6d4498af",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a30671c0d6b6d4498b0",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997aba671c0d6b6d4498b1",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53b11775671c0d6b6d4498b4",
+                           "attributeValue": "brian.tobey123@gmail.com"
+                       },
+                       {
+                           "attributeId": "53997959671c0d6b6d4498ad",
+                           "attributeValue": "HammerNPI"
+                       }
+                   ],
+                   "tags": [],
+                   "attributes": [],
+                   "relations": [],
+                   "key": "Organization",
+                   "text": "Scrum Master",
+                   "picture": "api/corporateProfilePic/5459aabf9492a602000000dc/NPILogo.png",
+                   "smallpicture": "api/corporateProfilePic/5459aabf9492a602000000dc/NPILogo.png",
+                   "connTypes": [
+                       "admin",
+                       "employee"
+                   ],
+                   "connType": "admin",
+                   "isWatched": false,
+                   "entityType": "Organization",
+                   "isAdmin": true,
+                   "admins": [
+                       {
+                           "id": "544b11bf5291710200000030",
+                           "_id": "5459aabf9492a602000000de",
+                           "joinDate": "2014-11-05T04:42:39.823Z"
+                       }
+                   ],
+                   "predefinedSpaces": {
+                       "publicSpace": "5459aabf9492a602000000e7",
+                       "sharedSpace": "5459aabf9492a602000000e8"
+                   }
+               },
+               {
+                   "accountId": "544b11bf5291710200000030",
+                   "_id": "5459aae59492a602000000ee",
+                   "id": "5459aae59492a602000000ee",
+                   "title": "OpsM",
+                   "companyName": "",
+                   "groupName": "",
+                   "profileDesc": "",
+                   "email": "brian.tobey123@gmail.com",
+                   "clientURI": "https://bn1.notify.windows.com/?token=AwYAAACGhUasaLU%2fxbNA5vDVx8zmtn4D5MwgjcbzOfcickpXCopKfkGA5VfW4kW31eAPNYIEtShfvi86UTPLIyJs1dX4HpX3DWxDUvIV%2btMItOyzGhxzcmKKn4LAMnG09%2f3K6pU%3d",
+                   "adminId": "544b11bf5291710200000030",
+                   "makeEmployee": false,
+                   "allowFullEnv": false,
+                   "allowPin": false,
+                   "awardApproval": 1,
+                   "awardRules": {
+                       "thumbsUpAward": true,
+                       "peerAwardAnyEmployee": true,
+                       "excelAwardAdminOnly": true,
+                       "xferAwards": true
+                   },
+                   "topStoryRules": {
+                       "allowStoryCollectionFromGroupsWithRels": false,
+                       "allowStoryCollectionFromAllDomainGroups": false,
+                       "topStoryFromGroupsWithRels": false,
+                       "topStoryFromAllAllowedOrgs": false
+                   },
+                   "sharedSpaceRules": {
+                       "accessSharedSpace": true,
+                       "showSharedSpaceTags": true
+                   },
+                   "attributesPredefined": [
+                       {
+                           "attributeId": "53997942671c0d6b6d4498ab",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997950671c0d6b6d4498ac",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997959671c0d6b6d4498ad",
+                           "attributeValue": "OpsM"
+                       },
+                       {
+                           "attributeId": "53997966671c0d6b6d4498ae",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a19671c0d6b6d4498af",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a30671c0d6b6d4498b0",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997aba671c0d6b6d4498b1",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53b11775671c0d6b6d4498b4",
+                           "attributeValue": "brian.tobey123@gmail.com"
+                       },
+                       {
+                           "attributeId": "53997959671c0d6b6d4498ad",
+                           "attributeValue": "HammerOpsM"
+                       }
+                   ],
+                   "tags": [],
+                   "attributes": [],
+                   "relations": [],
+                   "key": "Organization",
+                   "text": "Scrum Master",
+                   "picture": "api/corporateProfilePic/5459aae59492a602000000ee/OpsMLogo.png",
+                   "smallpicture": "api/corporateProfilePic/5459aae59492a602000000ee/OpsMLogo.png",
+                   "connTypes": [
+                       "employee",
+                       "admin"
+                   ],
+                   "connType": "employee",
+                   "isWatched": false,
+                   "entityType": "Organization",
+                   "isAdmin": true,
+                   "admins": [
+                       {
+                           "id": "544b11bf5291710200000030",
+                           "_id": "5459aae59492a602000000f0",
+                           "joinDate": "2014-11-05T04:43:17.756Z"
+                       }
+                   ],
+                   "predefinedSpaces": {
+                       "publicSpace": "5459aae59492a602000000f9",
+                       "sharedSpace": "5459aae59492a602000000fa"
+                   }
+               },
+               {
+                   "accountId": "544b11bf5291710200000030",
+                   "_id": "5459ab039492a602000000ff",
+                   "id": "5459ab039492a602000000ff",
+                   "title": "Dev",
+                   "companyName": "",
+                   "groupName": "",
+                   "profileDesc": "",
+                   "email": "brian.tobey123@gmail.com",
+                   "clientURI": "https://bn1.notify.windows.com/?token=AwYAAACGhUasaLU%2fxbNA5vDVx8zmtn4D5MwgjcbzOfcickpXCopKfkGA5VfW4kW31eAPNYIEtShfvi86UTPLIyJs1dX4HpX3DWxDUvIV%2btMItOyzGhxzcmKKn4LAMnG09%2f3K6pU%3d",
+                   "adminId": "544b11bf5291710200000030",
+                   "makeEmployee": false,
+                   "allowFullEnv": false,
+                   "allowPin": false,
+                   "awardApproval": 1,
+                   "awardRules": {
+                       "thumbsUpAward": true,
+                       "peerAwardAnyEmployee": true,
+                       "excelAwardAdminOnly": true,
+                       "xferAwards": true
+                   },
+                   "topStoryRules": {
+                       "allowStoryCollectionFromGroupsWithRels": false,
+                       "allowStoryCollectionFromAllDomainGroups": false,
+                       "topStoryFromGroupsWithRels": false,
+                       "topStoryFromAllAllowedOrgs": false
+                   },
+                   "sharedSpaceRules": {
+                       "accessSharedSpace": true,
+                       "showSharedSpaceTags": true
+                   },
+                   "attributesPredefined": [
+                       {
+                           "attributeId": "53997942671c0d6b6d4498ab",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997950671c0d6b6d4498ac",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997959671c0d6b6d4498ad",
+                           "attributeValue": "Dev"
+                       },
+                       {
+                           "attributeId": "53997966671c0d6b6d4498ae",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a19671c0d6b6d4498af",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a30671c0d6b6d4498b0",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997aba671c0d6b6d4498b1",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53b11775671c0d6b6d4498b4",
+                           "attributeValue": "brian.tobey123@gmail.com"
+                       },
+                       {
+                           "attributeId": "53997959671c0d6b6d4498ad",
+                           "attributeValue": "HammerDev"
+                       }
+                   ],
+                   "tags": [],
+                   "attributes": [],
+                   "relations": [],
+                   "key": "Organization",
+                   "text": "Scrum Master",
+                   "picture": "api/corporateProfilePic/5459ab039492a602000000ff/DevLogo.png",
+                   "smallpicture": "api/corporateProfilePic/5459ab039492a602000000ff/DevLogo.png",
+                   "connTypes": [
+                       "employee",
+                       "admin"
+                   ],
+                   "connType": "employee",
+                   "isWatched": false,
+                   "entityType": "Organization",
+                   "isAdmin": true,
+                   "admins": [
+                       {
+                           "id": "544b11bf5291710200000030",
+                           "_id": "5459ab039492a60200000101",
+                           "joinDate": "2014-11-05T04:43:47.013Z"
+                       }
+                   ],
+                   "predefinedSpaces": {
+                       "publicSpace": "5459ab039492a6020000010a",
+                       "sharedSpace": "5459ab039492a6020000010b"
+                   }
+               },
+               {
+                   "accountId": "544b11bf5291710200000030",
+                   "_id": "5459ab139492a60200000110",
+                   "id": "5459ab139492a60200000110",
+                   "title": "Ops",
+                   "companyName": "",
+                   "groupName": "",
+                   "profileDesc": "",
+                   "email": "brian.tobey123@gmail.com",
+                   "clientURI": "https://bn1.notify.windows.com/?token=AwYAAACGhUasaLU%2fxbNA5vDVx8zmtn4D5MwgjcbzOfcickpXCopKfkGA5VfW4kW31eAPNYIEtShfvi86UTPLIyJs1dX4HpX3DWxDUvIV%2btMItOyzGhxzcmKKn4LAMnG09%2f3K6pU%3d",
+                   "adminId": "544b11bf5291710200000030",
+                   "makeEmployee": false,
+                   "allowFullEnv": false,
+                   "allowPin": false,
+                   "awardApproval": 1,
+                   "awardRules": {
+                       "thumbsUpAward": true,
+                       "peerAwardAnyEmployee": true,
+                       "excelAwardAdminOnly": true,
+                       "xferAwards": true
+                   },
+                   "topStoryRules": {
+                       "allowStoryCollectionFromGroupsWithRels": false,
+                       "allowStoryCollectionFromAllDomainGroups": false,
+                       "topStoryFromGroupsWithRels": false,
+                       "topStoryFromAllAllowedOrgs": false
+                   },
+                   "sharedSpaceRules": {
+                       "accessSharedSpace": true,
+                       "showSharedSpaceTags": true
+                   },
+                   "attributesPredefined": [
+                       {
+                           "attributeId": "53997942671c0d6b6d4498ab",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997950671c0d6b6d4498ac",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997959671c0d6b6d4498ad",
+                           "attributeValue": "Ops"
+                       },
+                       {
+                           "attributeId": "53997966671c0d6b6d4498ae",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a19671c0d6b6d4498af",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a30671c0d6b6d4498b0",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997aba671c0d6b6d4498b1",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53b11775671c0d6b6d4498b4",
+                           "attributeValue": "brian.tobey123@gmail.com"
+                       },
+                       {
+                           "attributeId": "53997959671c0d6b6d4498ad",
+                           "attributeValue": "HammerOps"
+                       }
+                   ],
+                   "tags": [],
+                   "attributes": [],
+                   "relations": [],
+                   "key": "Organization",
+                   "text": "Scrum Master",
+                   "picture": "api/corporateProfilePic/5459ab139492a60200000110/OpsLogo.png",
+                   "smallpicture": "api/corporateProfilePic/5459ab139492a60200000110/OpsLogo.png",
+                   "connTypes": [
+                       "admin",
+                       "employee"
+                   ],
+                   "connType": "admin",
+                   "isWatched": false,
+                   "entityType": "Organization",
+                   "isAdmin": true,
+                   "admins": [
+                       {
+                           "id": "544b11bf5291710200000030",
+                           "_id": "5459ab139492a60200000112",
+                           "joinDate": "2014-11-05T04:44:03.968Z"
+                       }
+                   ],
+                   "predefinedSpaces": {
+                       "publicSpace": "5459ab139492a6020000011b",
+                       "sharedSpace": "5459ab139492a6020000011c"
+                   }
+               },
+               {
+                   "accountId": "544b11bf5291710200000030",
+                   "_id": "545aef3433882c0200000064",
+                   "id": "545aef3433882c0200000064",
+                   "title": "KnotSuite Platform Group",
+                   "companyName": "",
+                   "groupName": "",
+                   "profileDesc": "",
+                   "email": "molmol@sisigma.com",
+                   "clientURI": "https://bn1.notify.windows.com/?token=AwYAAADsDPplIcu1eALnPO3NyxWeWOcyO%2bRa7OtdVOnoMGdcHkYFpIW8i8fgijeuBWCc9%2b9duAUjUF2Ire0cCG%2fYkMdXy9HzSZr57m9mET67XmQX4b7RmXrJD%2f8CoXvAq1647kc%3d",
+                   "adminId": "545aebb533882c020000003b",
+                   "makeEmployee": false,
+                   "allowFullEnv": false,
+                   "allowPin": false,
+                   "awardApproval": 1,
+                   "awardRules": {
+                       "thumbsUpAward": true,
+                       "peerAwardAnyEmployee": true,
+                       "excelAwardAdminOnly": true,
+                       "xferAwards": true
+                   },
+                   "topStoryRules": {
+                       "allowStoryCollectionFromGroupsWithRels": false,
+                       "allowStoryCollectionFromAllDomainGroups": false,
+                       "topStoryFromGroupsWithRels": false,
+                       "topStoryFromAllAllowedOrgs": false
+                   },
+                   "sharedSpaceRules": {
+                       "accessSharedSpace": true,
+                       "showSharedSpaceTags": true
+                   },
+                   "attributesPredefined": [
+                       {
+                           "attributeId": "53997942671c0d6b6d4498ab",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997950671c0d6b6d4498ac",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997959671c0d6b6d4498ad",
+                           "attributeValue": "KnotSuite Platform Group"
+                       },
+                       {
+                           "attributeId": "53997966671c0d6b6d4498ae",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a19671c0d6b6d4498af",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a30671c0d6b6d4498b0",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997aba671c0d6b6d4498b1",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53b11775671c0d6b6d4498b4",
+                           "attributeValue": "molmol@sisigma.com"
+                       }
+                   ],
+                   "tags": [],
+                   "attributes": [],
+                   "relations": [],
+                   "key": "Organization",
+                   "text": "Scrum Master",
+                   "picture": "api/corporateProfilePic/545aef3433882c0200000064/platformlogo.png",
+                   "smallpicture": "api/corporateProfilePic/545aef3433882c0200000064/platformlogo.png",
+                   "connTypes": [
+                       "connection"
+                   ],
+                   "connType": "connection",
+                   "isWatched": false,
+                   "entityType": "Organization",
+                   "isAdmin": false,
+                   "admins": [
+                       {
+                           "id": "545aebb533882c020000003b",
+                           "_id": "545aef3433882c0200000066",
+                           "joinDate": "2014-11-06T03:47:00.324Z"
+                       }
+                   ],
+                   "predefinedSpaces": {
+                       "publicSpace": "545aef3433882c020000006f",
+                       "sharedSpace": "545aef3433882c0200000070"
+                   }
+               },
+               {
+                   "accountId": "544b11bf5291710200000030",
+                   "_id": "545aef4f33882c0200000076",
+                   "id": "545aef4f33882c0200000076",
+                   "title": "KnotSuite Apps Group",
+                   "companyName": "",
+                   "groupName": "",
+                   "profileDesc": "",
+                   "email": "molmol@sisigma.com",
+                   "clientURI": "https://bn1.notify.windows.com/?token=AwYAAADsDPplIcu1eALnPO3NyxWeWOcyO%2bRa7OtdVOnoMGdcHkYFpIW8i8fgijeuBWCc9%2b9duAUjUF2Ire0cCG%2fYkMdXy9HzSZr57m9mET67XmQX4b7RmXrJD%2f8CoXvAq1647kc%3d",
+                   "adminId": "545aebb533882c020000003b",
+                   "makeEmployee": false,
+                   "allowFullEnv": false,
+                   "allowPin": false,
+                   "awardApproval": 1,
+                   "awardRules": {
+                       "thumbsUpAward": true,
+                       "peerAwardAnyEmployee": true,
+                       "excelAwardAdminOnly": true,
+                       "xferAwards": true
+                   },
+                   "topStoryRules": {
+                       "allowStoryCollectionFromGroupsWithRels": false,
+                       "allowStoryCollectionFromAllDomainGroups": false,
+                       "topStoryFromGroupsWithRels": false,
+                       "topStoryFromAllAllowedOrgs": false
+                   },
+                   "sharedSpaceRules": {
+                       "accessSharedSpace": true,
+                       "showSharedSpaceTags": true
+                   },
+                   "attributesPredefined": [
+                       {
+                           "attributeId": "53997942671c0d6b6d4498ab",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997950671c0d6b6d4498ac",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997959671c0d6b6d4498ad",
+                           "attributeValue": "KnotSuite Apps Group"
+                       },
+                       {
+                           "attributeId": "53997966671c0d6b6d4498ae",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a19671c0d6b6d4498af",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a30671c0d6b6d4498b0",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997aba671c0d6b6d4498b1",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53b11775671c0d6b6d4498b4",
+                           "attributeValue": "molmol@sisigma.com"
+                       }
+                   ],
+                   "tags": [],
+                   "attributes": [],
+                   "relations": [],
+                   "key": "Organization",
+                   "text": "Scrum Master",
+                   "picture": "api/corporateProfilePic/545aef4f33882c0200000076/knotappslogo.png",
+                   "smallpicture": "api/corporateProfilePic/545aef4f33882c0200000076/knotappslogo.png",
+                   "connTypes": [
+                       "Manager"
+                   ],
+                   "connType": "Manager",
+                   "isWatched": false,
+                   "entityType": "Organization",
+                   "isAdmin": false,
+                   "admins": [
+                       {
+                           "id": "545aebb533882c020000003b",
+                           "_id": "545aef4f33882c0200000078",
+                           "joinDate": "2014-11-06T03:47:27.911Z"
+                       }
+                   ],
+                   "predefinedSpaces": {
+                       "publicSpace": "545aef4f33882c0200000081",
+                       "sharedSpace": "545aef4f33882c0200000082"
+                   }
+               },
+               {
+                   "accountId": "544b11bf5291710200000030",
+                   "_id": "545aef6933882c0200000086",
+                   "id": "545aef6933882c0200000086",
+                   "title": "KnotSuite Mobile Group",
+                   "companyName": "",
+                   "groupName": "",
+                   "profileDesc": "",
+                   "email": "molmol@sisigma.com",
+                   "clientURI": "https://bn1.notify.windows.com/?token=AwYAAADsDPplIcu1eALnPO3NyxWeWOcyO%2bRa7OtdVOnoMGdcHkYFpIW8i8fgijeuBWCc9%2b9duAUjUF2Ire0cCG%2fYkMdXy9HzSZr57m9mET67XmQX4b7RmXrJD%2f8CoXvAq1647kc%3d",
+                   "adminId": "545aebb533882c020000003b",
+                   "makeEmployee": false,
+                   "allowFullEnv": false,
+                   "allowPin": false,
+                   "awardApproval": 1,
+                   "awardRules": {
+                       "thumbsUpAward": true,
+                       "peerAwardAnyEmployee": true,
+                       "excelAwardAdminOnly": true,
+                       "xferAwards": true
+                   },
+                   "topStoryRules": {
+                       "allowStoryCollectionFromGroupsWithRels": false,
+                       "allowStoryCollectionFromAllDomainGroups": false,
+                       "topStoryFromGroupsWithRels": false,
+                       "topStoryFromAllAllowedOrgs": false
+                   },
+                   "sharedSpaceRules": {
+                       "accessSharedSpace": true,
+                       "showSharedSpaceTags": true
+                   },
+                   "attributesPredefined": [
+                       {
+                           "attributeId": "53997942671c0d6b6d4498ab",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997950671c0d6b6d4498ac",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997959671c0d6b6d4498ad",
+                           "attributeValue": "KnotSuite Mobile Group"
+                       },
+                       {
+                           "attributeId": "53997966671c0d6b6d4498ae",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a19671c0d6b6d4498af",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a30671c0d6b6d4498b0",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997aba671c0d6b6d4498b1",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53b11775671c0d6b6d4498b4",
+                           "attributeValue": "molmol@sisigma.com"
+                       }
+                   ],
+                   "tags": [],
+                   "attributes": [],
+                   "relations": [],
+                   "key": "Organization",
+                   "text": "Scrum Master",
+                   "picture": "api/corporateProfilePic/545aef6933882c0200000086/mobilelogo.png",
+                   "smallpicture": "api/corporateProfilePic/545aef6933882c0200000086/mobilelogo.png",
+                   "connTypes": [
+                       "connection"
+                   ],
+                   "connType": "connection",
+                   "isWatched": false,
+                   "entityType": "Organization",
+                   "isAdmin": false,
+                   "admins": [
+                       {
+                           "id": "545aebb533882c020000003b",
+                           "_id": "545aef6933882c0200000088",
+                           "joinDate": "2014-11-06T03:47:53.040Z"
+                       }
+                   ],
+                   "predefinedSpaces": {
+                       "publicSpace": "545aef6933882c0200000091",
+                       "sharedSpace": "545aef6933882c0200000092"
+                   }
+               },
+               {
+                   "accountId": "544b11bf5291710200000030",
+                   "_id": "547a8872a044760200000040",
+                   "id": "547a8872a044760200000040",
+                   "title": "KnotSuite Product Steering Group",
+                   "companyName": "",
+                   "groupName": "",
+                   "profileDesc": "",
+                   "email": "molmol@sisigma.com",
+                   "clientURI": "https://dev-frontserver.herokuapp.com/",
+                   "adminId": "545aebb533882c020000003b",
+                   "makeEmployee": false,
+                   "allowFullEnv": false,
+                   "allowPin": false,
+                   "awardApproval": 1,
+                   "awardRules": {
+                       "thumbsUpAward": true,
+                       "peerAwardAnyEmployee": true,
+                       "excelAwardAdminOnly": true,
+                       "xferAwards": true
+                   },
+                   "topStoryRules": {
+                       "allowStoryCollectionFromGroupsWithRels": false,
+                       "allowStoryCollectionFromAllDomainGroups": false,
+                       "topStoryFromGroupsWithRels": false,
+                       "topStoryFromAllAllowedOrgs": false
+                   },
+                   "sharedSpaceRules": {
+                       "accessSharedSpace": true,
+                       "showSharedSpaceTags": true
+                   },
+                   "attributesPredefined": [
+                       {
+                           "attributeId": "53997942671c0d6b6d4498ab",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997950671c0d6b6d4498ac",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997959671c0d6b6d4498ad",
+                           "attributeValue": "KnotSuite Product Steering Group"
+                       },
+                       {
+                           "attributeId": "53997966671c0d6b6d4498ae",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a19671c0d6b6d4498af",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a30671c0d6b6d4498b0",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997aba671c0d6b6d4498b1",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53b11775671c0d6b6d4498b4",
+                           "attributeValue": "molmol@sisigma.com"
+                       }
+                   ],
+                   "tags": [],
+                   "attributes": [],
+                   "relations": [],
+                   "key": "Organization",
+                   "text": "Scrum Master",
+                   "picture": "api/corporateProfilePic/547a8872a044760200000040/steeringlogo.png",
+                   "smallpicture": "api/corporateProfilePic/547a8872a044760200000040/steeringlogo.png",
+                   "connTypes": [
+                       "product manager"
+                   ],
+                   "connType": "product manager",
+                   "isWatched": false,
+                   "entityType": "Organization",
+                   "isAdmin": false,
+                   "admins": [
+                       {
+                           "id": "545aebb533882c020000003b",
+                           "_id": "547a8872a044760200000042",
+                           "joinDate": "2014-11-30T03:01:06.154Z"
+                       }
+                   ],
+                   "predefinedSpaces": {
+                       "publicSpace": "547a8872a04476020000004b",
+                       "sharedSpace": "547a8872a04476020000004c"
+                   }
+               },
+               {
+                   "accountId": "544b11bf5291710200000030",
+                   "_id": "547a888aa044760200000050",
+                   "id": "547a888aa044760200000050",
+                   "title": "KnotSuite Design Team",
+                   "companyName": "",
+                   "groupName": "",
+                   "profileDesc": "",
+                   "email": "molmol@sisigma.com",
+                   "clientURI": "https://dev-frontserver.herokuapp.com/",
+                   "adminId": "545aebb533882c020000003b",
+                   "makeEmployee": false,
+                   "allowFullEnv": false,
+                   "allowPin": false,
+                   "awardApproval": 1,
+                   "awardRules": {
+                       "thumbsUpAward": true,
+                       "peerAwardAnyEmployee": true,
+                       "excelAwardAdminOnly": true,
+                       "xferAwards": true
+                   },
+                   "topStoryRules": {
+                       "allowStoryCollectionFromGroupsWithRels": false,
+                       "allowStoryCollectionFromAllDomainGroups": false,
+                       "topStoryFromGroupsWithRels": false,
+                       "topStoryFromAllAllowedOrgs": false
+                   },
+                   "sharedSpaceRules": {
+                       "accessSharedSpace": true,
+                       "showSharedSpaceTags": true
+                   },
+                   "attributesPredefined": [
+                       {
+                           "attributeId": "53997942671c0d6b6d4498ab",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997950671c0d6b6d4498ac",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997959671c0d6b6d4498ad",
+                           "attributeValue": "KnotSuite Design Team"
+                       },
+                       {
+                           "attributeId": "53997966671c0d6b6d4498ae",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a19671c0d6b6d4498af",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a30671c0d6b6d4498b0",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997aba671c0d6b6d4498b1",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53b11775671c0d6b6d4498b4",
+                           "attributeValue": "molmol@sisigma.com"
+                       }
+                   ],
+                   "tags": [],
+                   "attributes": [],
+                   "relations": [],
+                   "key": "Organization",
+                   "text": "Scrum Master",
+                   "picture": "api/corporateProfilePic/547a888aa044760200000050/designlogo.png",
+                   "smallpicture": "api/corporateProfilePic/547a888aa044760200000050/designlogo.png",
+                   "connTypes": [
+                       "Manager"
+                   ],
+                   "connType": "Manager",
+                   "isWatched": false,
+                   "entityType": "Organization",
+                   "isAdmin": false,
+                   "admins": [
+                       {
+                           "id": "545aebb533882c020000003b",
+                           "_id": "547a888aa044760200000052",
+                           "joinDate": "2014-11-30T03:01:30.605Z"
+                       }
+                   ],
+                   "predefinedSpaces": {
+                       "publicSpace": "547a888aa04476020000005b",
+                       "sharedSpace": "547a888aa04476020000005c"
+                   }
+               },
+               {
+                   "accountId": "544b11bf5291710200000030",
+                   "_id": "547a88cba044760200000060",
+                   "id": "547a88cba044760200000060",
+                   "title": "KnotSuite Performance and Security Group",
+                   "companyName": "",
+                   "groupName": "",
+                   "profileDesc": "",
+                   "email": "molmol@sisigma.com",
+                   "clientURI": "https://dev-frontserver.herokuapp.com/",
+                   "adminId": "545aebb533882c020000003b",
+                   "makeEmployee": false,
+                   "allowFullEnv": false,
+                   "allowPin": false,
+                   "awardApproval": 1,
+                   "awardRules": {
+                       "thumbsUpAward": true,
+                       "peerAwardAnyEmployee": true,
+                       "excelAwardAdminOnly": true,
+                       "xferAwards": true
+                   },
+                   "topStoryRules": {
+                       "allowStoryCollectionFromGroupsWithRels": false,
+                       "allowStoryCollectionFromAllDomainGroups": false,
+                       "topStoryFromGroupsWithRels": false,
+                       "topStoryFromAllAllowedOrgs": false
+                   },
+                   "sharedSpaceRules": {
+                       "accessSharedSpace": true,
+                       "showSharedSpaceTags": true
+                   },
+                   "attributesPredefined": [
+                       {
+                           "attributeId": "53997942671c0d6b6d4498ab",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997950671c0d6b6d4498ac",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997959671c0d6b6d4498ad",
+                           "attributeValue": "KnotSuite Performance and Security Group"
+                       },
+                       {
+                           "attributeId": "53997966671c0d6b6d4498ae",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a19671c0d6b6d4498af",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a30671c0d6b6d4498b0",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997aba671c0d6b6d4498b1",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53b11775671c0d6b6d4498b4",
+                           "attributeValue": "molmol@sisigma.com"
+                       }
+                   ],
+                   "tags": [],
+                   "attributes": [],
+                   "relations": [],
+                   "key": "Organization",
+                   "text": "Scrum Master",
+                   "picture": "api/corporateProfilePic/547a88cba044760200000060/securitylogo.png",
+                   "smallpicture": "api/corporateProfilePic/547a88cba044760200000060/securitylogo.png",
+                   "connTypes": [
+                       "product coordinator"
+                   ],
+                   "connType": "product coordinator",
+                   "isWatched": false,
+                   "entityType": "Organization",
+                   "isAdmin": false,
+                   "admins": [
+                       {
+                           "id": "545aebb533882c020000003b",
+                           "_id": "547a88cba044760200000062",
+                           "joinDate": "2014-11-30T03:02:35.312Z"
+                       }
+                   ],
+                   "predefinedSpaces": {
+                       "publicSpace": "547a88cba04476020000006b",
+                       "sharedSpace": "547a88cba04476020000006c"
+                   }
+               },
+               {
+                   "accountId": "544b11bf5291710200000030",
+                   "_id": "547df4444aa1270200000035",
+                   "id": "547df4444aa1270200000035",
+                   "title": "KnotSuite BS Steering Group",
+                   "companyName": "",
+                   "groupName": "",
+                   "profileDesc": "",
+                   "email": "molmol@sisigma.com",
+                   "clientURI": "https://bn1.notify.windows.com/?token=AwYAAAAo6V0FTmlr7Fg8exQ0dgiE6%2bp5%2bqYB1%2fYvbOXF44CfwNDRjnFLhszGJDlQ%2faC4KyqutGsz1%2bJ7LdOe9fmZgvTVg5BVGTumRQLxjt5HlyyaJ9%2b4PH1sSCleQIdkfGvPYps%3d",
+                   "adminId": "545aebb533882c020000003b",
+                   "makeEmployee": false,
+                   "allowFullEnv": false,
+                   "allowPin": false,
+                   "awardApproval": 1,
+                   "awardRules": {
+                       "thumbsUpAward": true,
+                       "peerAwardAnyEmployee": true,
+                       "excelAwardAdminOnly": true,
+                       "xferAwards": true
+                   },
+                   "topStoryRules": {
+                       "allowStoryCollectionFromGroupsWithRels": false,
+                       "allowStoryCollectionFromAllDomainGroups": false,
+                       "topStoryFromGroupsWithRels": false,
+                       "topStoryFromAllAllowedOrgs": false
+                   },
+                   "sharedSpaceRules": {
+                       "accessSharedSpace": true,
+                       "showSharedSpaceTags": true
+                   },
+                   "attributesPredefined": [
+                       {
+                           "attributeId": "53997942671c0d6b6d4498ab",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997950671c0d6b6d4498ac",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997959671c0d6b6d4498ad",
+                           "attributeValue": "KnotSuite BS Steering Group"
+                       },
+                       {
+                           "attributeId": "53997966671c0d6b6d4498ae",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a19671c0d6b6d4498af",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a30671c0d6b6d4498b0",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997aba671c0d6b6d4498b1",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53b11775671c0d6b6d4498b4",
+                           "attributeValue": "molmol@sisigma.com"
+                       }
+                   ],
+                   "tags": [],
+                   "attributes": [],
+                   "relations": [],
+                   "key": "Organization",
+                   "text": "Scrum Master",
+                   "picture": "api/corporateProfilePic/547df4444aa1270200000035/bsmanagementlogo.png",
+                   "smallpicture": "api/corporateProfilePic/547df4444aa1270200000035/bsmanagementlogo.png",
+                   "connTypes": [
+                       "employee"
+                   ],
+                   "connType": "employee",
+                   "isWatched": false,
+                   "entityType": "Organization",
+                   "isAdmin": false,
+                   "admins": [
+                       {
+                           "id": "545aebb533882c020000003b",
+                           "_id": "547df4444aa1270200000037",
+                           "joinDate": "2014-12-02T17:17:56.390Z"
+                       }
+                   ],
+                   "predefinedSpaces": {
+                       "publicSpace": "547df4444aa1270200000040",
+                       "sharedSpace": "547df4444aa1270200000041"
+                   }
+               },
+               {
+                   "accountId": "544b11bf5291710200000030",
+                   "_id": "54cf89fd79ee0f03000000bf",
+                   "id": "54cf89fd79ee0f03000000bf",
+                   "title": "IliasSpace",
+                   "companyName": "IliasSpaceCompany",
+                   "groupName": "IliasSpaceGroup",
+                   "profileDesc": "",
+                   "email": "brian.tobey123@gmail.com",
+                   "clientURI": "https://sin.notify.windows.com/?token=AwYAAACja8jlidlqS0s97pOayq1%2bYZl%2bCMzyqnFlxLUfj%2fdc2a1hC%2bj6fazKEtWSE2qpLGR0ezm96IFbyroF%2bgrXVg4Mn6xPp%2bEBe%2fup5LuHp%2b8R7KAcdZqbWyxhHskvYPiDsbU%3d",
+                   "adminId": "544b11bf5291710200000030",
+                   "makeEmployee": false,
+                   "allowFullEnv": false,
+                   "allowPin": false,
+                   "awardApproval": 1,
+                   "awardRules": {
+                       "thumbsUpAward": true,
+                       "peerAwardAnyEmployee": true,
+                       "excelAwardAdminOnly": true,
+                       "xferAwards": true
+                   },
+                   "topStoryRules": {
+                       "allowStoryCollectionFromGroupsWithRels": false,
+                       "allowStoryCollectionFromAllDomainGroups": false,
+                       "topStoryFromGroupsWithRels": false,
+                       "topStoryFromAllAllowedOrgs": false
+                   },
+                   "sharedSpaceRules": {
+                       "accessSharedSpace": true,
+                       "showSharedSpaceTags": true
+                   },
+                   "attributesPredefined": [
+                       {
+                           "attributeId": "53997942671c0d6b6d4498ab",
+                           "attributeValue": "IliasSpaceCompany"
+                       },
+                       {
+                           "attributeId": "53997950671c0d6b6d4498ac",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997959671c0d6b6d4498ad",
+                           "attributeValue": "IliasSpace"
+                       },
+                       {
+                           "attributeId": "53997966671c0d6b6d4498ae",
+                           "attributeValue": "IliasSpaceGroup"
+                       },
+                       {
+                           "attributeId": "53997a19671c0d6b6d4498af",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a30671c0d6b6d4498b0",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997aba671c0d6b6d4498b1",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53b11775671c0d6b6d4498b4",
+                           "attributeValue": "brian.tobey123@gmail.com"
+                       }
+                   ],
+                   "tags": [],
+                   "attributes": [],
+                   "relations": [],
+                   "key": "Organization",
+                   "text": "Scrum Master",
+                   "picture": "api/defaultImages/image/org.png",
+                   "smallpicture": "api/defaultImages/image/org.png",
+                   "connTypes": [
+                       "admin",
+                       "employee"
+                   ],
+                   "connType": "admin",
+                   "isWatched": false,
+                   "entityType": "Organization",
+                   "isAdmin": true,
+                   "admins": [
+                       {
+                           "id": "544b11bf5291710200000030",
+                           "_id": "54cf89fd79ee0f03000000c1",
+                           "joinDate": "2015-02-02T14:30:21.569Z"
+                       }
+                   ],
+                   "predefinedSpaces": {
+                       "publicSpace": "54cf89fe79ee0f03000000cc",
+                       "sharedSpace": "54cf89fe79ee0f03000000cd"
+                   }
+               },
+               {
+                   "accountId": "544b11bf5291710200000030",
+                   "_id": "54db097ec92ceb03000000f7",
+                   "id": "54db097ec92ceb03000000f7",
+                   "title": "KSW",
+                   "companyName": "KnotSuite",
+                   "groupName": "KnotSuiteWeb",
+                   "profileDesc": "",
+                   "email": "illias@brainstation-23.com",
+                   "clientURI": "https://sin.notify.windows.com/?token=AwYAAADR1Y%2fLJwAL9JAm8Okcwo1D6dXZpuaV53aK0Jx%2bjLgwjO1MD83QO%2fEyvEfA5vLjJKicszvlHSqTAG1HyVyA3NiJYu6gvt7ExiRCT96oB5CH1JeWQEkjNcF4ZYefnIBYXIM%3d",
+                   "adminId": "54db04d1c92ceb03000000da",
+                   "makeEmployee": false,
+                   "allowFullEnv": false,
+                   "allowPin": false,
+                   "awardApproval": 1,
+                   "awardRules": {
+                       "thumbsUpAward": true,
+                       "peerAwardAnyEmployee": true,
+                       "excelAwardAdminOnly": true,
+                       "xferAwards": true
+                   },
+                   "topStoryRules": {
+                       "allowStoryCollectionFromGroupsWithRels": false,
+                       "allowStoryCollectionFromAllDomainGroups": false,
+                       "topStoryFromGroupsWithRels": false,
+                       "topStoryFromAllAllowedOrgs": false
+                   },
+                   "sharedSpaceRules": {
+                       "accessSharedSpace": true,
+                       "showSharedSpaceTags": true
+                   },
+                   "attributesPredefined": [
+                       {
+                           "attributeId": "53997942671c0d6b6d4498ab",
+                           "attributeValue": "KnotSuite"
+                       },
+                       {
+                           "attributeId": "53997950671c0d6b6d4498ac",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997959671c0d6b6d4498ad",
+                           "attributeValue": "KSW"
+                       },
+                       {
+                           "attributeId": "53997966671c0d6b6d4498ae",
+                           "attributeValue": "KnotSuiteWeb"
+                       },
+                       {
+                           "attributeId": "53997a19671c0d6b6d4498af",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997a30671c0d6b6d4498b0",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53997aba671c0d6b6d4498b1",
+                           "attributeValue": ""
+                       },
+                       {
+                           "attributeId": "53b11775671c0d6b6d4498b4",
+                           "attributeValue": "illias@brainstation-23.com"
+                       }
+                   ],
+                   "tags": [],
+                   "attributes": [],
+                   "relations": [],
+                   "key": "Organization",
+                   "text": "Scrum Master",
+                   "picture": "api/defaultImages/image/org.png",
+                   "smallpicture": "api/defaultImages/image/org.png",
+                   "connTypes": [
+                       "connection"
+                   ],
+                   "connType": "connection",
+                   "isWatched": false,
+                   "entityType": "Organization",
+                   "isAdmin": false,
+                   "admins": [
+                       {
+                           "id": "54db04d1c92ceb03000000da",
+                           "_id": "54db097ec92ceb03000000f8",
+                           "joinDate": "2015-02-11T07:49:18.891Z"
+                       }
+                   ],
+                   "predefinedSpaces": {
+                       "publicSpace": "54db097fc92ceb0300000102",
+                       "sharedSpace": "54db097fc92ceb0300000103"
+                   }
                }
            ];
+
+            var nominatedAwards = [
+                {
+                    "awardTrackId": "54f4474a809cd70300000058",
+                    "awardId": "54f4474a809cd70300000057",
+                    "title": "Good Job!",
+                    "description": "For doing a good job.",
+                    "image": "api/signals/1421670010180/getAttachment/Award_goodjob.png",
+                    "pledgeCount": 3,
+                    "initialPledgeRequired": 5,
+                    "canPledge": false,
+                    "status": "nominated"
+                },
+                {
+                    "awardTrackId": "54c2a6c8ab29490300000085",
+                    "awardId": "54c2a6c8ab29490300000084",
+                    "title": "Excellent",
+                    "description": "For doing an excellent job!",
+                    "image": "api/signals/1421669908455/getAttachment/Award_excellent.png",
+                    "pledgeCount": 4,
+                    "initialPledgeRequired": 5,
+                    "canPledge": false,
+                    "status": "nominated"
+                },
+                {
+                    "awardTrackId": "54f574499626f00300000085",
+                    "awardId": "54f574499626f00300000084",
+                    "title": "Speed Demon",
+                    "description": "For beating a deadline way before time.",
+                    "image": "api/signals/1421670423567/getAttachment/Award_speeddemon.png",
+                    "pledgeCount": 5,
+                    "initialPledgeRequired": 5,
+                    "canPledge": true,
+                    "status": "nominated"
+                },
+                {
+                    "awardTrackId": "54f574659626f00300000089",
+                    "awardId": "54f574659626f00300000088",
+                    "title": "Test",
+                    "description": "Award",
+                    "image": "api/defaultImages/image/award.png",
+                    "pledgeCount": 2,
+                    "initialPledgeRequired": 2,
+                    "canPledge": true,
+                    "status": "nominated"
+                }
+            ];
+
+            var awards = [
+                {
+                    "awardTrackId": "54f574659626f00300000089",
+                    "awardId": "54f574659626f00300000088",
+                    "title": "Test",
+                    "description": "Award",
+                    "image": "api/defaultImages/image/award.png",
+                    "pledgeCount": 0,
+                    "initialPledgeRequired": 2,
+                    "canPledge": false,
+                    "status": "awarded"
+                }
+            ]
+
+            var prodUrl = 'https://prod-frontserver.herokuapp.com/';
+
+            return{
+                getConnection :function(){
+                    var tempResult = angular.copy(peoplePickerResults);
+                    for(var i = 0 ; i<tempResult.length;i++){
+                        tempResult[i].smallpicture = prodUrl + tempResult[i].smallpicture;
+                    }
+                    return tempResult;
+                },
+                getAward: function(){
+                    var tempAward = angular.copy(awards);
+                    angular.forEach(tempAward,function(award){
+                       award.image = prodUrl +  award.image;
+                    });
+                    return tempAward;
+                },
+                getNominatedAward: function(){
+                    var tempNominatedAward = angular.copy(nominatedAwards);
+                    angular.forEach(tempNominatedAward,function(award){
+                        award.image = prodUrl +  award.image;
+                    });
+                    return tempNominatedAward;
+                }
+            }
         });
 })();

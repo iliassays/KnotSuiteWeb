@@ -2,18 +2,18 @@
 (function () {
 })(
     angular.module('application').controller("NavigationCtrl",
-        ["$scope", "LoginService", "FoundationActionSheet", "EventService", "$location", "ApiService",
-            function ($scope, LoginService, FoundationActionSheet, EventService, $location, ApiService) {
+        ["$scope", "LoginService", "FoundationActionSheet", "EventService", "$location", "ApiService","$rootScope",
+            function ($scope, LoginService, FoundationActionSheet, EventService, $location, ApiService,$rootScope) {
 
-                $scope.isLoggedIn = LoginService.isLoggedIn();
+                $rootScope.isLoggedIn = LoginService.isLoggedIn();
 
                 EventService.on('signedIn', function () {
-                    $scope.isLoggedIn = LoginService.isLoggedIn();
+                    $rootScope.isLoggedIn = LoginService.isLoggedIn();
                 });
 
                 $scope.signOut = function () {
                     LoginService.signOut();
-                    $scope.isLoggedIn = false;
+                    $rootScope.isLoggedIn = false;
                     $location.path('/');
 
                 };
@@ -21,6 +21,7 @@
                 EventService.on('updateProfilePicture', function (event,userData) {
                     $scope.profilePicture = ApiService.apiUrl + '/' + userData.imgSrc;
                     $scope.userName = userData.userName;
+                    $scope.accountType = userData.accountType;
                 });
 
             }])

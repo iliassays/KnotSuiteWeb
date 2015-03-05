@@ -60,7 +60,8 @@ var appJS = [
   'client/assets/js/directives/kswProfilePicture.js',
   'client/assets/js/directives/kswComposeSignal.js',
   'client/assets/js/directives/kswFileOnchange.js',
-  'client/assets/js/directives/kswPeoplePicker.js'
+  'client/assets/js/directives/kswPeoplePicker.js',
+  'client/assets/js/directives/kswLoggedInUser.js'
 ];
 
 // 3. TASKS

@@ -18,14 +18,18 @@
     cursor: pointer;
     p {
       line-height: 0;
-      text-align: center;
+      text-align: left;
       font-size: 14px;
       color: rgb(67, 184, 234);
     }
     p:first-of-type {
-      padding-top: 36px;
       color: #000000;
-      font-weight: bold;
+      margin-bottom: 0px;
+      text-overflow: ellipsis;
+      width: 188px;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 36px 10px 10px;
     }
     .email-container {
       text-overflow: ellipsis;
@@ -33,6 +37,7 @@
       white-space: nowrap;
       overflow: hidden;
       padding: 10px;
+      font-size: 12px;
     }
     @media only screen and (min-width: 90.063em) and (max-width: 120em) {
       .email-container {

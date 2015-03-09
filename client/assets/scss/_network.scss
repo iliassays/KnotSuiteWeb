@@ -21,10 +21,13 @@
       color: rgb(67, 184, 234);
     }
     p:first-of-type{
-      padding-top: 36px;
       color: #000000;
-      padding-left: 10px;
-      margin-bottom: 8px;
+      margin-bottom: 0px;
+      text-overflow: ellipsis;
+      width: 188px;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 36px 10px 10px;
     }
     .email-container{
       text-overflow: ellipsis;

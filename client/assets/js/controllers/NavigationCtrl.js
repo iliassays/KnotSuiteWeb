@@ -18,10 +18,20 @@
 
                 };
 
+                $scope.changeAccountType = function(connection){
+                    FoundationActionSheet.deactivate('current-user');
+                    $scope.accountType = connection.title;
+                    $scope.profilePicture = ApiService.apiUrl+'/'+connection.smallpicture;
+                };
+
+                $scope.getPictureUrl = function(connection){
+                  return   ApiService.apiUrl+'/'+connection.smallpicture;
+                };
+
                 EventService.on('updateProfilePicture', function (event,userData) {
                     $scope.profilePicture = ApiService.apiUrl + '/' + userData.imgSrc;
                     $scope.userName = userData.userName;
-                    $scope.accountType = userData.accountType;
+                    $scope.accountType = userData.accountType + " Account";
                 });
 
             }])

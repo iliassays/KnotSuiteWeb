@@ -1,12 +1,15 @@
 .site-header {
-  .action-sheet.is-active {
-    transform: translateX(-93%) translateY(100%);
+  .action-sheet {
+    border-radius: 0;
   }
-
   .action-sheet::before, .action-sheet::after {
     left: 94%;
   }
-
+  @media only screen and (min-width: 50em){
+    .action-sheet.is-active{
+      transform: translateX(-93%) translateY(100%);
+    }
+  }
   .menu-bar-color {
     background-color: transparent !important;
   }

@@ -48,6 +48,7 @@ var appJS = [
   'client/assets/js/services/ProfileService.js',
   'client/assets/js/services/EventService.js',
   'client/assets/js/services/DummyDataService.js',
+  'client/assets/js/services/MixPanelService.js',
   'client/assets/js/controllers/LoginCtrl.js',
   'client/assets/js/controllers/ProfileCtrl.js',
   'client/assets/js/controllers/PersonalSettingsCtrl.js',

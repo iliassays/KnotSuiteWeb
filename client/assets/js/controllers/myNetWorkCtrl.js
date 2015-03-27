@@ -1,8 +1,9 @@
 "use strict";
 (function () {
     angular.module("application")
-        .controller("myNetWorkCtrl", ["$scope", "DummyDataService",
-            function ($scope, DummyDataService) {
+        .controller("myNetWorkCtrl", ["$scope", "DummyDataService","MixPanelService",
+            function ($scope, DummyDataService,MixPanelService) {
+                MixPanelService.track("My Network");
                 $scope.groupCollection = {};
                 $scope.peoplePickerGroups = [
                     {key: "connType", value: "Group by connection type"},

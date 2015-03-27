@@ -2,9 +2,9 @@
 (function () {
     angular.module('application')
         .controller('LoginCtrl',
-        ['$scope', 'LoginService', '$location', '$rootScope', 'EventService',
-            function ($scope, LoginService, $location, $rootScope, EventService) {
-
+        ['$scope', 'LoginService', '$location', '$rootScope', 'EventService','MixPanelService',
+            function ($scope, LoginService, $location, $rootScope, EventService,MixPanelService) {
+                MixPanelService.track("Login Page");
                 if (LoginService.isLoggedIn()) {
                     $location.path('/myProfile');
                 }

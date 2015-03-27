@@ -1,8 +1,9 @@
 "use strict";
 (function () {
     angular.module('application').controller('myProfileCtrl',
-        ["$scope", "ProfileService", "ApiService", "LoginService", "$location","DummyDataService","$state",
-            function ($scope, ProfileService, ApiService, LoginService, $location,DummyDataService,$state) {
+        ["$scope", "ProfileService", "ApiService", "LoginService", "$location","DummyDataService","$state","MixPanelService",
+            function ($scope, ProfileService, ApiService, LoginService, $location,DummyDataService,$state,MixPanelService) {
+                MixPanelService.track("My Profile");
                 var userId = LoginService.getCurrentUserId();
                 $state.go('myProfile.signal');
                 $scope.signal = {

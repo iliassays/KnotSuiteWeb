@@ -43,11 +43,15 @@ var appJS = [
   'client/assets/js/modules/kswDirectiveModule.js',
   'client/assets/js/modules/kswFilterModule.js',
   'client/assets/js/filters/kswCapitalizeFilter.js',
+  'client/assets/js/filters/kswUrlFilter.js',
+  'client/assets/js/filters/kswDateDifference.js',
+  'client/assets/js/filters/kswUserNameFilter.js',
   'client/assets/js/services/ApiService.js',
   'client/assets/js/services/LoginService.js',
-  'client/assets/js/services/ProfileService.js',
+  'client/assets/js/services/UserContextService.js',
   'client/assets/js/services/EventService.js',
   'client/assets/js/services/DummyDataService.js',
+  'client/assets/js/services/SignalService.js',
   'client/assets/js/services/MixPanelService.js',
   'client/assets/js/controllers/LoginCtrl.js',
   'client/assets/js/controllers/ProfileCtrl.js',
@@ -62,7 +66,9 @@ var appJS = [
   'client/assets/js/directives/kswComposeSignal.js',
   'client/assets/js/directives/kswFileOnchange.js',
   'client/assets/js/directives/kswPeoplePicker.js',
-  'client/assets/js/directives/kswLoggedInUser.js'
+  'client/assets/js/directives/kswLoggedInUser.js',
+  'client/assets/js/directives/kswOnScroll.js',
+  'client/assets/js/directives/kswUpdateStringArea.js'
 ];
 
 // 3. TASKS

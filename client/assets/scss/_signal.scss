@@ -1,7 +1,7 @@
-$signal-icon-height:40px;
-$signal-icon-width:40px;
+$signal-icon-height: 40px;
+$signal-icon-width: 40px;
 
-@mixin signal-icon-common-style($background-image){
+@mixin signal-icon-common-style($background-image) {
   width: $signal-icon-width;
   height: $signal-icon-height;
   background: url($background-image) no-repeat;
@@ -9,23 +9,23 @@ $signal-icon-width:40px;
   cursor: pointer;
 }
 
-.compose-signal{
+.compose-signal {
   background-color: rgb(11, 90, 11);
   padding-top: 10px;
   padding-top: 14px;
   border-radius: 11px;
-  margin-left: 2px!important;
+  margin-left: 2px !important;
 
-  textarea{
+  textarea {
     resize: none;
-    margin-bottom:0;
+    margin-bottom: 0;
     border: none;
     height: 64px;
   }
-  .tagged-people{
+  .tagged-people {
     background-color: white;
     height: 46px;
-    img{
+    img {
       height: 45px;
       width: 45px;
       float: left;
@@ -33,30 +33,30 @@ $signal-icon-width:40px;
       border: 1px solid;
     }
   }
-  .attached-files{
+  .attached-files {
     float: left;
     padding: 3px;
     background-color: white;
     width: 100%;
     margin-bottom: 4px;
-    label{
+    label {
       margin-right: 3px;
       float: left;
       color: rgb(67, 184, 234);
     }
-    i{
+    i {
       background-color: red;
       cursor: pointer;
     }
   }
 
-  .signal-bottom{
+  .signal-bottom {
     margin-top: 6px;
     padding-right: 0;
-    .signal-attachment{
+    .signal-attachment {
       @include signal-icon-common-style('/assets/img/icons/signal/attach_file.png');
       overflow: hidden;
-      input{
+      input {
         display: block !important;
         width: 40px !important;
         height: 40px !important;
@@ -64,26 +64,92 @@ $signal-icon-width:40px;
         overflow: hidden !important;
       }
     }
-    .signal-people-picker{
+    .signal-people-picker {
       @include signal-icon-common-style('/assets/img/icons/signal/add_org.png');
     }
-    .signal-connection{
+    .signal-connection {
       @include signal-icon-common-style('/assets/img/icons/signal/add_tag.png');
       margin-left: 3px;
     }
-    .signal-post-button{
+    .signal-post-button {
       float: right;
-      a{
+      a {
         width: 90px;
       }
     }
-    .signal-audience{
+    .signal-audience {
       float: left;
       margin-top: 11px;
       padding-left: 12px;
-      a{
+      a {
         color: white;
       }
     }
+  }
+}
+
+.signal-main {
+  background: #ffffff;
+  padding: 10px;
+  border: 1px solid  #CAC8C8;
+  margin-left: 13px;
+  margin-top: 9px;
+  .signal-content {
+    border-bottom: 1px solid rgb(239, 231, 231);
+    min-height: 80px;
+    padding-bottom: 25px;
+  }
+  .bottom {
+    margin-left: 75px;
+    margin-top: 12px;
+    color: gray;
+    i{
+      cursor: pointer;
+    }
+    p{
+      font-size: 13px;
+    }
+    p:first-of-type{
+      float: left;
+    }
+    p:nth-child(2){
+      float: right;
+    }
+
+    a{
+      float: right;
+    }
+  }
+
+  img {
+    float: left;
+    height: 60px;
+    width: 60px;
+  }
+  .message {
+    margin-left: 75px;
+    text-align: justify;
+  }
+  .signal-header {
+    background-color: rgb(244, 234, 217);
+    padding: 5px;
+    margin-bottom: 8px;
+    span {
+      color: #60a8cd;
+    }
+  }
+  .userName {
+    color: rgb(96, 168, 205);
+  }
+
+  .signal-comment {
+    clear: both;
+    margin-top: 18px;
+    img {
+      height: 50px;
+      width: 50px;
+      float: left;
+    }
+
   }
 }

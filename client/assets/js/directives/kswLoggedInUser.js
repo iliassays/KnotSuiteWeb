@@ -10,7 +10,7 @@
                 link: function (scope, element, attrs) {
                     scope.$watch('currentUserPhoto', function(newValue, oldValue) {
                         element.css({
-                            'background': 'url(' + newValue + ')',
+                            'background': 'url('+newValue+')',
                             'width': '60px',
                             'background-size': '100% 100%',
                             'background-repeat': 'no-repeat'

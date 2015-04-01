@@ -2,10 +2,11 @@
 (function () {
     angular.module('application')
         .controller('LoginCtrl',
-        ['$scope', 'LoginService', '$location', '$rootScope', 'EventService','MixPanelService',
-            function ($scope, LoginService, $location, $rootScope, EventService,MixPanelService) {
+        ['$scope', 'LoginService', '$location', '$rootScope', 'EventService','MixPanelService','UserContextService',
+            function ($scope, LoginService, $location, $rootScope, EventService,MixPanelService,UserContextService) {
                 MixPanelService.track("Login Page");
-                if (LoginService.isLoggedIn()) {
+
+                if (UserContextService.isLoggedIn()) {
                     $location.path('/myProfile');
                 }
 
@@ -32,10 +33,9 @@
                 $scope.loginNow = function () {
                     LoginService.sendLoginRequest($scope.user).then(function (data) {
                         console.log(data);
-                        if(data.accountStatus==2){
-                            LoginService.saveAccessToken(data.userObj.accessToken);
-                            LoginService.saveAccountId(data.userObj.accountId);
-                            $rootScope.userData = data.userObj;
+                        if(data.accountStatus == 2){
+                            UserContextService.saveCurrentUserData(data.userObj);
+                            //$rootScope.userData = data.userObj;
                             EventService.trigger('signedIn');
                             EventService.trigger('updateProfilePicture',data.userObj);
                             $location.path('/myProfile');

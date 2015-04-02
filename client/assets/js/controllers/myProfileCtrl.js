@@ -9,8 +9,8 @@
             "DummyDataService",
             "$state",
             "MixPanelService",
-            "SignalService","EventService",
-            function ($scope, UserContextService, ApiService, LoginService, $location, DummyDataService, $state, MixPanelService, SignalService,EventService) {
+            "SignalService", "EventService",
+            function ($scope, UserContextService, ApiService, LoginService, $location, DummyDataService, $state, MixPanelService, SignalService, EventService) {
                 MixPanelService.track("My Profile");
                 var userId = UserContextService.getCurrentUserId();
                 $state.go('myProfile.signal');
@@ -25,7 +25,7 @@
                 $scope.signalOffSet = 0;
 
                 UserContextService.getProfileById(userId).then(function (data) {
-                    $scope.myPhoto =  data.connData.imgSrc;
+                    $scope.myPhoto = data.connData.imgSrc;
                     $scope.myName = data.connData.firstName + " " + data.connData.lastName;
                     $scope.myEmail = data.connData.email;
                 });
@@ -33,10 +33,12 @@
                 SignalService.getSignals($scope.signalOffSet).then(function (signals) {
                     console.log(signals);
                     $scope.signals = [];
-                    angular.forEach(signals.data,function(signal){
-                       if(signal.hasOwnProperty('doc')){
-                           $scope.signals.push(signal);
-                       }
+                    angular.forEach(signals.data, function (signal) {
+                        if (signal.hasOwnProperty('doc')) {
+                            signal.newComment = {};
+                            signal.newComment.attachemnts = [];
+                            $scope.signals.push(signal);
+                        }
                     });
                 });
 
@@ -66,11 +68,6 @@
 
                 $scope.showPeoplePicker = function () {
                     SignalService.getConnections().then(function (connections) {
-
-                        angular.forEach(connections, function (connection) {
-                            connection.smallpicture = ApiService.apiUrl + "/" + connection.smallpicture;
-                        });
-
                         $scope.peoplePickerFlag = true;
 
                         $scope.groupCollection["connType"] = _.groupBy(connections, function (m) {
@@ -115,37 +112,89 @@
                     // console.log(signal);
                 }
 
-                $scope.commented = function(data){
-                    return data.replace(/<\/?(user)\b[^<>]*>/g, "")
+                $scope.commented = function (data) {
+                    return data.replace(/<\/?(user)\b[^<>]*>/g, "");
                 }
 
-                $scope.saveDisLike = function(signal){
-                   SignalService.saveFeedback('n',signal._id)
-                       .then(function(response){
-                         if(response.code){
-                             signal.fbYes = response.data.fbYes;
-                             signal.fbNo = response.data.fbNo;
-                         }
-                       });;
+                $scope.saveDisLike = function (signal) {
+                    SignalService.saveFeedback('n', signal._id)
+                        .then(function (response) {
+                            if (response.code) {
+                                signal.fbYes = response.data.fbYes;
+                                signal.fbNo = response.data.fbNo;
+                            }
+                        });
+                    ;
                 }
 
-                $scope.saveLike = function(signal){
-                    SignalService.saveFeedback('y',signal._id)
-                        .then(function(response){
-                            signal.fbYes = response.data.fbYes;
-                            signal.fbNo = response.data.fbNo;
+                $scope.saveLike = function (signal) {
+                    SignalService.saveFeedback('y', signal._id)
+                        .then(function (response) {
+                            if (response.code) {
+                                signal.fbYes = response.data.fbYes;
+                                signal.fbNo = response.data.fbNo;
+                            }
                         });
                 }
 
-                $scope.loadMoreSignal = function(){
-                    $scope.signalOffSet +=10;
+                $scope.loadMoreSignal = function () {
+                    $scope.signalOffSet += 10;
                     SignalService.getSignals($scope.signalOffSet).then(function (signals) {
-                        angular.forEach(signals.data,function(signal){
-                            if(signal.hasOwnProperty('doc')){
+                        angular.forEach(signals.data, function (signal) {
+                            if (signal.hasOwnProperty('doc')) {
                                 $scope.signals.push(signal);
                             }
                         });
                     });
+                }
+
+                $scope.onCommentAttachmentChange = function (signal) {
+                    var attachments = event.target.files;
+                    angular.forEach(attachments, function (attachment) {
+                        var fileReader = new FileReader();
+                        fileReader.onload = function (fileLoadedEvent) {
+                            var attachmentData = fileLoadedEvent.target.result.replace(/^data(.*?),/, '');
+                            signal.newComment.attachemnts.push({name: attachment.name, fileBase64: attachmentData});
+                            $scope.$apply();
+                            console.log(signal.newComment.attachemnts);
+                        }
+                        fileReader.readAsDataURL(attachment);
+                    });
+                }
+
+                $scope.saveNewComment = function (signal) {
+
+                    signal.newComment.attachemntUrls = [];
+
+
+                    angular.forEach(signal.newComment.attachemnts, function (attachment) {
+                        SignalService.attachNewFileMobile(attachment).then(function (response) {
+
+                            console.log(response);
+
+                            signal.newComment.attachemntUrls.push(response.url);
+
+                            console.log(signal.newComment.attachemnts.length);
+                            console.log(signal.newComment.attachemnts.length);
+
+                            if (signal.newComment.attachemntUrls.length == signal.newComment.attachemnts.length) {
+                                SignalService.saveComment(signal).then(function (response) {
+                                    console.log(response);
+                                    if (response.code) {
+                                        signal.comments.push(response.data);
+                                        signal.newComment = {};
+                                        signal.newComment.attachemnts = [];
+                                    }
+                                });
+                            }
+
+                        });
+                    });
+                }
+
+
+                $scope.removeNewCommentAttachment = function (attachment, signal) {
+                    signal.newComment.attachemnts.splice(signal.newComment.attachemnts.indexOf(attachment), 1);
                 }
 
             }]);

@@ -115,10 +115,6 @@ $signal-icon-width: 40px;
     p:nth-child(2){
       float: right;
     }
-
-    a{
-      float: right;
-    }
   }
 
   img {
@@ -132,7 +128,7 @@ $signal-icon-width: 40px;
   }
   .signal-header {
     background-color: rgb(244, 234, 217);
-    padding: 5px;
+    padding: 1rem;
     margin-bottom: 8px;
     span {
       color: #60a8cd;
@@ -150,6 +146,40 @@ $signal-icon-width: 40px;
       width: 50px;
       float: left;
     }
-
+  }
+  .new-comment{
+    clear: both;
+    .new-comment-attachment{
+      margin-left: 75px;
+      label{
+        color: #008CBA;
+        i{
+          color: red;
+          cursor: pointer;
+        }
+      }
+    }
+    .new-comment-bottom{
+      margin-left: 75px;
+      .attachment{
+        width: 40px;
+        height: 40px;
+        background: #6dc631 url("/assets/img/icons/signal/attach_file.png") no-repeat;
+        float: left;
+        cursor: pointer;
+        overflow: hidden;
+        background-position: 50% 50%;
+        input{
+          display: block !important;
+          width: 40px !important;
+          height: 40px !important;
+          opacity: 0 !important;
+          overflow: hidden !important;
+        }
+      }
+      a{
+        float: right;
+      }
+    }
   }
 }

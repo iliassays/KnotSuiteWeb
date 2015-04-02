@@ -37,9 +37,20 @@
                 };
                 return ApiService.post('/corporateHub/getMainHubActivities', data);
             };
+
+            var saveFeedback = function (fbType,signalId){
+                var data = {
+                    accessToken: UserContextService.getAccessToken(),
+                    signalId: signalId,
+                    fbType: fbType
+                };
+                return ApiService.post('/api/signals/saveFeedback', data);
+            }
+
             return {
                 getConnections: getConnections,
-                getSignals: getSignals
+                getSignals: getSignals,
+                saveFeedback:saveFeedback
             }
         }]);
 })();

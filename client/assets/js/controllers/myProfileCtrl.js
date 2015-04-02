@@ -41,7 +41,7 @@
                 });
 
                 EventService.on('onBodyScroll', function (event) {
-                    console.log("sadf");
+
                 });
 
                 $scope.onAttachmentChange = function (attachment) {
@@ -117,6 +117,24 @@
 
                 $scope.commented = function(data){
                     return data.replace(/<\/?(user)\b[^<>]*>/g, "")
+                }
+
+                $scope.saveDisLike = function(signal){
+                   SignalService.saveFeedback('n',signal._id)
+                       .then(function(response){
+                         if(response.code){
+                             signal.fbYes = response.data.fbYes;
+                             signal.fbNo = response.data.fbNo;
+                         }
+                       });;
+                }
+
+                $scope.saveLike = function(signal){
+                    SignalService.saveFeedback('y',signal._id)
+                        .then(function(response){
+                            signal.fbYes = response.data.fbYes;
+                            signal.fbNo = response.data.fbNo;
+                        });
                 }
 
             }]);

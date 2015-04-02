@@ -12,7 +12,7 @@
                         var firstPartOfUrl = newValue.substr(0,newValue.lastIndexOf('/'));
                         var lastPartOfUrl = newValue.substr(newValue.lastIndexOf('/'));
                         if(lastPartOfUrl.indexOf(' ')){
-                            newValue = firstPartOfUrl + lastPartOfUrl.replace(' ','%20');
+                            newValue = firstPartOfUrl + lastPartOfUrl.replace(/ /g,'%20');
                         }
                         element.css({
                             'background-image': "url("+newValue+")",

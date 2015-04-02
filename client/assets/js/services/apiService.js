@@ -4,7 +4,7 @@ angular.module('application')
     .factory('ApiService',["$q","$http",function($q,$http){
         var baseDevUrl = "https://dev-frontserver.herokuapp.com";
         var baseProdUrl = "https://prod-frontserver.herokuapp.com";
-        var baseUrl = baseProdUrl;
+        var baseUrl = baseDevUrl;
 
     var post = function(url,data){
         var deferred = $q.defer();

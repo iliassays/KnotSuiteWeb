@@ -137,5 +137,16 @@
                         });
                 }
 
+                $scope.loadMoreSignal = function(){
+                    $scope.signalOffSet +=10;
+                    SignalService.getSignals($scope.signalOffSet).then(function (signals) {
+                        angular.forEach(signals.data,function(signal){
+                            if(signal.hasOwnProperty('doc')){
+                                $scope.signals.push(signal);
+                            }
+                        });
+                    });
+                }
+
             }]);
 })();

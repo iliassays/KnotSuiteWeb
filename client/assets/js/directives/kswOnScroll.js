@@ -5,6 +5,7 @@
             return {
                 restrict: "A",
                 link: function (scope, element, attrs) {
+
                     element.bind('scroll',function(){
                         EventService.trigger("onBodyScroll");
                     });

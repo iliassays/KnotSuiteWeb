@@ -35,8 +35,9 @@
                     $scope.signals = [];
                     angular.forEach(signals.data, function (signal) {
                         if (signal.hasOwnProperty('doc')) {
-                            signal.newComment = {};
-                            signal.newComment.attachemnts = [];
+                            signal.newComment = {
+                                attachments : []
+                            };
                             $scope.signals.push(signal);
                         }
                     });
@@ -47,18 +48,21 @@
                 });
 
                 $scope.onAttachmentChange = function (attachment) {
-                    var attachment = event.target.files[0];
-                    var fileReader = new FileReader();
-                    fileReader.onload = function (fileLoadedEvent) {
-                        var attachmentData = fileLoadedEvent.target.result.replace(/^data(.*?),/, '');
-                        $scope.signal.attachments.push({
-                            fileName: attachment.name,
-                            attachmentContent: attachmentData
-                        });
-                        $scope.$apply();
-                        console.log($scope.signal.attachments);
-                    }
-                    fileReader.readAsDataURL(attachment);
+                    var attachments = event.target.files;
+
+                    angular.forEach(attachments, function (attachment) {
+                        var fileReader = new FileReader();
+                        fileReader.onload = function (fileLoadedEvent) {
+                            var attachmentData = fileLoadedEvent.target.result.replace(/^data(.*?),/, '');
+                            $scope.signal.attachments.push({
+                                name: attachment.name,
+                                fileBase64: attachmentData
+                            });
+                            $scope.$apply();
+                            console.log($scope.signal.attachments);
+                        }
+                        fileReader.readAsDataURL(attachment);
+                    });
                 };
 
                 $scope.removeAttachment = function (attachment) {
@@ -109,11 +113,59 @@
                 }
 
                 $scope.postSignal = function (signal) {
-                    // console.log(signal);
-                }
+                    console.log(signal);
+                    signal.attachmentUrl = [];
+                     if(!signal.attachments.length){
+                         SignalService.saveSignal(signal)
+                             .then(function(response){
 
-                $scope.commented = function (data) {
-                    return data.replace(/<\/?(user)\b[^<>]*>/g, "");
+                                 var newSignal = {
+                                     doc: response.data,
+                                     newComment:{
+                                         attachments:[]
+                                     },
+                                     comments:[]
+                                 }
+
+                                 $scope.signals.unshift(newSignal);
+
+                                 $scope.signal = {
+                                     content: '',
+                                     taggedPeople: [],
+                                     attachments: [],
+                                     attachmentUrl:[]
+                                 };
+
+                             });
+                     }else{
+                         angular.forEach(signal.attachments, function (attachment) {
+                             SignalService.attachNewFileMobile(attachment).then(function (response) {
+
+                                 signal.attachmentUrl.push(response.url);
+
+                                 if (signal.attachmentUrl.length == signal.attachments.length) {
+                                     SignalService.saveSignal(signal).then(function (response) {
+                                         console.log(response);
+                                         var newSignal = {
+                                             doc: response.data,
+                                             newComment:{
+                                                 attachments:[]
+                                             },
+                                             comments:[]
+                                         }
+                                         $scope.signals.unshift(newSignal);
+                                         $scope.signal = {
+                                             content: '',
+                                             taggedPeople: [],
+                                             attachments: [],
+                                             attachmentUrl:[]
+                                         };
+                                     });
+                                 }
+
+                             });
+                         });
+                     }
                 }
 
                 $scope.saveDisLike = function (signal) {
@@ -154,9 +206,8 @@
                         var fileReader = new FileReader();
                         fileReader.onload = function (fileLoadedEvent) {
                             var attachmentData = fileLoadedEvent.target.result.replace(/^data(.*?),/, '');
-                            signal.newComment.attachemnts.push({name: attachment.name, fileBase64: attachmentData});
+                            signal.newComment.attachments.push({name: attachment.name, fileBase64: attachmentData});
                             $scope.$apply();
-                            console.log(signal.newComment.attachemnts);
                         }
                         fileReader.readAsDataURL(attachment);
                     });
@@ -164,38 +215,34 @@
 
                 $scope.saveNewComment = function (signal) {
 
-                    signal.newComment.attachemntUrls = [];
+                    signal.newComment.attachmentUrls = [];
 
-                    if(signal.newComment.attachemnts.length==0){
+                    if(signal.newComment.attachments.length==0){
                         SignalService.saveComment(signal).then(function (response) {
                             console.log(response);
                             if (response.code) {
                                 signal.comments.push(response.data);
                                 signal.newComment = {};
-                                signal.newComment.attachemnts = [];
+                                signal.newComment.attachments = [];
+                                signal.newComment.attachmentUrls = [];
                             }
                         });
                         return;
                     }
 
-
-                    angular.forEach(signal.newComment.attachemnts, function (attachment) {
+                    angular.forEach(signal.newComment.attachments, function (attachment) {
                         SignalService.attachNewFileMobile(attachment).then(function (response) {
 
-                            console.log(response);
+                            signal.newComment.attachmentUrls.push(response.url);
 
-                            signal.newComment.attachemntUrls.push(response.url);
-
-                            console.log(signal.newComment.attachemnts.length);
-                            console.log(signal.newComment.attachemnts.length);
-
-                            if (signal.newComment.attachemntUrls.length == signal.newComment.attachemnts.length) {
+                            if (signal.newComment.attachmentUrls.length == signal.newComment.attachments.length) {
                                 SignalService.saveComment(signal).then(function (response) {
                                     console.log(response);
                                     if (response.code) {
                                         signal.comments.push(response.data);
                                         signal.newComment = {};
-                                        signal.newComment.attachemnts = [];
+                                        signal.newComment.attachments = [];
+                                        signal.newComment.attachmentUrls = [];
                                     }
                                 });
                             }
@@ -204,9 +251,8 @@
                     });
                 }
 
-
                 $scope.removeNewCommentAttachment = function (attachment, signal) {
-                    signal.newComment.attachemnts.splice(signal.newComment.attachemnts.indexOf(attachment), 1);
+                    signal.newComment.attachments.splice(signal.newComment.attachments.indexOf(attachment), 1);
                 }
 
             }]);

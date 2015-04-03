@@ -22,10 +22,9 @@
                     var data = {
                         searchKey: searchKey == "" ? null : searchKey,
                         accessToken: UserContextService.getAccessToken(),
-                        orgIds: [currentlySignedAs.id],
+                        orgIds: [currentlySignedAs.accountInfo.id],
                         includeOrgs: false
                     }
-                    console.log(data);
                     return ApiService.post('/api/connections/getAllEmployeesOfOrgs', data);
                 }
             }
@@ -56,10 +55,10 @@
                     fileBase64: attachment.fileBase64,
                     accessToken: UserContextService.getAccessToken()
                 }
-                return ApiService.post('/api/signals/attachFile_Mobile',data);
+                return ApiService.post('/api/signals/attachFile_Mobile', data);
             }
 
-            var saveComment = function(signal){
+            var saveComment = function (signal) {
                 var data = {
                     accessToken: UserContextService.getAccessToken(),
                     content: signal.newComment.message,
@@ -69,18 +68,73 @@
                     object: null,
                     activityType: signal.doc.activityType,
                     objectTags: {
-                        objectTags: [
-                        ],
+                        objectTags: [],
                         hashTags: [],
                         privateTags: []
                     },
                     ogdataObject: null,
-                    attachments:  signal.newComment.attachemntUrls,
+                    attachments: signal.newComment.attachmentUrls,
                     orgId: null,
                     visibility: {
                         scope: "Self",
                         privacy: "AllConnection"
                     }
+                };
+                return ApiService.post('/api/signals/saveSignal', data);
+            }
+
+            var saveSignal = function (signal) {
+                console.log(signal);
+
+                signal.objectTags = [];
+
+                angular.forEach(signal.taggedPeople,function(person){
+                    var object = {
+                        objId: person.accountId,
+                        objPicture: person.smallpicture,
+                        objType: person.entityType,
+                        objTitle: person.title
+                    }
+                    signal.objectTags.push(object);
+                });
+
+                var currentlySignedAs = UserContextService.getCurrentlySignedAsAccount();
+
+                if (currentlySignedAs.isPersonalAccount) {
+                    signal.visibility = {
+                        scope: "Self",
+                        privacy: "AllConnection"
+                    }
+                } else {
+                    signal.visibility = {
+                        scope: "Organization",
+                        privacy: "AllEmployee"
+                    }
+                }
+
+                var data = {
+                    accessToken: UserContextService.getAccessToken(),
+                    content: signal.content,
+                    spaceId: null,
+                    rootId: null,
+                    verb: null,
+                    object: null,
+                    activityType: "Composed-DashBoard",
+                    objectTags: {
+                        objectTags: signal.objectTags,
+                        hashTags: [],
+                        privateTags: []
+                    },
+                    ogdataObject: {
+                        ogTitle: "",
+                        ogDescription: "",
+                        ogImage: "",
+                        isOgData: false,
+                        url: ""
+                    },
+                    attachments: signal.attachmentUrl,
+                    orgId: currentlySignedAs.isPersonalAccount == true ? null : currentlySignedAs.accountInfo.id,
+                    visibility: signal.visibility
                 };
                 return ApiService.post('/api/signals/saveSignal',data);
             }
@@ -89,8 +143,9 @@
                 getConnections: getConnections,
                 getSignals: getSignals,
                 saveFeedback: saveFeedback,
-                attachNewFileMobile:attachNewFileMobile,
-                saveComment:saveComment
+                attachNewFileMobile: attachNewFileMobile,
+                saveComment: saveComment,
+                saveSignal:saveSignal
             }
         }]);
 })();

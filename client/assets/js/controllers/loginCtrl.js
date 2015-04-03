@@ -10,9 +10,16 @@
                     $location.path('/myProfile');
                 }
 
+                //$scope.user = {
+                //    loginEmail:"brian.tobey123@gmail.com",
+                //    loginPassword:"@ddinstagram",
+                //    clientURI:"NO_CLIENT_URI",
+                //    timeOffset:360
+                //}
+
                 $scope.user = {
-                    loginEmail:"brian.tobey123@gmail.com",
-                    loginPassword:"@ddinstagram",
+                    loginEmail:"",
+                    loginPassword:"",
                     clientURI:"NO_CLIENT_URI",
                     timeOffset:360
                 }

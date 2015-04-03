@@ -21,6 +21,7 @@ $signal-icon-width: 40px;
     margin-bottom: 0;
     border: none;
     height: 64px;
+    overflow: hidden;
   }
   .tagged-people {
     background-color: white;
@@ -30,7 +31,8 @@ $signal-icon-width: 40px;
       width: 45px;
       float: left;
       margin-right: 5px;
-      border: 1px solid;
+      border: 1px solid rgb(224, 213, 213);
+      margin-left: 5px;
     }
   }
   .attached-files {
@@ -97,7 +99,14 @@ $signal-icon-width: 40px;
   .signal-content {
     border-bottom: 1px solid rgb(239, 231, 231);
     min-height: 80px;
-    padding-bottom: 25px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    padding-bottom: 30px;
+    img {
+      float: left;
+      height: 60px;
+      width: 60px;
+    }
   }
   .bottom {
     margin-left: 75px;
@@ -117,15 +126,67 @@ $signal-icon-width: 40px;
     }
   }
 
-  img {
-    float: left;
-    height: 60px;
-    width: 60px;
+  .tagged-people{
+    margin-top: 10px;
+    width: 100%;
+    overflow: auto;
+    margin-left: 75px;
+    p{
+      color: gray;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    .people{
+      img{
+        height: 40px;
+        width: 40px;
+        margin-right: 10px;
+        border: 1px solid rgb(224, 213, 213);
+        margin-bottom: 10px;
+      }
+    }
   }
+
+  .hash-tag{
+    margin-top: 10px;
+    width: 100%;
+    overflow: auto;
+    margin-left: 75px;
+    p{
+      color: gray;
+      margin-bottom: 10px;
+      font-size: 14px
+    }
+    span{
+      color: #2583ee;
+      margin-bottom: 14px;
+      margin-right:10px;
+      float: left;
+    }
+  }
+
+  .signal-content-attachment{
+   margin-top: 10px;
+    margin-left: 75px;
+    p{
+      color: gray;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    img{
+      height: 40px;
+      width: 40px;
+      margin-right: 10px;
+      border: 1px solid rgb(224, 213, 213);
+      margin-bottom: 10px;
+    }
+  }
+
   .message {
     margin-left: 75px;
     text-align: justify;
   }
+
   .signal-header {
     background-color: rgb(244, 234, 217);
     padding: 1rem;
@@ -134,30 +195,50 @@ $signal-icon-width: 40px;
       color: #60a8cd;
     }
   }
+
   .userName {
     color: rgb(96, 168, 205);
   }
 
   .signal-comment {
-    clear: both;
-    margin-top: 18px;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 10px;
     img {
       height: 50px;
       width: 50px;
       float: left;
+      margin-left: 5px;
+    }
+    .signal-comment-attachment{
+      width: 100%;
+      overflow: auto;
+      margin-left: 75px;
+      p{
+        color: gray;
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
     }
   }
+
   .new-comment{
-    clear: both;
+    width: 100%;
+    overflow: hidden;
     img{
       height: 50px;
       width: 50px;
+      float: left;
     }
     margin-top: 10px;
     .new-comment-attachment{
       margin-left: 75px;
+      width: 100%;
+      overflow: hidden;
       label{
         color: #008CBA;
+        float: left;
+        margin-right: 5px;
         i{
           color: red;
           cursor: pointer;
@@ -184,6 +265,7 @@ $signal-icon-width: 40px;
       }
       a{
         float: right;
+        margin-right: 0;
       }
     }
   }

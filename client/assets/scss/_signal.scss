@@ -149,6 +149,11 @@ $signal-icon-width: 40px;
   }
   .new-comment{
     clear: both;
+    img{
+      height: 50px;
+      width: 50px;
+    }
+    margin-top: 10px;
     .new-comment-attachment{
       margin-left: 75px;
       label{

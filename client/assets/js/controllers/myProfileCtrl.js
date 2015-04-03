@@ -166,6 +166,18 @@
 
                     signal.newComment.attachemntUrls = [];
 
+                    if(signal.newComment.attachemnts.length==0){
+                        SignalService.saveComment(signal).then(function (response) {
+                            console.log(response);
+                            if (response.code) {
+                                signal.comments.push(response.data);
+                                signal.newComment = {};
+                                signal.newComment.attachemnts = [];
+                            }
+                        });
+                        return;
+                    }
+
 
                     angular.forEach(signal.newComment.attachemnts, function (attachment) {
                         SignalService.attachNewFileMobile(attachment).then(function (response) {

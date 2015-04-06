@@ -46,6 +46,7 @@ var appJS = [
   'client/assets/js/filters/kswUrlFilter.js',
   'client/assets/js/filters/kswDateDifference.js',
   'client/assets/js/filters/kswUserNameFilter.js',
+  'client/assets/js/filters/kswDocumentIconFilter.js',
   'client/assets/js/services/ApiService.js',
   'client/assets/js/services/LoginService.js',
   'client/assets/js/services/UserContextService.js',

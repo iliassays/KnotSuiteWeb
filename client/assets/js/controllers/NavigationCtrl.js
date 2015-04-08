@@ -24,7 +24,7 @@
                 $scope.changeAccountType = function (connection) {
                     FoundationActionSheet.deactivate('current-user');
                     $scope.accountType = connection.title;
-                    $scope.profilePicture = ApiService.apiUrl + '/' + connection.smallpicture;
+                    //$scope.profilePicture = ApiService.apiUrl + '/' + connection.smallpicture;
                     UserContextService.changeCurrentlySignedAsAccount(false, connection);
                     $location.path('/');
                 };
@@ -32,7 +32,7 @@
                 $scope.changePersonalAccount = function () {
                     FoundationActionSheet.deactivate('current-user');
                     $scope.accountType = $scope.personalAccountInfo.userName;
-                    $scope.profilePicture = ApiService.apiUrl + '/' + $scope.personalAccountInfo.imgSrc;
+                   // $scope.profilePicture = ApiService.apiUrl + '/' + $scope.personalAccountInfo.imgSrc;
                     UserContextService.changeCurrentlySignedAsAccount(true, $scope.personalAccountInfo);
                     $location.path('/');
                 }

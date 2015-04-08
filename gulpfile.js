@@ -52,6 +52,7 @@ var appJS = [
   'client/assets/js/services/UserContextService.js',
   'client/assets/js/services/EventService.js',
   'client/assets/js/services/DummyDataService.js',
+  'client/assets/js/services/AwardService.js',
   'client/assets/js/services/SignalService.js',
   'client/assets/js/services/MixPanelService.js',
   'client/assets/js/controllers/LoginCtrl.js',
@@ -69,6 +70,8 @@ var appJS = [
   'client/assets/js/directives/kswPeoplePicker.js',
   'client/assets/js/directives/kswLoggedInUser.js',
   'client/assets/js/directives/kswOnScroll.js',
+  'client/assets/js/directives/kswReadMore.js',
+  'client/assets/js/directives/kswWebLink.js',
   'client/assets/js/directives/kswUpdateStringArea.js'
 ];
 

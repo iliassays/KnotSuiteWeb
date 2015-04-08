@@ -31,7 +31,6 @@
                 });
 
                 SignalService.getSignals($scope.signalOffSet).then(function (signals) {
-                    console.log(signals);
                     $scope.signals = [];
                     angular.forEach(signals.data, function (signal) {
                         if (signal.hasOwnProperty('doc')) {
@@ -48,7 +47,7 @@
                 });
 
                 $scope.onAttachmentChange = function (attachment) {
-                    var attachments = event.target.files;
+                    var attachments = window.event.target.files;
 
                     angular.forEach(attachments, function (attachment) {
                         var fileReader = new FileReader();
@@ -59,7 +58,6 @@
                                 fileBase64: attachmentData
                             });
                             $scope.$apply();
-                            console.log($scope.signal.attachments);
                         }
                         fileReader.readAsDataURL(attachment);
                     });
@@ -103,7 +101,7 @@
                 }
 
                 $scope.findPeople = function (peopleSearchText) {
-                    console.log(peopleSearchText);
+
                 }
 
                 $scope.updatePeoplePickerResults = function (selectedPeoplePickerGroup) {
@@ -113,7 +111,6 @@
                 }
 
                 $scope.postSignal = function (signal) {
-                    console.log(signal);
                     signal.attachmentUrl = [];
                      if(!signal.attachments.length){
                          SignalService.saveSignal(signal)
@@ -145,7 +142,6 @@
 
                                  if (signal.attachmentUrl.length == signal.attachments.length) {
                                      SignalService.saveSignal(signal).then(function (response) {
-                                         console.log(response);
                                          var newSignal = {
                                              doc: response.data,
                                              newComment:{
@@ -201,7 +197,7 @@
                 }
 
                 $scope.onCommentAttachmentChange = function (signal) {
-                    var attachments = event.target.files;
+                    var attachments = window.event.target.files;
                     angular.forEach(attachments, function (attachment) {
                         var fileReader = new FileReader();
                         fileReader.onload = function (fileLoadedEvent) {
@@ -219,7 +215,6 @@
 
                     if(signal.newComment.attachments.length==0){
                         SignalService.saveComment(signal).then(function (response) {
-                            console.log(response);
                             if (response.code) {
                                 signal.comments.push(response.data);
                                 signal.newComment = {};
@@ -237,7 +232,6 @@
 
                             if (signal.newComment.attachmentUrls.length == signal.newComment.attachments.length) {
                                 SignalService.saveComment(signal).then(function (response) {
-                                    console.log(response);
                                     if (response.code) {
                                         signal.comments.push(response.data);
                                         signal.newComment = {};

@@ -13,7 +13,6 @@
             }
 
             this.changeCurrentlySignedAsAccount = function(isPersonalAccount, accountInfo){
-                console.log(isPersonalAccount);
                 currentlySignedAsAccount.isPersonalAccount = isPersonalAccount;
                 currentlySignedAsAccount.accountInfo = accountInfo;
             }
@@ -87,6 +86,13 @@
             this.getCorporateConnection = function(){
                 var currentUserData = JSON.parse(localStorage["currentUserData"]);
                 return currentUserData.corporateConnections;
+            }
+
+            this.getAllConnectionsOfUser = function(){
+                var data = {
+                    accessToken: this.getAccessToken()
+                };
+                return ApiService.post('/personalHub/getAllConnectionsOfUser', data);
             }
 
         }]);

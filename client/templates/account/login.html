@@ -24,7 +24,8 @@ animationOut: fadeOut
             </div>
             <div class="grid-block">
                 <div class="small-10 medium-10 large-9 grid-container">
-                    <input placeholder="Password" data-ng-model="user.loginPassword" type="password">
+                    <input placeholder="Password" data-ng-model="user.loginPassword" type="password"
+                           ng-keypress="($event.which === 13)?loginNow():0">
                 </div>
 
             </div>
@@ -52,10 +53,10 @@ animationOut: fadeOut
 
         <div class="grid-content medium-5 large-3 login-right">
             <div class="grid-block">
-            <div class="small-10 medium-12 large-11 grid-container">
-                <h4 class="headline">New?</h4>
+                <div class="small-10 medium-12 large-11 grid-container">
+                    <h4 class="headline">New?</h4>
+                </div>
             </div>
-        </div>
             <div class="grid-block">
                 <div class="small-10 medium-12 large-11 grid-container">
                     <p class="text">
@@ -69,11 +70,11 @@ animationOut: fadeOut
             <div class="grid-block">
                 <div class="small-10 medium-12 large-11 grid-container">
                     <p>
-                        <i class="fa fa-arrow-circle-o-right fa-icon-warning"></i><a herf="javascript:;" class="sign-up-link">SIGN UP</a>
+                        <i class="fa fa-arrow-circle-o-right fa-icon-warning"></i><a herf="javascript:;"
+                                                                                     class="sign-up-link">SIGN UP</a>
                     </p>
                 </div>
             </div>
-
 
 
         </div>

@@ -185,6 +185,16 @@ $signal-icon-width: 40px;
   .message {
     margin-left: 75px;
     text-align: justify;
+    a.read-more, a.read-less {
+      cursor: pointer;
+      color: blue;
+    }
+    span.more-text {
+      display: none;
+    }
+    span.more-text.show {
+      display: inline !important
+    }
   }
 
   .signal-header {
@@ -221,7 +231,32 @@ $signal-icon-width: 40px;
       }
     }
   }
-
+.activity-type{
+  margin-bottom: 18px;
+  border: 1px solid #B6ABAB;
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  &:hover{
+    border: 1px solid #000000;
+  }
+  img{
+    float: left;
+    height: 75px;
+  }
+  .award-title{
+    margin-top: 10px;
+  }
+  .award-status{
+   font-size: 14px;
+    color: rgb(128, 128, 128);
+  }
+  p{
+    margin-left: 88px;
+    text-align: justify;
+    margin-bottom: 0px;
+  }
+}
   .new-comment{
     width: 100%;
     overflow: hidden;

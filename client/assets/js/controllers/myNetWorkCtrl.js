@@ -1,8 +1,8 @@
 "use strict";
 (function () {
     angular.module("application")
-        .controller("myNetWorkCtrl", ["$scope", "DummyDataService", "MixPanelService",
-            function ($scope, DummyDataService, MixPanelService) {
+        .controller("myNetWorkCtrl", ["$scope", "DummyDataService", "MixPanelService","UserContextService",
+            function ($scope, DummyDataService, MixPanelService,UserContextService) {
 
                 MixPanelService.track("My Network");
 
@@ -16,26 +16,26 @@
 
                 $scope.selectedPeoplePickerGroup = $scope.peoplePickerGroups[1];
 
-                var data = DummyDataService.getConnection();
+                UserContextService.getAllConnectionsOfUser().then(function(data){
+                    $scope.peoplePickerFlag = true;
 
-                $scope.peoplePickerFlag = true;
+                    $scope.groupCollection["connType"] = _.groupBy(data, function (m) {
+                        return m.connType;
+                    });
+                    $scope.groupCollection["entityType"] = _.groupBy(data, function (m) {
+                        return m.entityType;
+                    });
 
-                $scope.groupCollection["connType"] = _.groupBy(data, function (m) {
-                    return m.connType;
+                    $scope.groupCollection["nameType"] = _.groupBy(data, function (m) {
+                        return m.title.charAt(0);
+                    });
+
+                    if ($scope.selectedPeoplePickerGroup) {
+                        $scope.selectedGroup = $scope.groupCollection[$scope.selectedPeoplePickerGroup.key];
+                    } else {
+                        $scope.selectedGroup = $scope.groupCollection["connType"];
+                    }
                 });
-                $scope.groupCollection["entityType"] = _.groupBy(data, function (m) {
-                    return m.entityType;
-                });
-
-                $scope.groupCollection["nameType"] = _.groupBy(data, function (m) {
-                    return m.title.charAt(0);
-                });
-
-                if ($scope.selectedPeoplePickerGroup) {
-                    $scope.selectedGroup = $scope.groupCollection[$scope.selectedPeoplePickerGroup.key];
-                } else {
-                    $scope.selectedGroup = $scope.groupCollection["connType"];
-                }
 
                 $scope.updatePeoplePickerResults = function (selectedPeoplePickerGroup) {
                     if (selectedPeoplePickerGroup) {

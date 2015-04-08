@@ -24,22 +24,8 @@
                     timeOffset:360
                 }
 
-                //$scope.user = {
-                //    loginEmail: "",
-                //    loginPassword: "",
-                //    clientURI: "test",
-                //    timeOffset: 360,
-                //    appId: "knotsillicon",
-                //    IsValidationEnabled: true,
-                //    Errors: {
-                //        Errors: {},
-                //        IsValidationEnabled: true
-                //    }
-                //};
-
                 $scope.loginNow = function () {
                     LoginService.sendLoginRequest($scope.user).then(function (data) {
-                        console.log(data);
                         if(data.accountStatus == 2){
                             UserContextService.saveCurrentUserData(data.userObj);
                             //$rootScope.userData = data.userObj;

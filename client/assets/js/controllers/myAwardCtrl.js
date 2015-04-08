@@ -2,8 +2,8 @@
 (function () {
     angular.module('application')
         .controller("myAwardCtrl",
-        ["$scope", "DummyDataService", "MixPanelService", "AwardService","UserContextService","$state",
-            function ($scope, DummyDataService, MixPanelService, AwardService,UserContextService,$state) {
+        ["$scope", "DummyDataService", "MixPanelService", "AwardService","UserContextService","$state","$rootScope",
+            function ($scope, DummyDataService, MixPanelService, AwardService,UserContextService,$state,$rootScope) {
                 MixPanelService.track("My Award");
 
                 var userId = UserContextService.getCurrentUserId();
@@ -15,7 +15,6 @@
                             $scope.awards = response.data;
 
                             $scope.totalAwards = $scope.awards.length;
-
                             $scope.awardsGroup ={
                                 "#UNTAGGED":[]
                             };

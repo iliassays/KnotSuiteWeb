@@ -2,9 +2,9 @@
 
 (function () {
     angular.module('application').controller("ProfileCtrl",
-        ["$scope", "$stateParams", "ProfileService", "$state", "LoginService", "$location",
-            function ($scope, $stateParams, ProfileService, $state, LoginService, $location) {
-                if (!LoginService.isLoggedIn()) {
+        ["$scope", "$stateParams", "UserContextService", "$state", "LoginService", "$location",
+            function ($scope, $stateParams, UserContextService, $state, LoginService, $location) {
+                if (!UserContextService.isLoggedIn()) {
                     $location.path('/');
                 }
                 $state.go('profile.personalSettings');

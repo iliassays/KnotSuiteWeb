@@ -3,14 +3,14 @@
 (function () {
     angular.module("application")
         .controller("PersonalSettingsCtrl",
-        ["$scope", "ProfileService", "$stateParams", "$rootScope", "ApiService", "LoginService", "$location","MixPanelService",
-            function ($scope, ProfileService, $stateParams, $rootScope, ApiService, LoginService, $location,MixPanelService) {
+        ["$scope", "UserContextService", "$stateParams", "$rootScope", "ApiService", "LoginService", "$location","MixPanelService",
+            function ($scope, UserContextService, $stateParams, $rootScope, ApiService, LoginService, $location,MixPanelService) {
                 MixPanelService.track("Personal Settings");
-                if (!LoginService.isLoggedIn()) {
+                if (!UserContextService.isLoggedIn()) {
                     $location.path('/');
                 }
-                var userId = LoginService.getCurrentUserId();
-                ProfileService.getProfileById(userId).then(function (data) {
+                var userId = UserContextService.getCurrentUserId();
+                UserContextService.getProfileById(userId).then(function (data) {
                     $scope.profilePicture = ApiService.apiUrl + '/' + data.connData.imgSrc;
                 });
                 $scope.saveDate = function () {

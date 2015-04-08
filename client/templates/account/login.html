@@ -3,8 +3,8 @@ name: login
 url: /
 controller : LoginCtrl
 animationIn: fadeIn
-animationOut: fadeOut
 ---
+
 <div class="login-container">
     <div class="vertical medium-horizontal align-center grid-block">
         <div class="grid-block medium-1 large-2 hide-for-small"></div>
@@ -18,14 +18,15 @@ animationOut: fadeOut
             </div>
             <div class="grid-block">
                 <div class="small-10 medium-10 large-9 grid-container">
-                    <input placeholder="Username" data-ng-model="user.loginEmail" type="text">
+                    <input placeholder="Username" data-ng-model="user.loginEmail" type="text"
+                           data-ng-keypress="($event.which === 13)?loginNow():0">
                 </div>
 
             </div>
             <div class="grid-block">
                 <div class="small-10 medium-10 large-9 grid-container">
                     <input placeholder="Password" data-ng-model="user.loginPassword" type="password"
-                           ng-keypress="($event.which === 13)?loginNow():0">
+                           data-ng-keypress="($event.which === 13)?loginNow():0">
                 </div>
 
             </div>

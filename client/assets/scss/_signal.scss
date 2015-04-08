@@ -184,17 +184,6 @@ $signal-icon-width: 40px;
 
   .message {
     margin-left: 75px;
-    text-align: justify;
-    a.read-more, a.read-less {
-      cursor: pointer;
-      color: blue;
-    }
-    span.more-text {
-      display: none;
-    }
-    span.more-text.show {
-      display: inline !important
-    }
   }
 
   .signal-header {

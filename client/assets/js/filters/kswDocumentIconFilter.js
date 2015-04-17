@@ -14,7 +14,7 @@
                     return '/assets/img/doc-icons/doc_icon_excel_big.png';
                 }
                 else if ((/\.(txt)$/i).test(fileType)) {
-                    return '/assets/img/doc-icons/txt.png';
+                    return '/assets/img/doc-icons/doc_icon_default_big.png';
                 } else if ((/\.(pdf)$/i).test(fileType)) {
                     return '/assets/img/doc-icons/doc_icon_pdf_big.png';
                 } else {

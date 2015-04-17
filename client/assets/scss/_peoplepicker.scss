@@ -1,8 +1,11 @@
 .people-picker {
-  margin-left: 2px !important;
-  margin-top: 4px;
   background: #E4E9EC;
   padding: 4px;
+  z-index: 1;
+  position: absolute;
+  margin: 4px!important;
+  margin-top: -18px!important;
+  border: 2px solid rgb(171, 169, 169);
   img {
     float: left;
     height: 100px;

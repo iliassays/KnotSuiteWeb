@@ -2,11 +2,12 @@
 (function () {
     angular.module('application')
         .controller("myAwardCtrl",
-        ["$scope", "DummyDataService", "MixPanelService", "AwardService","UserContextService","$state","$rootScope",
-            function ($scope, DummyDataService, MixPanelService, AwardService,UserContextService,$state,$rootScope) {
+        ["$scope", "DummyDataService", "MixPanelService", "AwardService","UserContextService","$state","$rootScope","FoundationApi",
+            function ($scope, DummyDataService, MixPanelService, AwardService,UserContextService,$state,$rootScope,FoundationApi) {
                 MixPanelService.track("My Award");
 
                 var userId = UserContextService.getCurrentUserId();
+                FoundationApi.publish('loaderModal', 'open');
 
                 AwardService.getAllAwards()
                     .then(function (response) {
@@ -39,6 +40,7 @@
                                 }
                             });
                         }
+                        FoundationApi.publish('loaderModal', 'close');
                     });
 
                 AwardService.getNominatedAwardById(userId).then(function (response) {

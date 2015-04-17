@@ -48,10 +48,12 @@ var appJS = [
   'client/assets/js/filters/kswDateDifference.js',
   'client/assets/js/filters/kswUserNameFilter.js',
   'client/assets/js/filters/kswDocumentIconFilter.js',
+    'client/assets/js/filters/kswImageFilter.js',
   'client/assets/js/services/ApiService.js',
   'client/assets/js/services/LoginService.js',
   'client/assets/js/services/UserContextService.js',
   'client/assets/js/services/EventService.js',
+    'client/assets/js/services/ChatService.js',
   'client/assets/js/services/DummyDataService.js',
   'client/assets/js/services/AwardService.js',
   'client/assets/js/services/SignalService.js',
@@ -62,6 +64,7 @@ var appJS = [
   'client/assets/js/controllers/NavigationCtrl.js',
   'client/assets/js/controllers/myNetWorkCtrl.js',
   'client/assets/js/controllers/myProfileCtrl.js',
+    'client/assets/js/controllers/ChatCtrl.js',
   'client/assets/js/controllers/myAwardCtrl.js',
   'client/assets/js/controllers/selectAwardCtrl.js',
   'client/assets/js/controllers/nominateAwardCtrl.js',
@@ -73,7 +76,9 @@ var appJS = [
   'client/assets/js/directives/kswOnScroll.js',
   'client/assets/js/directives/kswReadMore.js',
   'client/assets/js/directives/kswWebLink.js',
-  'client/assets/js/directives/kswUpdateStringArea.js'
+  'client/assets/js/directives/kswUpdateStringArea.js',
+    'client/assets/js/directives/kswDynamicHeight.js',
+    'client/assets/js/directives/kswMiniPeoplePicker.js'
 ];
 
 // 3. TASKS
@@ -96,11 +101,11 @@ gulp.task('copy', function() {
   gulp.src(dirs, {
     base: './client/'
   })
-    .pipe(gulp.dest('./build'));
+      .pipe(gulp.dest('./build'));
 
   // Iconic SVG icons
   gulp.src('./bower_components/foundation-apps/iconic/**/*')
-    .pipe(gulp.dest('./build/assets/img/iconic/'));
+      .pipe(gulp.dest('./build/assets/img/iconic/'));
 
   gulp.src('./bower_components/font-awesome/fonts/**/*')
       .pipe(gulp.dest('./build/assets/fonts/'));
@@ -108,61 +113,61 @@ gulp.task('copy', function() {
 
   // Foundation's Angular partials
   return gulp.src(['./bower_components/foundation-apps/js/angular/components/**/*.html'])
-    .pipe(gulp.dest('./build/components/'));
+      .pipe(gulp.dest('./build/components/'));
 });
 
 // Compiles Sass
 gulp.task('sass', function() {
   return gulp.src('client/assets/scss/app.scss')
-    .pipe($.rubySass({
-      loadPath: sassPaths,
-      style: 'nested',
-      bundleExec: false
-    })).on('error', function(e) {
-      console.log(e);
-    })
-    .pipe($.autoprefixer({
-      browsers: ['last 2 versions', 'ie 10']
-    }))
-    .pipe(gulp.dest('./build/assets/css/'));
+      .pipe($.rubySass({
+        loadPath: sassPaths,
+        style: 'nested',
+        bundleExec: false
+      })).on('error', function(e) {
+        console.log(e);
+      })
+      .pipe($.autoprefixer({
+        browsers: ['last 2 versions', 'ie 10']
+      }))
+      .pipe(gulp.dest('./build/assets/css/'));
 });
 
 // Compiles and copies the Foundation for Apps JavaScript, as well as your app's custom JS
 gulp.task('uglify', function() {
   // Foundation JavaScript
   gulp.src(foundationJS)
-    .pipe($.uglify({
-      beautify: true,
-      mangle: false
-    }).on('error', function(e) {
-      console.log(e);
-    }))
-    .pipe($.concat('foundation.js'))
-    .pipe(gulp.dest('./build/assets/js/'))
+      .pipe($.uglify({
+        beautify: true,
+        mangle: false
+      }).on('error', function(e) {
+        console.log(e);
+      }))
+      .pipe($.concat('foundation.js'))
+      .pipe(gulp.dest('./build/assets/js/'))
   ;
 
   // App JavaScript
   return gulp.src(appJS)
-    .pipe($.uglify({
-      beautify: true,
-      mangle: false
-    }).on('error', function(e) {
-      console.log(e);
-    }))
-    .pipe($.concat('app.js'))
-    .pipe(gulp.dest('./build/assets/js/'))
-  ;
+      .pipe($.uglify({
+        beautify: true,
+        mangle: false
+      }).on('error', function(e) {
+        console.log(e);
+      }))
+      .pipe($.concat('app.js'))
+      .pipe(gulp.dest('./build/assets/js/'))
+      ;
 });
 
 // Copies your app's page templates and generates URLs for them
 gulp.task('copy-templates', ['copy'], function() {
   return gulp.src('./client/templates/**/*.html')
-    .pipe(router({
-      path: 'build/assets/js/routes.js',
-      root: 'client'
-    }))
-    .pipe(gulp.dest('./build/templates'))
-  ;
+      .pipe(router({
+        path: 'build/assets/js/routes.js',
+        root: 'client'
+      }))
+      .pipe(gulp.dest('./build/templates'))
+      ;
 });
 
 // Starts a test server, which you can view at http://localhost:8080

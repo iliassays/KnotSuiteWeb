@@ -59,6 +59,18 @@
             }
 
             var saveComment = function (signal) {
+
+                signal.newComment.objectTags = [];
+
+                angular.forEach(signal.newComment.taggedPeople, function (person) {
+                    signal.newComment.objectTags.push({
+                        objId: person.id,
+                        objPicture: person.picture,
+                        objType: person.entityType,
+                        objTitle: person.title
+                    });
+                });
+
                 var data = {
                     accessToken: UserContextService.getAccessToken(),
                     content: signal.newComment.message,
@@ -68,7 +80,7 @@
                     object: null,
                     activityType: signal.doc.activityType,
                     objectTags: {
-                        objectTags: [],
+                        objectTags: signal.newComment.objectTags,
                         hashTags: [],
                         privateTags: []
                     },
@@ -88,7 +100,7 @@
 
                 signal.objectTags = [];
 
-                angular.forEach(signal.taggedPeople,function(person){
+                angular.forEach(signal.taggedPeople, function (person) {
                     var object = {
                         objId: person.accountId,
                         objPicture: person.smallpicture,
@@ -136,7 +148,7 @@
                     orgId: currentlySignedAs.isPersonalAccount == true ? null : currentlySignedAs.accountInfo.id,
                     visibility: signal.visibility
                 };
-                return ApiService.post('/api/signals/saveSignal',data);
+                return ApiService.post('/api/signals/saveSignal', data);
             }
 
             return {
@@ -145,7 +157,7 @@
                 saveFeedback: saveFeedback,
                 attachNewFileMobile: attachNewFileMobile,
                 saveComment: saveComment,
-                saveSignal:saveSignal
+                saveSignal: saveSignal
             }
         }]);
 })();

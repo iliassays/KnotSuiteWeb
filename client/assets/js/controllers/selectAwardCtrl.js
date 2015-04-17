@@ -2,10 +2,10 @@
 (function(){
     angular.module("application")
         .controller("selectAwardCtrl",
-        ["$scope","DummyDataService","$state","MixPanelService","AwardService","$rootScope",
-            function($scope,DummyDataService,$state,MixPanelService,AwardService,$rootScope){
+        ["$scope","DummyDataService","$state","MixPanelService","AwardService","$rootScope","FoundationApi",
+            function($scope,DummyDataService,$state,MixPanelService,AwardService,$rootScope,FoundationApi){
                 MixPanelService.track("Select Award");
-
+                FoundationApi.publish('loaderModal', 'open');
                 AwardService.getAllAwards()
                     .then(function (response) {
                         if (response.code) {
@@ -33,6 +33,7 @@
                                 }
                             });
                         }
+                        FoundationApi.publish('loaderModal', 'close');
                     });
 
                 $scope.onAwardSelect = function(award){

@@ -16,6 +16,8 @@
 @import "contentmenu";
 @import "footer";
 @import "margin";
+@import "chat";
+@import "minipeoplepicker";
 
 .ksw-header{
   padding: 2rem;
@@ -51,5 +53,8 @@
 }
 body{
   background: #12766c url('/assets/img/main-background.jpg');
+}
+.modal{
+  background-color: transparent!important;
 }
 

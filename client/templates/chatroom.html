@@ -1,0 +1,78 @@
+---
+name: chatroom
+url: /chat
+controller: ChatCtrl
+---
+
+<div class="grid-content">
+    <div class="grid-block horizontal">
+
+        <div class="large-4 medium-grid-content sidebar vertical panel panel-left" ng-class="positionClass" ng-transclude="" zf-panel="" id="leftSidebar" zf-closable="panel">
+            <div class="grid-content">
+                <a zf-close="" class="close-button hide-for-medium">×</a>
+                <section class="block-list conversation-user-block-list">
+                    <header class="title custom-header conversation-header-background">
+                        Conversations
+                    </header>
+                    <div class="history" ksw-dynamic-height parent=".ksw-content" reduce="70">
+                        <div class="grid-content message-history" data-ng-repeat="message in messages">
+                            <img data-ng-src="{{getProfilePictureThumbnail(message.participants[0]._id)}}" alt=""/>
+                            <div class="content">
+                                {{message.lastMessage}}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="large-4 grid-content">
+            <a class="small secondary expand button hide-for-medium" zf-toggle="leftSidebar">Show Conversations</a>
+            <a class="small secondary expand button hide-for-medium" zf-toggle="rightSidebar">Show People</a>
+            <div class="grid-container conversation">
+                <section class="block-list conversation-user-block-list">
+                    <header class="title custom-header message-header-background">
+                        Mohammad Faisal
+                    </header>
+                    <div class="history" ksw-dynamic-height parent=".ksw-content" reduce="170">
+                        <div class="grid-content message-history" data-ng-repeat="message in messages">
+                            <img data-ng-src="{{getProfilePictureThumbnail(message.participants[0]._id)}}" alt=""/>
+                            <div class="content">
+                                {{message.lastMessage}}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="newMessage">
+                        <textarea autofocus="" placeholder="Type here new message"></textarea>
+                        <a href="" class="button success">Reply</a>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+
+        <div class="large-4 medium-grid-content sidebar vertical panel panel-left" ng-class="positionClass" ng-transclude="" zf-panel="" id="rightSidebar" zf-closable="panel">
+            <div class="grid-content">
+
+                <section class="block-list conversation-user-block-list">
+                    <header class="title custom-header people-header-background">
+                        People <span><a zf-close="" class="close-button hide-for-medium">×</a></span>
+                    </header>
+                    <div class="history" ksw-dynamic-height parent=".ksw-content" reduce="70">
+                        <div class="grid-content message-history" data-ng-repeat="connection in personalConnections">
+                            <img data-ng-src="{{connection | kswImageFilter: 60:connection._id}}" alt="{{connection.title}}"/>
+                            <div class="content">
+                                {{connection.title}}
+                            </div>
+                            <div class="content email">
+                                {{connection.email}}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+    </div>
+</div>

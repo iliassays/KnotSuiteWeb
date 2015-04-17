@@ -1,13 +1,13 @@
 "use strict";
 (function () {
     angular.module("application")
-        .controller("myNetWorkCtrl", ["$scope", "DummyDataService", "MixPanelService","UserContextService",
-            function ($scope, DummyDataService, MixPanelService,UserContextService) {
+        .controller("myNetWorkCtrl", ["$scope", "DummyDataService", "MixPanelService","UserContextService","FoundationApi",
+            function ($scope, DummyDataService, MixPanelService,UserContextService,FoundationApi) {
 
                 MixPanelService.track("My Network");
 
                 $scope.groupCollection = {};
-
+                FoundationApi.publish('loaderModal', 'open');
                 $scope.peoplePickerGroups = [
                     {key: "connType", value: "Group by connection type"},
                     {key: "entityType", value: "Group by type"},
@@ -35,6 +35,7 @@
                     } else {
                         $scope.selectedGroup = $scope.groupCollection["connType"];
                     }
+                    FoundationApi.publish('loaderModal', 'close');
                 });
 
                 $scope.updatePeoplePickerResults = function (selectedPeoplePickerGroup) {

@@ -24,15 +24,17 @@ $signal-icon-width: 40px;
     overflow: hidden;
   }
   .tagged-people {
-    background-color: white;
-    height: 46px;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    background-color: #ffffff;
+    padding-bottom: 4px;
     img {
       height: 45px;
       width: 45px;
       float: left;
-      margin-right: 5px;
       border: 1px solid rgb(224, 213, 213);
-      margin-left: 5px;
+      margin: 5px;
     }
   }
   .attached-files {
@@ -220,6 +222,7 @@ $signal-icon-width: 40px;
       }
     }
   }
+
 .activity-type{
   margin-bottom: 18px;
   border: 1px solid #B6ABAB;
@@ -246,6 +249,7 @@ $signal-icon-width: 40px;
     margin-bottom: 0px;
   }
 }
+
   .new-comment{
     width: 100%;
     overflow: hidden;
@@ -255,10 +259,23 @@ $signal-icon-width: 40px;
       float: left;
     }
     margin-top: 10px;
+    .new-comment-people-tagged{
+      margin-left: 75px;
+      width: 100%;
+      overflow: hidden;
+      img{
+        float: left;
+        height: 40px;
+        width: 40px;
+        margin-right: 5px;
+        margin-bottom: 3px;
+      }
+    }
     .new-comment-attachment{
       margin-left: 75px;
       width: 100%;
       overflow: hidden;
+      margin-bottom: 10px;
       label{
         color: #008CBA;
         float: left;

@@ -58,7 +58,7 @@
             this.personalConnections = function (searchKey) {
                 var data = {
                     searchKey: searchKey == "" ? null : searchKey,
-                    accessToken: LoginService.getAccessToken(),
+                    accessToken: this.getAccessToken(),
                     orgIds: [],
                     includeOrgs: false
                 }

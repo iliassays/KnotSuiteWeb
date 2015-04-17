@@ -1,0 +1,22 @@
+.mini-people-picker{
+  position: absolute;
+  z-index: 1;
+  margin-top: -16px;
+  background-color: whitesmoke;
+  .result{
+    width: 100%;
+    overflow: hidden;
+    padding: 10px;
+    cursor: pointer;
+    &:hover{
+      background-color: #ffffff;
+      border: 1px dotted #694948;
+    }
+    img{
+      float: left;
+      height: 30px;
+      margin-right: 10px;
+      width: 30px;
+    }
+  }
+}

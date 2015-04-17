@@ -13,9 +13,6 @@
                         {key: "nameType", value: "Group by name"}
                     ];
                     $scope.selectedPeoplePickerGroup = $scope.peoplePickerGroups[1];
-                    $scope.hidePeoplePicker = function () {
-                        $scope.peoplePickerFlag = false;
-                    }
                 },
                 link: function (scope, element, attrs) {
                 }

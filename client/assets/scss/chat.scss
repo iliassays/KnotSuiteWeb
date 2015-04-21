@@ -24,6 +24,32 @@
       }
       .content{
         margin-left: 80px;
+        .userName{
+          margin-bottom: 8px;
+          color: #60a8cd;
+        }
+        .lastUpdated{
+          font-size: 14px;
+          margin-top: 8px;
+          color: gray;
+        }
+        .top{
+          width: 100%;
+          overflow: hidden;
+          p.left{
+            float: left;
+            color: #60a8cd;
+          }
+          p.right{
+            float: right;
+            font-size: 14px;
+            color: gray;
+          }
+        }
+        .bottom{
+          margin-bottom: 0;
+          margin-top: -8px;
+        }
       }
       .email{
         color: #43b8ea;

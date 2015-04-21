@@ -95,6 +95,31 @@
                 return ApiService.post('/personalHub/getAllConnectionsOfUser', data);
             }
 
+            this.getCurrentAccountConnections = function(searchKey){
+                var currentlySignedAs = this.getCurrentlySignedAsAccount();
+
+
+                if (currentlySignedAs.isPersonalAccount) {
+                    var data = {
+                        searchKey: searchKey == "" ? null : searchKey,
+                        accessToken: this.getAccessToken(),
+                        orgIds: [],
+                        includeOrgs: false
+                    }
+                    return ApiService.post('/personalHub/personalConnections', data);
+
+                } else {
+
+                    var data = {
+                        searchKey: searchKey == "" ? null : searchKey,
+                        accessToken: this.getAccessToken(),
+                        orgIds: [currentlySignedAs.accountInfo.id],
+                        includeOrgs: false
+                    }
+                    return ApiService.post('/api/connections/getAllEmployeesOfOrgs', data);
+                }
+            }
+
         }]);
 })();
 

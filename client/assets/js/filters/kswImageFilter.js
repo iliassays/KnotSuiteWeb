@@ -1,14 +1,24 @@
 "use strict";
-(function(){
+(function () {
     angular.module("kswFilterModule")
-        .filter("kswImageFilter",["ApiService",function(ApiService){
-            return function(input,imageSize,personId){
+        .filter("kswImageFilter", ["ApiService", function (ApiService) {
+            return function (input, imageSize, id, isOrg) {
+
+                if (isOrg) {
+                    return ApiService.imageCdnServer +
+                        '/getOrgProfilePictureThumbnail/' +
+                        id +
+                        '/' +
+                        imageSize +
+                        '/org.jpg';
+                }
+
                 return ApiService.imageCdnServer +
-                      '/getProfilePictureThumbnail/' +
-                      personId +
-                      '/' +
-                      imageSize +
-                      '/profile.jpg';
+                    '/getProfilePictureThumbnail/' +
+                    id +
+                    '/' +
+                    imageSize +
+                    '/profile.jpg';
             }
         }]);
 })();

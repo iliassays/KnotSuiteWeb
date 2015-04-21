@@ -27,18 +27,20 @@
                 //    clientUriExpiryDate:"2015-05-08T07:44:42.000Z",
                 //    appId:"knotsuite"
                 //}
-                //$scope.user = {
-                //    loginEmail: "brian.tobey123@gmail.com",
-                //    loginPassword: "@ddinstagram",
-                //    clientURI: "NO_CLIENT_URI",
-                //    timeOffset: 360
-                //}
+
                 $scope.user = {
-                    loginEmail: "",
-                    loginPassword: "",
+                    loginEmail: "brian.tobey123@gmail.com",
+                    loginPassword: "@ddinstagram",
                     clientURI: "NO_CLIENT_URI",
                     timeOffset: 360
                 }
+
+                //$scope.user = {
+                //    loginEmail: "",
+                //    loginPassword: "",
+                //    clientURI: "NO_CLIENT_URI",
+                //    timeOffset: 360
+                //}
 
 
                 $scope.loginNow = function () {

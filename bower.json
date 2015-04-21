@@ -25,6 +25,7 @@
     "foundation-apps": "master",
     "font-awesome": "master",
     "lodash": "master",
-    "ngAnimate-animate.css": "master"
+    "ngAnimate-animate.css": "master",
+    "socket.io-client": "master"
   }
 }

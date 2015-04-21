@@ -4,10 +4,9 @@
         .factory('ApiService', ["$q", "$http", function ($q, $http) {
             var baseDevUrl = "https://dev-frontserver.herokuapp.com";
             var baseProdUrl = "https://prod-frontserver.herokuapp.com";
-            var baseUrl = baseProdUrl;
-            var chatServerUrl = "http://prod-chatserver.herokuapp.com";
-            var imageCdnServer = "http://prod-cdn.herokuapp.com";
-
+            var baseUrl = baseDevUrl;
+            var chatServerUrl = "http://dev-chatserver.herokuapp.com";
+            var imageCdnServer = "http://dev-cdn.herokuapp.com";
             var post = function (url, data, serverUrl) {
                 var deferred = $q.defer();
                 $http({
@@ -25,11 +24,30 @@
                 return deferred.promise;
             };
 
+            var getProfileThumbnail = function(id,imageSize,isOrg){
+                if (isOrg) {
+                    return imageCdnServer +
+                        '/getOrgProfilePictureThumbnail/' +
+                        id +
+                        '/' +
+                        imageSize +
+                        '/org.jpg';
+                }
+
+                return imageCdnServer +
+                    '/getProfilePictureThumbnail/' +
+                    id +
+                    '/' +
+                    imageSize +
+                    '/profile.jpg';
+            }
+
             return {
                 post: post,
                 apiUrl: baseUrl,
                 chatServerUrl:chatServerUrl,
-                imageCdnServer:imageCdnServer
+                imageCdnServer:imageCdnServer,
+                getProfileThumbnail:getProfileThumbnail
             };
         }]);
 })();

@@ -96,13 +96,12 @@
             }
 
             var saveSignal = function (signal) {
-                console.log(signal);
 
                 signal.objectTags = [];
 
                 angular.forEach(signal.taggedPeople, function (person) {
                     var object = {
-                        objId: person.accountId,
+                        objId: person.id,
                         objPicture: person.smallpicture,
                         objType: person.entityType,
                         objTitle: person.title

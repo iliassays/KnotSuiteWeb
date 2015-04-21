@@ -110,6 +110,9 @@ gulp.task('copy', function() {
   gulp.src('./bower_components/font-awesome/fonts/**/*')
       .pipe(gulp.dest('./build/assets/fonts/'));
 
+    gulp.src('./bower_components/socket.io-client/socket.io.js')
+        .pipe(gulp.dest('./build/assets/js'));
+
 
   // Foundation's Angular partials
   return gulp.src(['./bower_components/foundation-apps/js/angular/components/**/*.html'])

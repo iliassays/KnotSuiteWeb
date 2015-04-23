@@ -14,8 +14,8 @@ controller: ChatCtrl
                     <header class="title custom-header conversation-header-background">
                         Conversations
                     </header>
-                    <div class="history" ksw-dynamic-height parent=".ksw-content" reduce="70">
-                        <div class="grid-content message-history" data-ng-repeat="conversation in conversations" data-ng-click="loadAllMessage(conversation)">
+                    <div class="history" ksw-dynamic-height parent=".ksw-content" reduce="70" >
+                        <div class="grid-content message-history" data-ng-repeat="conversation in conversations" data-ng-click="loadAllMessage(conversation)" data-ng-class="{'selected-history-background' : conversation._id == selectedConversion.conversation._id}">
                             <img data-ng-src="{{conversation.target._id | kswImageFilter: 60:conversation.target._id}}" alt=""/>
                             <div class="content">
                                 <div class="userName">{{conversation.target.firstName +' '+conversation.target.lastName}}</div>
@@ -42,7 +42,7 @@ controller: ChatCtrl
                         {{selectedConversion.conversation.target.firstName +' '+ selectedConversion.conversation.target.lastName}}
                     </header>
 
-                    <div class="history" ksw-dynamic-height parent=".ksw-content" reduce="170">
+                    <div class="history" ksw-dynamic-height parent=".ksw-content" reduce="170" scroll-glue>
                         <div class="grid-content message-history" data-ng-repeat="conversation in selectedConversion.messages">
                             <img data-ng-src="{{conversation.actorId | kswImageFilter: 60:conversation.actorId._id}}" alt=""/>
 

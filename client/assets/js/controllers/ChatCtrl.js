@@ -106,11 +106,33 @@
                 }
 
                 chatSocket.on("sisigma_chat_message",function(response){
-                    console.log(response);
+                    if(response){
+                        if($scope.selectedConversion.conversation._id == response.conversationId){
+                            var messageIsExist = _.find($scope.selectedConversion.messages,{_id:response._id});
+                            if(!messageIsExist){
+                                $scope.selectedConversion.messages.push(response);
+                                $scope.$apply();
+                            }
+                        }
+                    }
                 });
 
                 chatSocket.on("sisigma_chat_new_conversation",function(response){
-                    console.log(response);
+                    if(response){
+                        ChatService.getMessageHistory().then(function (response) {
+                            if (response.code) {
+                                $scope.conversations = response.data;
+                                angular.forEach($scope.conversations, function (conversation) {
+                                    if (conversation.participants[0]._id == currentUserId) {
+                                        conversation.target = conversation.participants[1];
+                                    } else {
+                                        conversation.target = conversation.participants[0];
+                                    }
+                                });
+                            }
+                        });
+
+                    }
                 });
 
 

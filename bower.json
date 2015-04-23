@@ -26,6 +26,7 @@
     "font-awesome": "master",
     "lodash": "master",
     "ngAnimate-animate.css": "master",
-    "socket.io-client": "master"
+    "socket.io-client": "master",
+    "angular-scroll-glue": "~2.0.5"
   }
 }

@@ -18,9 +18,15 @@
                 return ApiService.post('/api/getNominatedAwardsByUserId',data);
             }
 
+            var nominateAward = function(award){
+                award.accessToken = UserContextService.getAccessToken();
+                return ApiService.post('/api/nominateAward',award);
+            }
+
             return{
                 getAllAwards: getAllAwards,
-                getNominatedAwardById: getNominatedAwardById
+                getNominatedAwardById: getNominatedAwardById,
+                nominateAward:nominateAward
             }
         }]);
 })();

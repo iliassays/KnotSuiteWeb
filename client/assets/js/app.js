@@ -6,6 +6,7 @@
         'ngAnimate',
         'kswDirectiveModule',
         'kswFilterModule',
+        'luegg.directives',
         //foundation
         'foundation',
         'foundation.dynamicRouting',

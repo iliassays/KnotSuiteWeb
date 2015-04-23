@@ -22,8 +22,8 @@
             var sendMessage = function(selectedConversation){
                 var data = {
                     conversationId:selectedConversation.conversation._id,
-                    message:selectedConversation.newMessage,
-                    actorId:selectedConversation.conversation.target._id,
+                    message: selectedConversation.newMessage,
+                    actorId: UserContextService.getCurrentUserId(),
                     attachments:[],
                     accessToken:UserContextService.getAccessToken()
                 };

@@ -36,7 +36,8 @@ var foundationJS = [
   'bower_components/foundation-apps/js/angular/**/*.js',
   '!bower_components/foundation-apps/js/angular/app.js',
   'bower_components/lodash/lodash.js',
-  'bower_components/hammerjs/hammer.js'
+  'bower_components/hammerjs/hammer.js',
+    'bower_components/angular-scroll-glue/src/scrollglue.js'
 ];
 // These files are for your app's JavaScript
 var appJS = [

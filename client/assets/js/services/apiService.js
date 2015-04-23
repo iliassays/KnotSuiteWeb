@@ -2,11 +2,12 @@
 (function () {
     angular.module('application')
         .factory('ApiService', ["$q", "$http", function ($q, $http) {
+
             var baseDevUrl = "https://dev-frontserver.herokuapp.com";
             var baseProdUrl = "https://prod-frontserver.herokuapp.com";
-            var baseUrl = baseDevUrl;
-            var chatServerUrl = "http://dev-chatserver.herokuapp.com";
-            var imageCdnServer = "http://dev-cdn.herokuapp.com";
+            var baseUrl = baseProdUrl;
+            var chatServerUrl = "https://prod-chatserver.herokuapp.com";
+            var imageCdnServer = "http://prod-cdn.herokuapp.com";
             var post = function (url, data, serverUrl) {
                 var deferred = $q.defer();
                 $http({

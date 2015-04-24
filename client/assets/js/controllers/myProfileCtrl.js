@@ -155,7 +155,9 @@
                                 var newSignal = {
                                     doc: response.data,
                                     newComment: {
-                                        attachments: []
+                                        attachments: [],
+                                        taggedPeople:[],
+                                        message:''
                                     },
                                     comments: []
                                 }
@@ -182,7 +184,9 @@
                                         var newSignal = {
                                             doc: response.data,
                                             newComment: {
-                                                attachments: []
+                                                attachments: [],
+                                                taggedPeople:[],
+                                                message:''
                                             },
                                             comments: []
                                         }
@@ -265,6 +269,8 @@
                                 signal.newComment = {};
                                 signal.newComment.attachments = [];
                                 signal.newComment.attachmentUrls = [];
+                                signal.newComment.taggedPeople = [];
+                                signal.newComment.message = '';
                             }
                             FoundationApi.publish('loaderModal', 'close');
                         });
@@ -283,6 +289,8 @@
                                         signal.newComment = {};
                                         signal.newComment.attachments = [];
                                         signal.newComment.attachmentUrls = [];
+                                        signal.newComment.taggedPeople = [];
+                                        signal.newComment.message = '';
                                     }
                                     FoundationApi.publish('loaderModal', 'close');
                                 });

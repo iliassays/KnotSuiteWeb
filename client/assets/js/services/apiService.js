@@ -5,9 +5,9 @@
 
             var baseDevUrl = "https://dev-frontserver.herokuapp.com";
             var baseProdUrl = "https://prod-frontserver.herokuapp.com";
-            var baseUrl = baseProdUrl;
-            var chatServerUrl = "https://prod-chatserver.herokuapp.com";
-            var imageCdnServer = "http://prod-cdn.herokuapp.com";
+            var baseUrl = baseDevUrl;
+            var chatServerUrl = "https://dev-chatserver.herokuapp.com";
+            var fileCdnServer = "http://dev-cdn.herokuapp.com";
             var post = function (url, data, serverUrl) {
                 var deferred = $q.defer();
                 $http({
@@ -27,7 +27,7 @@
 
             var getProfileThumbnail = function(id,imageSize,isOrg){
                 if (isOrg) {
-                    return imageCdnServer +
+                    return fileCdnServer +
                         '/getOrgProfilePictureThumbnail/' +
                         id +
                         '/' +
@@ -35,7 +35,7 @@
                         '/org.jpg';
                 }
 
-                return imageCdnServer +
+                return fileCdnServer +
                     '/getProfilePictureThumbnail/' +
                     id +
                     '/' +
@@ -47,7 +47,7 @@
                 post: post,
                 apiUrl: baseUrl,
                 chatServerUrl:chatServerUrl,
-                imageCdnServer:imageCdnServer,
+                fileCdnServer:fileCdnServer,
                 getProfileThumbnail:getProfileThumbnail
             };
         }]);

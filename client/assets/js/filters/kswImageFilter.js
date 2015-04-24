@@ -5,7 +5,7 @@
             return function (input, imageSize, id, isOrg) {
 
                 if (isOrg) {
-                    return ApiService.imageCdnServer +
+                    return ApiService.fileCdnServer +
                         '/getOrgProfilePictureThumbnail/' +
                         id +
                         '/' +
@@ -13,7 +13,7 @@
                         '/org.jpg';
                 }
 
-                return ApiService.imageCdnServer +
+                return ApiService.fileCdnServer +
                     '/getProfilePictureThumbnail/' +
                     id +
                     '/' +

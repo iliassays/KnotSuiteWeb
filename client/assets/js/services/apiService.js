@@ -25,6 +25,28 @@
                 return deferred.promise;
             };
 
+            var fileUpload = function(url,data,serverUrl){
+                var deferred = $q.defer();
+                $http({
+                    url: serverUrl == null ? baseUrl + url : serverUrl + url,
+                    method: "POST",
+                    data: data,
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                }).success(function (data,status, headers, config) {
+                    var result = {};
+                    result.data = data;
+                    result.status = status;
+                    result.headers = headers;
+                    result.config = config;
+                    deferred.resolve(result);
+                }).error(function (result, status) {
+                    deferred.reject(status);
+                });
+                return deferred.promise;
+            }
+
             var getProfileThumbnail = function(id,imageSize,isOrg){
                 if (isOrg) {
                     return fileCdnServer +
@@ -48,7 +70,8 @@
                 apiUrl: baseUrl,
                 chatServerUrl:chatServerUrl,
                 fileCdnServer:fileCdnServer,
-                getProfileThumbnail:getProfileThumbnail
+                getProfileThumbnail:getProfileThumbnail,
+                postWithHeader:fileUpload
             };
         }]);
 })();

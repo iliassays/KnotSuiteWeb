@@ -3,6 +3,9 @@
     angular.module('kswFilterModule')
         .filter('kswDocumentIconFilter', ["ApiService", function (ApiService) {
             return function (input) {
+                if(!input){
+                    return '/assets/img/doc-icons/doc_icon_default_big.png';
+                }
 
                 var fileType = input.match(/\.[0-9a-z]+$/i)[0];
 
@@ -20,6 +23,7 @@
                 } else {
                     return '/assets/img/doc-icons/doc_icon_default_big.png';
                 }
+
             }
         }]);
 })();

@@ -19,6 +19,11 @@
                 ChatService.getMessageHistory().then(function (response) {
                     if (response.code) {
                         $scope.conversations = response.data;
+                        if(!$scope.conversations.length){
+                            FoundationApi.publish('loaderModal', 'close');
+                            return;
+                        }
+
                         angular.forEach($scope.conversations, function (conversation) {
                             if (conversation.participants[0]._id == currentUserId) {
                                 conversation.target = conversation.participants[1];
@@ -121,6 +126,7 @@
                     if(response){
                         ChatService.getMessageHistory().then(function (response) {
                             if (response.code) {
+                                $scope.conversations = [];
                                 $scope.conversations = response.data;
                                 angular.forEach($scope.conversations, function (conversation) {
                                     if (conversation.participants[0]._id == currentUserId) {

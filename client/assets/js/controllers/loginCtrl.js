@@ -33,13 +33,13 @@
                    loginPassword: "@ddinstagram",
                    clientURI: "NO_CLIENT_URI",
                    timeOffset: 360
-                }
+               }
 
                 //$scope.user = {
                 //    loginEmail: "",
                 //    loginPassword: "",
                 //    clientURI: "NO_CLIENT_URI",
-                //   timeOffset: 360
+                //    timeOffset: 360
                 //}
 
 

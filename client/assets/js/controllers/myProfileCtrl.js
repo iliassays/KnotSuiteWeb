@@ -1,4 +1,4 @@
-"use strict";
+//"use strict";
 (function () {
     angular.module('application').controller('myProfileCtrl',
         ["$scope",
@@ -176,9 +176,7 @@
                     } else {
                         angular.forEach(signal.attachments, function (attachment) {
                             SignalService.attachNewFileMobile(attachment).then(function (response) {
-
-                                signal.attachmentUrl.push(response.url);
-
+                                signal.attachmentUrl.push(response.headers('Url'));
                                 if (signal.attachmentUrl.length == signal.attachments.length) {
                                     SignalService.saveSignal(signal).then(function (response) {
                                         var newSignal = {
@@ -200,7 +198,6 @@
                                         FoundationApi.publish('loaderModal', 'close');
                                     });
                                 }
-
                             });
                         });
                     }

@@ -55,7 +55,8 @@
                     fileBase64: attachment.fileBase64,
                     accessToken: UserContextService.getAccessToken()
                 }
-                return ApiService.post('/api/signals/attachFile_Mobile', data);
+              //  return ApiService.post('/api/signals/attachFile_Mobile', data);
+                return ApiService.postWithHeader('/uploadFile', data,ApiService.fileCdnServer);
             }
 
             var saveComment = function (signal) {

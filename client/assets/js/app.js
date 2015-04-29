@@ -16,9 +16,9 @@
         .run(run)
     ;
 
-    config.$inject = ['$urlRouterProvider', '$locationProvider'];
+    config.$inject = ['$urlRouterProvider', '$locationProvider','$httpProvider'];
 
-    function config($urlProvider, $locationProvider) {
+    function config($urlProvider, $locationProvider,$httpProvider) {
         $urlProvider.otherwise('/');
 
         $locationProvider.html5Mode({
@@ -27,6 +27,7 @@
         });
 
         //$locationProvider.hashPrefix('!');
+
     }
 
     function run() {

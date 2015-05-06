@@ -5,9 +5,10 @@
 
             var baseDevUrl = "https://dev-frontserver.herokuapp.com";
             var baseProdUrl = "https://prod-frontserver.herokuapp.com";
-            var baseUrl = baseDevUrl;
-            var chatServerUrl = "https://dev-chatserver.herokuapp.com";
-            var fileCdnServer = "http://dev-cdn.herokuapp.com";
+            var baseUrl = baseProdUrl;
+            var chatServerUrl = "https://prod-chatserver.herokuapp.com";
+            var fileCdnServer = "http://prod-cdn.herokuapp.com";
+
             var post = function (url, data, serverUrl) {
                 var deferred = $q.defer();
                 $http({
@@ -17,7 +18,12 @@
                     headers: {
                         "Content-Type": "application/json"
                     }
-                }).success(function (result) {
+                }).success(function (data,status, headers, config) {
+                    var result = {};
+                    result.data = data;
+                    result.status = status;
+                    result.headers = headers;
+                    result.config = config;
                     deferred.resolve(result);
                 }).error(function (result, status) {
                     deferred.reject(status);

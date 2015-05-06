@@ -30,13 +30,15 @@
                 $scope.signalOffSet = 0;
                 FoundationApi.publish('loaderModal', 'open');
 
-                UserContextService.getProfileById(userId).then(function (data) {
+                UserContextService.getProfileById(userId).then(function (response) {
+                    var data = response.data;
                     $scope.currentUserId = data.connData._id;
                     $scope.myName = data.connData.firstName + " " + data.connData.lastName;
                     $scope.myEmail = data.connData.email;
                 });
 
-                SignalService.getSignals($scope.signalOffSet).then(function (signals) {
+                SignalService.getSignals($scope.signalOffSet).then(function (response) {
+                    var signals = response.data;
                     $scope.signals = [];
                     angular.forEach(signals.data, function (signal) {
                         if (signal.hasOwnProperty('doc')) {
@@ -57,10 +59,9 @@
 
                 });
 
-                $scope.onAttachmentChange = function (attachment) {
-                    var attachments = window.event.target.files;
+                $scope.onAttachmentChange = function () {
 
-                    angular.forEach(attachments, function (attachment) {
+                    angular.forEach(window.event.target.files, function (attachment) {
                         var fileReader = new FileReader();
                         fileReader.onload = function (fileLoadedEvent) {
                             var attachmentData = fileLoadedEvent.target.result.replace(/^data(.*?),/, '');
@@ -71,6 +72,7 @@
                             $scope.$apply();
                         }
                         fileReader.readAsDataURL(attachment);
+                        $scope.$apply();
                     });
                 };
 
@@ -82,7 +84,8 @@
                 $scope.showPeoplePicker = function () {
                     if(!$scope.peoplePickerFlag ){
                         FoundationApi.publish('loaderModal', 'open');
-                        SignalService.getConnections().then(function (connections) {
+                        SignalService.getConnections().then(function (response) {
+                            var connections = response.data;
                             $scope.peoplePickerFlag = true;
                             angular.forEach(connections,function(connection){
                                 var isExists = _.find($scope.signal.taggedPeople,{id:connection.id});
@@ -152,8 +155,10 @@
                         SignalService.saveSignal(signal)
                             .then(function (response) {
 
+                                var signal = response.data;
+                                console.log(signal);
                                 var newSignal = {
-                                    doc: response.data,
+                                    doc: signal.data,
                                     newComment: {
                                         attachments: [],
                                         taggedPeople:[],
@@ -179,8 +184,9 @@
                                 signal.attachmentUrl.push(response.headers('Url'));
                                 if (signal.attachmentUrl.length == signal.attachments.length) {
                                     SignalService.saveSignal(signal).then(function (response) {
+                                        var signal = response.data;
                                         var newSignal = {
-                                            doc: response.data,
+                                            doc: signal.data,
                                             newComment: {
                                                 attachments: [],
                                                 taggedPeople:[],
@@ -207,22 +213,23 @@
                     FoundationApi.publish('loaderModal', 'open');
                     SignalService.saveFeedback('n', signal._id)
                         .then(function (response) {
-                            if (response.code) {
-                                signal.fbYes = response.data.fbYes;
-                                signal.fbNo = response.data.fbNo;
+                            var data = response.data;
+                            if (data.code) {
+                                signal.fbYes = data.data.fbYes;
+                                signal.fbNo = data.data.fbNo;
                             }
                             FoundationApi.publish('loaderModal', 'close');
                         });
-                    ;
                 }
 
                 $scope.saveLike = function (signal) {
                     FoundationApi.publish('loaderModal', 'open');
                     SignalService.saveFeedback('y', signal._id)
                         .then(function (response) {
-                            if (response.code) {
-                                signal.fbYes = response.data.fbYes;
-                                signal.fbNo = response.data.fbNo;
+                            var data = response.data;
+                            if (data.code) {
+                                signal.fbYes = data.data.fbYes;
+                                signal.fbNo = data.data.fbNo;
                             }
                             FoundationApi.publish('loaderModal', 'close');
                         });
@@ -231,7 +238,8 @@
                 $scope.loadMoreSignal = function () {
                     FoundationApi.publish('loaderModal', 'open');
                     $scope.signalOffSet += 10;
-                    SignalService.getSignals($scope.signalOffSet).then(function (signals) {
+                    SignalService.getSignals($scope.signalOffSet).then(function (response) {
+                        var signals = response.data;
                         angular.forEach(signals.data, function (signal) {
                             if (signal.hasOwnProperty('doc')) {
                                 $scope.signals.push(signal);
@@ -242,6 +250,7 @@
                 }
 
                 $scope.onCommentAttachmentChange = function (signal) {
+
                     var attachments = window.event.target.files;
                     angular.forEach(attachments, function (attachment) {
                         var fileReader = new FileReader();
@@ -261,9 +270,10 @@
 
                     if (signal.newComment.attachments.length == 0) {
                         SignalService.saveComment(signal).then(function (response) {
-                            if (response.code) {
-                                signal.comments.push(response.data);
-                                signal.newComment = {};
+                            var comment = response.data;
+                            if (comment.code) {
+                                signal.comments.push(comment.data);
+                              //  signal.newComment = {};
                                 signal.newComment.attachments = [];
                                 signal.newComment.attachmentUrls = [];
                                 signal.newComment.taggedPeople = [];
@@ -277,13 +287,14 @@
                     angular.forEach(signal.newComment.attachments, function (attachment) {
                         SignalService.attachNewFileMobile(attachment).then(function (response) {
 
-                            signal.newComment.attachmentUrls.push(response.url);
+                            signal.newComment.attachmentUrls.push(response.headers('Url'));
 
                             if (signal.newComment.attachmentUrls.length == signal.newComment.attachments.length) {
                                 SignalService.saveComment(signal).then(function (response) {
-                                    if (response.code) {
-                                        signal.comments.push(response.data);
-                                        signal.newComment = {};
+                                    var comment = response.data;
+                                    if (comment.code) {
+                                        signal.comments.push(comment.data);
+                                      //  signal.newComment = {};
                                         signal.newComment.attachments = [];
                                         signal.newComment.attachmentUrls = [];
                                         signal.newComment.taggedPeople = [];
@@ -306,7 +317,8 @@
                         newComment.caretPosition = $event.currentTarget.selectionStart;
                         newComment.showMiniPeoplePicker = true;
                         FoundationApi.publish('loaderModal', 'open');
-                        SignalService.getConnections().then(function (connections) {
+                        SignalService.getConnections().then(function (response) {
+                            var connections = response.data;
                             newComment.people = connections;
                             FoundationApi.publish('loaderModal', 'close');
                         });

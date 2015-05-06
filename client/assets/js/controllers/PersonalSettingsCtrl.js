@@ -10,7 +10,8 @@
                     $location.path('/');
                 }
                 var userId = UserContextService.getCurrentUserId();
-                UserContextService.getProfileById(userId).then(function (data) {
+                UserContextService.getProfileById(userId).then(function (response) {
+                    var data = response.data;
                     $scope.profilePicture = ApiService.apiUrl + '/' + data.connData.imgSrc;
                 });
                 $scope.saveDate = function () {

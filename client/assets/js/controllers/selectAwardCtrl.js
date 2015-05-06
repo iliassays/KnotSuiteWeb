@@ -8,13 +8,13 @@
                 FoundationApi.publish('loaderModal', 'open');
                 AwardService.getAllAwards()
                     .then(function (response) {
-                        if (response.code) {
-
+                        var data = response.data;
+                        if (data.code) {
                             $scope.awardsGroup ={
                                 "#UNTAGGED":[]
                             };
 
-                            var temp = angular.copy(response.data);
+                            var temp = angular.copy(data.data);
                             angular.forEach(temp,function(award){
 
                                 if(award.tags.length>0){
@@ -39,7 +39,6 @@
                 $scope.onAwardSelect = function(award){
                     $rootScope.selectedAward = award;
                     $state.go('myProfile.nominateAward',{awardId:award._id});
-
                 }
         }]);
 })();

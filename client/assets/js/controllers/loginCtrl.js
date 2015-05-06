@@ -45,7 +45,8 @@
 
                 $scope.loginNow = function () {
                     FoundationApi.publish('loaderModal', 'open');
-                    LoginService.sendLoginRequest($scope.user).then(function (data) {
+                    LoginService.sendLoginRequest($scope.user).then(function (response) {
+                        var data = response.data;
                         if (data.accountStatus == 2) {
 
                             UserContextService.saveCurrentUserData(data.userObj);

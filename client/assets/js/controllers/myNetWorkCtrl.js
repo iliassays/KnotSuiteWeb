@@ -16,7 +16,8 @@
 
                 $scope.selectedPeoplePickerGroup = $scope.peoplePickerGroups[1];
 
-                UserContextService.getAllConnectionsOfUser().then(function(data){
+                UserContextService.getAllConnectionsOfUser().then(function(response){
+                    var data = response.data;
                     $scope.peoplePickerFlag = true;
 
                     $scope.groupCollection["connType"] = _.groupBy(data, function (m) {

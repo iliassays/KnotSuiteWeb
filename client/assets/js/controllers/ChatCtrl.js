@@ -17,8 +17,9 @@
                 FoundationApi.publish('loaderModal', 'open');
 
                 ChatService.getMessageHistory().then(function (response) {
-                    if (response.code) {
-                        $scope.conversations = response.data;
+                    var data = response.data;
+                    if (data.code) {
+                        $scope.conversations = data.data;
                         if(!$scope.conversations.length){
                             FoundationApi.publish('loaderModal', 'close');
                             return;
@@ -35,8 +36,9 @@
                         $scope.selectedConversion.conversation = $scope.conversations[0];
                         FoundationApi.publish('loaderModal', 'open');
                         ChatService.getMessages($scope.selectedConversion.conversation).then(function (response) {
-                            if (response.code) {
-                                $scope.selectedConversion.messages = response.data;
+                            var data = response.data;
+                            if (data.code) {
+                                $scope.selectedConversion.messages = data.data;
                             }
                             FoundationApi.publish('loaderModal', 'close');
                         });
@@ -44,7 +46,7 @@
                 });
 
                 UserContextService.getCurrentAccountConnections('').then(function (response) {
-                    $scope.personalConnections = response;
+                    $scope.personalConnections = response.data;
                     FoundationApi.publish('loaderModal', 'close');
                 });
 
@@ -52,8 +54,9 @@
                     FoundationApi.publish('loaderModal', 'open');
                     $scope.selectedConversion.conversation = conversation;
                     ChatService.getMessages(conversation).then(function (response) {
-                        if (response.code) {
-                            $scope.selectedConversion.messages = response.data;
+                        var data = response.data;
+                        if (data.code) {
+                            $scope.selectedConversion.messages = data.data;
                         }
                         FoundationApi.publish('loaderModal', 'close');
                     });
@@ -64,7 +67,8 @@
                     if (!selectedConversation.conversation._id) {
 
                         ChatService.createConversation(selectedConversation).then(function (response) {
-                               if(response.code){
+                            var data = response.data;
+                               if(data.code){
                                    var conversation = response.data;
                                    if (conversation.participants[0]._id == currentUserId) {
                                        conversation.target = conversation.participants[1];
@@ -76,8 +80,9 @@
 
                                    ChatService.sendMessage(selectedConversation)
                                        .then(function(response){
-                                           if(response.code){
-                                               selectedConversation.messages.push(response.data);
+                                           var data = response.data;
+                                           if(data.code){
+                                               selectedConversation.messages.push(data.data);
                                            }
                                            conversation.lastMessage = selectedConversation.newMessage;
                                            $scope.conversations.unshift(conversation);
@@ -90,8 +95,9 @@
                     else{
                         ChatService.sendMessage(selectedConversation)
                             .then(function(response){
-                                if(response.code){
-                                    selectedConversation.messages.push(response.data);
+                                var data = response.data;
+                                if(data.code){
+                                    selectedConversation.messages.push(data.data);
                                 }
                                 selectedConversation.newMessage = '';
                                 FoundationApi.publish('loaderModal', 'close');

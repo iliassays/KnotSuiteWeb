@@ -1,0 +1,229 @@
+.connection-request-main {
+  background-color: rgb(62, 133, 206);
+  overflow-y: auto;
+  .request {
+    width: 100%;
+    overflow: hidden !important;
+    border-bottom: 1px solid rgb(107, 94, 94);
+    padding: 7px;
+    .request-left {
+      img {
+        height: 60px;
+        width: 60px;
+        float: left;
+      }
+      p {
+        float: left;
+        margin-left: 14px;
+        padding-top: 16px;
+        color: white;
+      }
+      float: left;
+    }
+    .request-right {
+      float: right;
+      width: 46%;
+      padding-top:6px;
+      input {
+        width: 150px;
+        float: left;
+        margin-right: 8px;
+      }
+      .request-reject{
+        float: left;
+        background: url("/assets/img/icons/connection/blue_delete.png");
+        height: 50px;
+        width: 50px;
+        background-repeat: no-repeat;
+        margin-top: 5px;
+        cursor: pointer;
+      }
+      .request-accept{
+        float: left;
+        background: url("/assets/img/icons/connection/blue_accept.png");
+        height: 50px;
+        width: 50px;
+        background-repeat: no-repeat;
+        margin-top: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.connection-request-header {
+  width: 100%;
+  overflow: hidden;
+  h6 {
+    float: left;
+  }
+  a {
+    float: right;
+    margin-right: 0;
+  }
+}
+
+.invitation-header {
+  height: 51px;
+}
+
+
+.invitation-bottom{
+  padding-top: 10px;
+  width: 100%;
+  overflow: hidden;
+  a{
+    float: right;
+  }
+
+}
+
+.invitation-main {
+  background-color: rgb(236, 240, 242);
+  overflow-y: auto;
+  .send-connection {
+    width: 100%;
+    overflow: hidden !important;
+    border-bottom: 1px solid rgb(107, 94, 94);
+    padding: 7px;
+    .send-connection-left {
+      img {
+        height: 60px;
+        width: 60px;
+        float: left;
+      }
+      p {
+        float: left;
+        margin-left: 14px;
+        padding-top: 16px;
+        color: rgb(189, 134, 134);
+      }
+      float: left;
+    }
+    .send-connection-right {
+      float: right;
+      width: 44%;
+      padding-top:6px;
+      input {
+        width: 150px;
+        float: left;
+        margin-right: 8px;
+      }
+      .send-connection-accept{
+        float: left;
+        background: url("/assets/img/icons/connection/blue_accept.png");
+        height: 50px;
+        width: 50px;
+        background-repeat: no-repeat;
+        margin-top: 5px;
+        cursor: pointer;
+      }
+      .send-connection-reject{
+        float: left;
+        background: url("/assets/img/icons/connection/blue_delete.png");
+        height: 50px;
+        width: 50px;
+        background-repeat: no-repeat;
+        margin-top: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.invitation-search {
+  padding: 10px;
+  background: rgb(5, 84, 76);
+  span {
+    margin: 0;
+  }
+}
+
+.search-result-main{
+  height: 300px;
+  overflow: auto;
+  background: white;
+  width: 29%;
+  position: absolute;
+  padding: 7px;
+  margin-left: 10px;
+  margin-top: -6px;
+
+  .search-result{
+    width: 100%;
+    overflow: hidden;
+    padding: 10px;
+    &:hover{
+      background-color: rgb(77, 74, 74);
+      cursor: pointer;
+    }
+    img{
+      width: 60px;
+      height: 60px;
+      float: left;
+    }
+    p{
+      float: left;
+      margin-left: 33px;
+      padding-top: 15px;
+      color: #AB9F9F;
+    }
+  }
+
+}
+
+.people-you-may-know {
+  background-color: rgb(217, 102, 103);
+  overflow-y: auto;
+  .recommended {
+    width: 100%;
+    overflow: hidden !important;
+    border-bottom: 1px solid rgb(107, 94, 94);
+    padding: 7px;
+    .recommended-left {
+      img {
+        height: 60px;
+        width: 60px;
+        float: left;
+      }
+      p {
+        float: left;
+        margin-left: 14px;
+        padding-top: 16px;
+        color: white;
+      }
+      float: left;
+    }
+    .recommended-right {
+      float: right;
+      width: 40%;
+      padding-top:6px;
+      input {
+        width: 150px;
+        float: left;
+        margin-right: 8px;
+      }
+      .recommended-accept{
+        float: left;
+        background: url("/assets/img/icons/connection/blue_accept.png");
+        height: 50px;
+        width: 50px;
+        background-repeat: no-repeat;
+        margin-top: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.people-you-may-know-header {
+  width: 100%;
+  overflow: hidden;
+  h6 {
+    float: left;
+  }
+  a {
+    float: right;
+    margin-right: 0;
+  }
+}

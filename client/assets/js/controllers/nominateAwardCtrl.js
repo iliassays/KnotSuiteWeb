@@ -37,7 +37,8 @@
                 $scope.showConnection = function () {
                     FoundationApi.publish('loaderModal', 'open');
                     UserContextService.getCurrentAccountConnections('').then(function (response) {
-                        $scope.connections.people = response;
+                        var data = response.data;
+                        $scope.connections.people = data;
                         $scope.connections.isShow = true;
                         FoundationApi.publish('loaderModal', 'close');
                     });

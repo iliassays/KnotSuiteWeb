@@ -46,56 +46,57 @@
                 return ApiService.post("/api/connections/rejectConnectionRequests", data);
             };
 
-            var sendConnectionRequests = function(selectedAccount,object){
+            var sendConnectionRequests = function (selectedAccount, object) {
 
-                var connectionRequests  = [];
+                var connectionRequests = [];
 
-                if(angular.isArray(object)){
-                    angular.forEach(object,function(obj){
+                if (angular.isArray(object)) {
+                    angular.forEach(object, function (obj) {
                         connectionRequests.push(
                             {
-                                firstEntityId:selectedAccount._id,
-                                firstEntityType:selectedAccount.entityType,
-                                secondEntityId:obj.entityId,
-                                secondEntityType:obj.entityType,
-                                secondEntityEmail:null,
-                                relation:obj.relation,
-                                message:null
+                                firstEntityId: selectedAccount._id,
+                                firstEntityType: selectedAccount.entityType,
+                                secondEntityId: obj.entityId,
+                                secondEntityType: obj.entityType,
+                                secondEntityEmail: null,
+                                relation: obj.relation,
+                                message: null
                             }
                         );
                     });
-                }else{
+                } else {
                     connectionRequests.push(
                         {
-                            firstEntityId:selectedAccount._id,
-                            firstEntityType:selectedAccount.entityType,
-                            secondEntityId:object.entityId,
-                            secondEntityType:object.entityType,
-                            secondEntityEmail:null,
-                            relation:object.relation,
-                            message:null
+                            firstEntityId: selectedAccount._id,
+                            firstEntityType: selectedAccount.entityType,
+                            secondEntityId: object.entityId,
+                            secondEntityType: object.entityType,
+                            secondEntityEmail: null,
+                            relation: object.relation,
+                            message: null
                         }
                     );
                 }
 
                 var data = {
-                    accessToken:UserContextService.getAccessToken(),
-                    connectionRequests:connectionRequests,
-                    requestingEntityId:null,
-                    requestingEntityType:null
+                    accessToken: UserContextService.getAccessToken(),
+                    connectionRequests: connectionRequests,
+                    requestingEntityId: null,
+                    requestingEntityType: null
                 };
 
 
-                return ApiService.post("/api/connections/sendConnectionRequests",data);
+                return ApiService.post("/api/connections/sendConnectionRequests", data);
             };
 
-            var getSuggestedConnections = function(account,searchKey){
+            var getSuggestedConnections = function (account, searchKey) {
+                var entityId = account == null ? null : account._id;
                 var data = {
-                    accessToken:UserContextService.getAccessToken(),
-                    entityId:account._id,
-                    searchKey:searchKey
+                    accessToken: UserContextService.getAccessToken(),
+                    entityId: entityId,
+                    searchKey: searchKey
                 };
-                return ApiService.post("/api/connections/getSuggestedConnections",data);
+                return ApiService.post("/api/connections/getSuggestedConnections", data);
             }
 
             return {
@@ -103,8 +104,8 @@
                 getCreateConnectionsData: getCreateConnectionsData,
                 acceptConnectionRequests: acceptConnectionRequests,
                 rejectConnectionRequests: rejectConnectionRequests,
-                sendConnectionRequests:sendConnectionRequests,
-                getSuggestedConnections:getSuggestedConnections
+                sendConnectionRequests: sendConnectionRequests,
+                getSuggestedConnections: getSuggestedConnections
             };
         }]);
 })();

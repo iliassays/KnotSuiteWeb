@@ -1,0 +1,37 @@
+.site-search-box{
+  margin: 0;
+  input{
+    height: 51px;
+    width: 380px;
+  }
+}
+.site-search-result{
+  position: absolute;
+  list-style: none;
+  background: #ffffff;
+  top: 83px;
+  margin-left: -380px;
+  z-index: 1;
+  width: 380px;
+  height: 300px;
+  overflow: auto;
+  li{
+    padding: 3px 0 3px 3px;
+    margin: 5px;
+    &:hover{
+      background-color: #453E3E;
+      cursor: pointer;
+      color: #ffffff;
+    }
+    img{
+      float: left;
+      width: 47px;
+      height: 47px;
+      padding: 3px;
+    }
+    p{
+      margin-top: 4px;
+      margin-left: 70px;
+    }
+  }
+}

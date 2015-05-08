@@ -84,6 +84,7 @@
             }
 
             this.getCorporateConnection = function(){
+
                 var currentUserData = JSON.parse(localStorage["currentUserData"]);
                 return currentUserData.corporateConnections;
             }
@@ -118,6 +119,13 @@
                     }
                     return ApiService.post('/api/connections/getAllEmployeesOfOrgs', data);
                 }
+            }
+
+            this.getUserOwnedOrganization = function(){
+                var data = {
+                    accessToken: this.getAccessToken()
+                };
+                return ApiService.post('/personalHub/corporateConnections', data);
             }
 
         }]);

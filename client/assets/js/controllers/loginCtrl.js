@@ -28,19 +28,19 @@
                 //    appId:"knotsuite"
                 //}
 
-               $scope.user = {
-                    loginEmail: "brian.tobey123@gmail.com",
-                   loginPassword: "@ddinstagram",
-                   clientURI: "NO_CLIENT_URI",
-                   timeOffset: 360
-               }
+               //$scope.user = {
+               //     loginEmail: "brian.tobey123@gmail.com",
+               //    loginPassword: "@ddinstagram",
+               //    clientURI: "NO_CLIENT_URI",
+               //    timeOffset: 360
+               //}
 
-                //$scope.user = {
-                //    loginEmail: "",
-                //    loginPassword: "",
-                //    clientURI: "NO_CLIENT_URI",
-                //    timeOffset: 360
-                //}
+                $scope.user = {
+                    loginEmail: "",
+                    loginPassword: "",
+                    clientURI: "NO_CLIENT_URI",
+                    timeOffset: 360
+                };
 
 
                 $scope.loginNow = function () {
@@ -74,6 +74,16 @@
                         FoundationApi.publish('loaderModal', 'close');
                     });
                 };
+
+                $scope.loginAlert = function(){
+                    FoundationApi.publish('main-notifications', {
+                            title: 'LOGIN',
+                            content: 'Please login first to proceed.',
+                            color: 'warning',
+                            autoclose: "3000"
+                        }
+                    );
+                }
 
             }]);
 })();

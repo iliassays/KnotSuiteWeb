@@ -14,9 +14,17 @@
       }
       p {
         float: left;
-        margin-left: 14px;
-        padding-top: 16px;
         color: white;
+        text-overflow: ellipsis;
+        width: 134px;
+        white-space: nowrap;
+        overflow: hidden;
+        padding: 10px;
+      }
+      @media only screen and (min-width: 90.063em) and (max-width: 120em) {
+        p {
+          width: auto;
+        }
       }
       float: left;
     }
@@ -94,9 +102,17 @@
       }
       p {
         float: left;
-        margin-left: 14px;
-        padding-top: 16px;
+        text-overflow: ellipsis;
+        width: 134px;
+        white-space: nowrap;
+        overflow: hidden;
+        padding: 10px;;
         color: rgb(189, 134, 134);
+      }
+      @media only screen and (min-width: 90.063em) and (max-width: 120em) {
+        p {
+          width: auto;
+        }
       }
       float: left;
     }
@@ -188,9 +204,17 @@
       }
       p {
         float: left;
-        margin-left: 14px;
-        padding-top: 16px;
+        text-overflow: ellipsis;
+        width: 134px;
+        white-space: nowrap;
+        overflow: hidden;
+        padding: 10px;;
         color: white;
+      }
+      @media only screen and (min-width: 90.063em) and (max-width: 120em) {
+        p {
+          width: auto;
+        }
       }
       float: left;
     }

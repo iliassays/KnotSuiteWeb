@@ -5,6 +5,7 @@
 
             $scope.searchflag = false;
             $scope.siteSearchResult = [];
+            $scope.siteSearchKey = "";
 
             $scope.updateSearchResult = function (siteSearchKey) {
                 if (siteSearchKey == "") {
@@ -14,11 +15,12 @@
 
                 ConnectionRequestService.getSuggestedConnections(null, siteSearchKey)
                     .then(function (response) {
-                        console.log($scope.siteSearchKey);
                         if (siteSearchKey != "") {
                             $scope.siteSearchResult = response.data;
+                        }else{
+                            $scope.siteSearchResult = [];
                         }
                     });
-            }
+            };
         }]);
 })();

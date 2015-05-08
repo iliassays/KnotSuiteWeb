@@ -181,7 +181,8 @@
                     } else {
                         angular.forEach(signal.attachments, function (attachment) {
                             SignalService.attachNewFileMobile(attachment).then(function (response) {
-                                signal.attachmentUrl.push(response.headers('Url'));
+                               // signal.attachmentUrl.push(response.headers('Url'));
+                                signal.attachmentUrl.push(response.data.url);
                                 if (signal.attachmentUrl.length == signal.attachments.length) {
                                     SignalService.saveSignal(signal).then(function (response) {
                                         var signal = response.data;
@@ -233,7 +234,7 @@
                             }
                             FoundationApi.publish('loaderModal', 'close');
                         });
-                }
+                };
 
                 $scope.loadMoreSignal = function () {
                     FoundationApi.publish('loaderModal', 'open');
@@ -286,8 +287,10 @@
 
                     angular.forEach(signal.newComment.attachments, function (attachment) {
                         SignalService.attachNewFileMobile(attachment).then(function (response) {
+                           // console.log(response.data);
 
-                            signal.newComment.attachmentUrls.push(response.headers('Url'));
+                           // signal.newComment.attachmentUrls.push(response.headers('Url'));
+                            signal.newComment.attachmentUrls.push(response.data.url);
 
                             if (signal.newComment.attachmentUrls.length == signal.newComment.attachments.length) {
                                 SignalService.saveComment(signal).then(function (response) {

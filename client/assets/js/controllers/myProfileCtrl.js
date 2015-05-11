@@ -9,13 +9,16 @@
             "DummyDataService",
             "$state",
             "MixPanelService",
-            "SignalService", "EventService", "FoundationApi",
+            "SignalService", "EventService", "FoundationApi","EventService",
             function ($scope, UserContextService, ApiService, LoginService,
                       $location, DummyDataService, $state, MixPanelService,
-                      SignalService, EventService, FoundationApi) {
+                      SignalService, EventService, FoundationApi,EventService) {
                 MixPanelService.track("My Profile");
 
                 var userId = UserContextService.getCurrentUserId();
+
+                EventService.trigger('signedIn');
+                //EventService.trigger('updateProfilePicture', UserContextService.getPersonalAccountInfo().currentUserData);
 
                 $state.go('myProfile.signal');
                 $scope.signal = {

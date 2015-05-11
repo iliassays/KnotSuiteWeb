@@ -7,14 +7,6 @@
 
                 $rootScope.isLoggedIn = UserContextService.isLoggedIn();
 
-                EventService.on('signedIn', function () {
-                    $rootScope.isLoggedIn = UserContextService.isLoggedIn();
-
-                    $scope.corporateConnections = UserContextService.getCorporateConnection();
-                    $scope.personalAccountInfo = UserContextService.getPersonalAccountInfo();
-                    UserContextService.changeCurrentlySignedAsAccount(true, $scope.personalAccountInfo);
-                });
-
                 $scope.signOut = function () {
                     LoginService.signOut();
                     $rootScope.isLoggedIn = false;
@@ -49,6 +41,13 @@
                     $scope.profilePicture = ApiService.getProfileThumbnail($scope.personalAccountInfo.accountId,60,false);
                     $scope.userName = userData.userName;
                     $scope.accountType = userData.accountType + " Account";
+                });
+
+                EventService.on('signedIn', function () {
+                    $rootScope.isLoggedIn = UserContextService.isLoggedIn();
+                    $scope.corporateConnections = UserContextService.getCorporateConnection();
+                    $scope.personalAccountInfo = UserContextService.getPersonalAccountInfo();
+                    UserContextService.changeCurrentlySignedAsAccount(true, $scope.personalAccountInfo);
                 });
 
             }])

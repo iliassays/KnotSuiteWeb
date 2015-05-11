@@ -79,7 +79,8 @@
                     accountId : currentUserData.accountId,
                     accountType: 'Personal Account',
                     imgSrc: currentUserData.imgSrc,
-                    userName : currentUserData.userName
+                    userName : currentUserData.userName,
+                    currentUserData: currentUserData
                 }
             }
 

@@ -9,18 +9,16 @@
             "DummyDataService",
             "$state",
             "MixPanelService",
-            "SignalService", "EventService", "FoundationApi","EventService",
+            "SignalService", "FoundationApi","EventService",
             function ($scope, UserContextService, ApiService, LoginService,
                       $location, DummyDataService, $state, MixPanelService,
-                      SignalService, EventService, FoundationApi,EventService) {
+                      SignalService, FoundationApi,EventService) {
                 MixPanelService.track("My Profile");
 
                 var userId = UserContextService.getCurrentUserId();
 
-                EventService.trigger('signedIn');
-                //EventService.trigger('updateProfilePicture', UserContextService.getPersonalAccountInfo().currentUserData);
-
                 $state.go('myProfile.signal');
+
                 $scope.signal = {
                     content: '',
                     taggedPeople: [],
@@ -56,10 +54,6 @@
                         }
                     });
                     FoundationApi.publish('loaderModal', 'close');
-                });
-
-                EventService.on('onBodyScroll', function (event) {
-
                 });
 
                 $scope.onAttachmentChange = function () {

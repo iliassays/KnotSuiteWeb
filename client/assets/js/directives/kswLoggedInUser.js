@@ -1,21 +1,19 @@
 "use strict";
 (function () {
     angular.module('kswDirectiveModule')
-        .directive("kswLoggedInUser", function () {
+        .directive("kswLoggedInUser", function ($parse) {
             return {
                 restrict: "A",
                 scope: {
                     currentUserPhoto: '@'
                 },
+                controller:function($scope, $element, $attrs){
+
+                },
                 link: function (scope, element, attrs) {
-                    scope.$watch('currentUserPhoto', function(newValue, oldValue) {
-                        var firstPartOfUrl = newValue.substr(0,newValue.lastIndexOf('/'));
-                        var lastPartOfUrl = newValue.substr(newValue.lastIndexOf('/'));
-                        if(lastPartOfUrl.indexOf(' ')){
-                            newValue = firstPartOfUrl + lastPartOfUrl.replace(/ /g,'%20');
-                        }
+                    attrs.$observe('currentUserPhoto', function(value) {
                         element.css({
-                            'background-image': "url("+newValue+")",
+                            'background-image': "url("+value+")",
                             'width': '60px',
                             'background-size': '100% 100%',
                             'background-repeat': 'no-repeat'

@@ -69,7 +69,7 @@
                     '/' +
                     imageSize +
                     '/profile.jpg';
-            }
+            };
 
             return {
                 post: post,

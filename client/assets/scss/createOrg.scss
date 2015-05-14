@@ -1,0 +1,26 @@
+.create-org-main{
+  .title-bar{
+    background-color: rgb(8, 81, 74);
+    border-bottom: 0;
+    color: #ffffff;
+  }
+  .cancel-button{
+    background-color: #96B29A;
+  }
+  .create-org-body{
+    background-color: rgb(19, 121, 110);
+    .create-org-form{
+      margin-top: 10px;
+      margin-bottom: 10px;
+      label{
+        color: #ffffff;
+      }
+      a{
+        color: #ffffff;
+        &:hover{
+          color: wheat;
+        }
+      }
+    }
+  }
+}

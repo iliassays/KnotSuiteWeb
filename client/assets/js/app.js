@@ -16,21 +16,27 @@
         .run(run)
     ;
 
-    config.$inject = ['$urlRouterProvider', '$locationProvider','$httpProvider'];
+    config.$inject = ['$urlRouterProvider', '$locationProvider', '$httpProvider'];
 
-    function config($urlProvider, $locationProvider,$httpProvider) {
+    function config($urlProvider, $locationProvider, $httpProvider) {
         $urlProvider.otherwise('/');
 
         $locationProvider.html5Mode({
             enabled: true,
             requireBase: false
         });
-
-        //$locationProvider.hashPrefix('!');
-
     }
 
-    function run() {
+    run.$inject = ['UserContextService', '$rootScope','EventService'];
+    function run(UserContextService, $rootScope, EventService) {
+        if(UserContextService.isLoggedIn()){
+            $rootScope.isLoggedIn = UserContextService.isLoggedIn();
+            UserContextService.saveCurrentUserData(UserContextService.getPersonalAccountInfo().currentUserData);
+            setTimeout(function(){
+                EventService.trigger('signedIn');
+                EventService.trigger('updateProfilePicture', UserContextService.getPersonalAccountInfo().currentUserData);
+            },400);
+        }
         FastClick.attach(document.body);
     }
 

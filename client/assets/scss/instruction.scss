@@ -1,0 +1,97 @@
+.instruction{
+  video{
+    width: 100%;
+  }
+
+  .logo{
+    padding-bottom: 40px;
+  }
+
+  .instruction-left{
+    padding: 20px;
+
+    .video-description{
+      p{
+        line-height: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    .info{
+      color: #ffffff;
+
+      a{
+        color: #ffffff;
+        font-weight: bold;
+      }
+    }
+
+    .login-button{
+      width: 100%;
+      margin: 0 0 1rem 0;
+    }
+    .sign-up-title{
+      color: #ffc520;
+      font-size: 25px;
+      font-weight: bold;
+    }
+    .sign-up-hints{
+      color: #ffffff;
+    }
+  }
+
+  .instruction-right{
+    padding: 20px;
+    .download-links{
+      margin-top: 8%;
+      a{
+        color: #000000;
+      }
+    }
+
+    .headline{
+      color: #ffc520;
+    }
+    .text{
+      color: #ffffff;
+    }
+    .sign-up-link{
+      color: #ffffff;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 5px 0px 0px 5px;
+    }
+  }
+  .about-knot-suite{
+    color: #ffc520;
+    a{
+      color: #DAD0D0;
+    }
+  }
+
+  .award-button{
+    .view-awards{
+      background-color: #A8B031;
+    }
+    .create-template{
+      background-color: #519D47;
+    }
+  }
+
+}
+
+.instruction-divider{
+  max-width: 1.33%;
+}
+
+.instruction-videos{
+  video{
+    float: left;
+    height: 100px;
+    width: 75px;
+    margin-right: 10px;
+  }
+  video:last-of-type{
+    margin-right: 0;
+  }
+}

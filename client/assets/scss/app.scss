@@ -20,6 +20,11 @@
 @import "minipeoplepicker";
 @import "connectionrequest";
 @import "search";
+@import "landing";
+@import "textalign";
+@import "float";
+@import "instruction";
+@import "createOrg";
 
 .ksw-header{
   padding: 2rem;
@@ -58,5 +63,9 @@ body{
 }
 .modal{
   background-color: transparent!important;
+}
+
+.knot-suite-box-background{
+  background: rgb(17, 119, 108);
 }
 

@@ -32,8 +32,7 @@
                     $scope.currentUser = $scope.personalAccountInfo;
                     UserContextService.changeCurrentlySignedAsAccount(true, $scope.personalAccountInfo);
                    $location.path('/');
-                }
-
+                };
 
                 $scope.openCreateOrgModal = function(){
                     FoundationApi.publish('createOrgModal', 'open');

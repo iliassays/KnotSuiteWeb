@@ -17,7 +17,7 @@
                     .then(function (response) {
                         if (siteSearchKey != "") {
                             $scope.siteSearchResult = response.data;
-                        }else{
+                        } else {
                             $scope.siteSearchResult = [];
                         }
                     });

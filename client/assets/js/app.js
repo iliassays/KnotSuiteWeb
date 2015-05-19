@@ -39,5 +39,4 @@
         }
         FastClick.attach(document.body);
     }
-
 })();

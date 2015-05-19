@@ -1,8 +1,8 @@
 "use strict";
 (function () {
     angular.module("application")
-        .controller("myNetWorkCtrl", ["$scope", "DummyDataService", "MixPanelService","UserContextService","FoundationApi",
-            function ($scope, DummyDataService, MixPanelService,UserContextService,FoundationApi) {
+        .controller("myNetWorkCtrl", ["$scope", "DummyDataService", "MixPanelService", "UserContextService", "FoundationApi",
+            function ($scope, DummyDataService, MixPanelService, UserContextService, FoundationApi) {
 
                 MixPanelService.track("My Network");
 
@@ -16,7 +16,7 @@
 
                 $scope.selectedPeoplePickerGroup = $scope.peoplePickerGroups[1];
 
-                UserContextService.getAllConnectionsOfUser().then(function(response){
+                UserContextService.getAllConnectionsOfUser().then(function (response) {
                     var data = response.data;
                     $scope.peoplePickerFlag = true;
 

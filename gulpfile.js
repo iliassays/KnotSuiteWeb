@@ -78,6 +78,7 @@ var appJS = [
     'client/assets/js/controllers/signupCtrl.js',
     'client/assets/js/controllers/ConnectionRequestCtrl.js',
     'client/assets/js/controllers/searchCtrl.js',
+    'client/assets/js/controllers/knotSiliconPreviewCtrl.js',
   'client/assets/js/directives/kswProfilePicture.js',
   'client/assets/js/directives/kswComposeSignal.js',
   'client/assets/js/directives/kswFileOnchange.js',

@@ -12,6 +12,7 @@
   }
   .history {
     overflow-y: auto;
+    overflow-x: hidden;
     .message-history {
       padding: 4px;
       border-bottom: 1px solid #dad1d2;
@@ -42,6 +43,7 @@
           p.left{
             float: left;
             color: #60a8cd;
+            line-height: 1;
           }
           p.right{
             float: right;
@@ -50,8 +52,16 @@
           }
         }
         .bottom{
-          margin-bottom: 0;
-          margin-top: -8px;
+          width: 100%;
+          overflow: hidden;
+          p{
+            line-height: 1;
+          }
+          p:last-of-type{
+            float: right;
+            font-size: 14px;
+            color: gray;
+          }
         }
       }
       .email{

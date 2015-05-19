@@ -9,9 +9,9 @@
             'EventService',
             'MixPanelService',
             'UserContextService',
-            "FoundationApi","ModalFactory",
+            "FoundationApi", "ModalFactory",
             function ($scope, LoginService, $location, $rootScope, EventService,
-                      MixPanelService, UserContextService, FoundationApi,ModalFactory) {
+                      MixPanelService, UserContextService, FoundationApi, ModalFactory) {
                 MixPanelService.track("Login Page");
 
                 if (UserContextService.isLoggedIn()) {
@@ -28,12 +28,12 @@
                 //    appId:"knotsuite"
                 //}
 
-               //$scope.user = {
-               //     loginEmail: "brian.tobey123@gmail.com",
-               //    loginPassword: "@ddinstagram",
-               //    clientURI: "NO_CLIENT_URI",
-               //    timeOffset: 360
-               //}
+                //$scope.user = {
+                //     loginEmail: "brian.tobey123@gmail.com",
+                //    loginPassword: "@ddinstagram",
+                //    clientURI: "NO_CLIENT_URI",
+                //    timeOffset: 360
+                //}
 
                 $scope.user = {
                     loginEmail: "",
@@ -61,7 +61,7 @@
 
                             EventService.trigger('signedIn');
                             EventService.trigger('updateProfilePicture', data.userObj);
-                           // console.log(data.userObj);
+                            // console.log(data.userObj);
                             $location.path('/myProfile');
                         } else {
                             FoundationApi.publish('main-notifications', {
@@ -76,7 +76,7 @@
                     });
                 };
 
-                $scope.loginAlert = function(){
+                $scope.loginAlert = function () {
                     FoundationApi.publish('main-notifications', {
                             title: 'LOGIN',
                             content: 'Please login first to proceed.',

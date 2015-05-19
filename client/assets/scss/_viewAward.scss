@@ -1,0 +1,22 @@
+@import "kswCustom";
+.view-award-container{
+  margin-left: 2px !important;
+  img{
+    float: left;
+    height: 92px;
+    width: 96px;
+  }
+  .view-award-container-results{
+
+  }
+  h4{
+    color: #000000;
+  }
+  .custom-view-award-container-card{
+    @extend .ksw-custom-card;
+  }
+
+  .selected-card{
+    border: 2px solid green;
+  }
+}

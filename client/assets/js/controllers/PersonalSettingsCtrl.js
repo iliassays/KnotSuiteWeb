@@ -3,8 +3,8 @@
 (function () {
     angular.module("application")
         .controller("PersonalSettingsCtrl",
-        ["$scope", "UserContextService", "$stateParams", "$rootScope", "ApiService", "LoginService", "$location","MixPanelService",
-            function ($scope, UserContextService, $stateParams, $rootScope, ApiService, LoginService, $location,MixPanelService) {
+        ["$scope", "UserContextService", "$stateParams", "$rootScope", "ApiService", "LoginService", "$location", "MixPanelService",
+            function ($scope, UserContextService, $stateParams, $rootScope, ApiService, LoginService, $location, MixPanelService) {
                 MixPanelService.track("Personal Settings");
                 if (!UserContextService.isLoggedIn()) {
                     $location.path('/');

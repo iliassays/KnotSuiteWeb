@@ -2,8 +2,8 @@
 (function () {
     angular.module("application")
         .controller("createAwardTemplateCtrl",
-        ["$scope", "UserContextService", "SignalService", "AwardService", "$state","FoundationApi","$rootScope",
-            function ($scope, UserContextService, SignalService, AwardService, $state,FoundationApi,$rootScope) {
+        ["$scope", "UserContextService", "SignalService", "AwardService", "$state", "FoundationApi", "$rootScope",
+            function ($scope, UserContextService, SignalService, AwardService, $state, FoundationApi, $rootScope) {
                 $scope.awardTemplate = {
                     title: '',
                     description: '',

@@ -7,7 +7,7 @@
                     var data = {
                         accessToken: UserContextService.getAccessToken(),
                         organizationName: org.name,
-                        domain: org.email
+                        domain: org.domain
                     };
                     return ApiService.post("/api/registerOrganization", data);
                 };

@@ -73,6 +73,12 @@
                 this.saveAccountId(currentUserData.accountId);
             }
 
+            this.saveCurrentUserOrg = function(org){
+                var currentUserData = JSON.parse(localStorage["currentUserData"]);
+                currentUserData.corporateConnections.push(org);
+                this.saveCurrentUserData(currentUserData);
+            }
+
             this.getPersonalAccountInfo = function(){
                 var currentUserData = JSON.parse(localStorage["currentUserData"]);
                 return {
@@ -81,14 +87,14 @@
                     imgSrc: currentUserData.imgSrc,
                     userName : currentUserData.userName,
                     currentUserData: currentUserData
-                }
-            }
+                };
+            };
 
             this.getCorporateConnection = function(){
 
                 var currentUserData = JSON.parse(localStorage["currentUserData"]);
                 return currentUserData.corporateConnections;
-            }
+            };
 
             this.getAllConnectionsOfUser = function(){
                 var data = {

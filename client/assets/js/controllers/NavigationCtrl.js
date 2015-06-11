@@ -52,5 +52,9 @@
                     UserContextService.changeCurrentlySignedAsAccount(true, $scope.personalAccountInfo);
                 });
 
+                EventService.on('orgCreated', function (event,org) {
+                    $scope.corporateConnections.push(org);
+                });
+
             }])
 );

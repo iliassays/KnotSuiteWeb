@@ -1,17 +1,30 @@
 "use strict";
 (function () {
     angular.module("application")
-        .controller("createOrgCtrl", ["$scope", "FoundationApi", "OrgService", "OrgService",
-            function ($scope, FoundationApi, OrgService) {
+        .controller("createOrgCtrl", ["$scope", "FoundationApi","UserContextService", "OrgService","EventService",
+            function ($scope, FoundationApi,UserContextService, OrgService,EventService) {
 
                 $scope.org = {
                     name: "",
-                    email: "",
+                    domain: "",
                     isAgreed: false
                 };
 
                 $scope.createOrg = function () {
-                    if ($scope.org.name == "" || $scope.org.email == "" || $scope.org.isAgreed == false) {
+
+                    var currentUserEmail = UserContextService.getPersonalAccountInfo().currentUserData.email.replace(/.*@/,"");
+                    if(currentUserEmail != $scope.org.domain){
+                        FoundationApi.publish('main-notifications', {
+                                title: 'ERROR',
+                                content: 'Domain mismatch',
+                                color: 'warning',
+                                autoclose: "3000"
+                            }
+                        );
+                        return;
+                    }
+
+                    if ($scope.org.name == "" || $scope.org.domain == "" || $scope.org.isAgreed == false) {
                         FoundationApi.publish('main-notifications', {
                                 title: 'ERROR',
                                 content: 'Invalid input',
@@ -21,10 +34,12 @@
                         );
                         return;
                     }
+
                     FoundationApi.publish('loaderModal', 'open');
                     OrgService.createOrg($scope.org)
                         .then(function (response) {
-                            console.log(response.data);
+                            EventService.trigger('orgCreated',response.data.data);
+                            UserContextService.saveCurrentUserOrg(response.data.data);
                             FoundationApi.publish('loaderModal', 'close');
                             FoundationApi.publish('createOrgModal', 'close');
                         });
